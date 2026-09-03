@@ -18,6 +18,294 @@
 
     <link rel="stylesheet" href="style.css">
 
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.466), rgba(0, 0, 0, 0.527)), url("./src/banner3.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            padding: 40px;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .hero-content-image {
+            width: 120px;
+        }
+
+        .herocontent {
+            display: flex;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            color: white;
+
+        }
+
+        .hero-eyebrow span {
+            font-size: 10px;
+            color: white;
+        }
+
+        .herocontent {
+            margin-top: 80px;
+            margin-bottom: 150px;
+            display: flex;
+        }
+
+        .herocontent h1 {
+            font-size: 100px;
+            max-width: 800px;
+            line-height: 1;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .hero-content-bottom {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .imgbox {
+            width: 80%;
+            height: 60px;
+            background: url("./src/img1.webp") center/cover no-repeat;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .imgbox img {
+            width: 100%;
+            height: 60px;
+
+        }
+
+        .imgbox .playbtn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: gray;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .hero-content-bottom p {
+            font-size: 18px;
+            max-width: 400px;
+            color: white;
+        }
+
+        .hpart2 {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .hpart2 div {
+            height: 130px;
+            width: 130px;
+            background: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+
+        .hero-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin-top: 50px;
+        }
+
+        .hero-footer-content p {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .hero-footer-content div {
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-footer-count h2 {
+            font-size: 90px;
+            line-height: 0.8;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .hero-footer-count p {
+            font-size: 25px;
+            color: white;
+        }
+
+        .hero-footer-content a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media(max-width:1050px) {
+
+            .herocontent h1 {
+                font-size: 70px;
+                max-width: 600px;
+            }
+
+            .hero-content-bottom p {
+                font-size: 16px;
+                max-width: 350px;
+            }
+
+            .hpart2 div {
+                height: 100px;
+                width: 100px;
+            }
+
+            .hero-footer-count h2 {
+                font-size: 60px;
+            }
+
+            .hero-footer-count p {
+                font-size: 20px;
+            }
+
+        }
+
+        @media(max-width:800px) {
+
+            .herocontent h1 {
+                font-size: 50px;
+                max-width: 450px;
+            }
+
+            .hero-content-bottom p {
+                font-size: 15px;
+                max-width: 270px;
+            }
+
+            .hpart2 div {
+                height: 90px;
+                width: 90px;
+            }
+
+            .hero-footer-count h2 {
+                font-size: 40px;
+            }
+
+            .hero-footer-count p {
+                font-size: 18px;
+            }
+
+        }
+
+
+        @media(max-width:620px) {
+
+
+
+            .hero-content-bottom p {
+                font-size: 15px;
+                max-width: 450px;
+            }
+
+
+            .hero-footer-count h2 {
+                font-size: 40px;
+            }
+
+            .hero-footer-count p {
+                font-size: 18px;
+            }
+
+            .hero-section {
+                padding: 30px;
+            }
+
+            .herocontent {
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+
+            .hpart2 {
+                display: none;
+            }
+
+            .hero-content-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-footer-content {
+                margin-top: 20px;
+            }
+
+
+
+        }
+
+        @media (max-width:500px) {
+            .hero-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .herocontent {
+                margin-bottom: 5px;
+            }
+
+            .hero-footer-count p {
+                font-size: 16px;
+            }
+             .hero-footer-content p{
+               font-size: 15px;
+            }
+
+        }
+    </style>
+
 </head>
 
 <body>
@@ -53,6 +341,53 @@
             </div>
 
     </header>
+
+
+    <section class="hero-section">
+
+        <div class="herocontent">
+
+            <div class="hpart1">
+                <p class="hero-eyebrow"><span class="material-symbols-outlined">circle</span> Modern Home For Modern
+                    Life</p>
+
+                <h1>Discover Your Dream Property</h1>
+
+                <div class="hero-content-bottom">
+                    <div class="imgbox">
+                        <div class="playbtn"><span class="material-symbols-outlined">play_arrow</span></div>
+                    </div>
+                    <p>Explore homes , offices, and rentals with ease. We connects you with properties that match your
+                        lifestyle and needs.</p>
+                </div>
+            </div>
+
+            <div class="hpart2">
+
+                <div>
+                    <span class="material-symbols-outlined">arrow_outward</span>
+                    <span class="material-symbols-outlined"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-footer">
+
+            <div class="hero-footer-content">
+                <p>We are here : 39 Division St, New York</p>
+                <div>
+                    <p>Emails Us : </p> <a href="404.html">support@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="hero-footer-count">
+                <h2>895+</h2>
+                <p>Property Listed</p>
+            </div>
+        </div>
+
+    </section>
 
     <script src="script.js"></script>
 </body>

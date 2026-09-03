@@ -19,6 +19,8 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    position: fixed;
+    width: 100%;
 }
 
 .header a{
@@ -155,6 +157,9 @@ body{
 
     .menubtn{
         display: flex;
+        background: green;
+        padding: 5px;
+        border-radius: 5px;
     }
 
     .callbtn{
