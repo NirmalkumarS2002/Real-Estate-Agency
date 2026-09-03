@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header a{
+    text-decoration: none;
+}
+
+.logoimg{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.logoimg img{
+    width: clamp(130px,14vw,160px);
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex: 1;
+}
+
+.navbtns ,
+.navicons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menus{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.menus li{
+    list-style: none;
+}
+
+.menus li a{
+    font-size: 17px;
+}
+
+.navbtns a{
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    text-wrap: nowrap;
+}
+
+.menuwrap{ 
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+.navbtns a:first-child{
+    background:  green;
+}
+
+.navbtns a:last-child{
+    border: 1px solid gray;
+}
+
+.navicons div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-wrap: nowrap;
+}
+
+.navicons div span{
+    font-size: 20px;
+}
+
+.menubtn{
+    display: none;
+    z-index: 1;
+}
+
+.menuspan{
+    display: none;
+}
+
+
+@media (max-width:1000px) {
+
+    .header{
+        padding-inline: 15px;
+    }
+
+    .menuwrap{
+        position: absolute;
+        gap: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        left: 0px;
+        top: 0px;
+        padding: 60px 20px;
+        background: red;
+        height: 100vh;
+        max-width: 360px;
+        overflow-y: auto;
+        transition: .5s ease;
+        transform: translateX(-100%);
+    }
+
+    .menuwrap.active{
+        transform: translateX(0%);
+    }
+
+    .navbtns{
+        flex-direction: column;
+        align-items: flex-start;    
+    }
+
+    .menus{
+        flex-direction: column;
+    }
+
+    .navbar{
+        justify-content: flex-end;
+    }
+
+.menuspan{
+    display: block;
+}
+
+
+    .menubtn{
+        display: flex;
+    }
+
+    .callbtn{
+        display: none !important;
+    }
+    
+}
