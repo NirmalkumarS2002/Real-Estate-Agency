@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Realty - Admin Dashboard</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pcolor: rgb(63, 214, 63);
+            --pcolor-dim: rgba(63, 214, 63, .12);
+            --dark: #0a0a0a;
+            --panel-dark: #121212;
+            --ink: #101210;
+            --sub: #6f6f6f;
+            --line: #E7E7E3;
+            --bg: #F7F6F2;
+            --card: #FFFFFF;
+            --good: #1e9e5a;
+            --warn: #c78a1c;
+            --r: 3px;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'Hanken Grotesk', sans-serif;
+            display: flex;
+            overflow-x: hidden;
+            min-height: 100vh;
+            color: var(--ink);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* ================= SIDEBAR ================= */
+        .sidebar {
+            width: 252px;
+            flex-shrink: 0;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            transition: width .3s ease;
+            border-right: 1px solid #1a1a1a;
+        }
+
+        .sidebar.collapsed {
+            width: 78px;
+        }
+
+        .sidebar.collapsed .nav-group-label,
+        .sidebar.collapsed .side-nav button span.label,
+        .sidebar.collapsed .sidebar-footer .who,
+        .sidebar.collapsed .sidebar-logo img {
+            display: none;
+        }
+
+        .sidebar.collapsed .sidebar-footer {
+            justify-content: center;
+        }
+
+        .sidebar.collapsed .side-nav button {
+            justify-content: center;
+        }
+
+        .sidebar-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 18px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-logo img {
+            width: clamp(120px, 13vw, 150px);
+        }
+
+        .rail-toggle {
+            background: #1a1a1a;
+            border: none;
+            color: #9a9a9a;
+            width: 30px;
+            height: 30px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .rail-toggle:hover {
+            color: var(--pcolor);
+        }
+
+        .sidebar-logo .adminclose {
+            color: white;
+            display: none;
+        }
+
+        .sidebar-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 14px;
+        }
+
+        .nav-group-label {
+            font-size: 10.5px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6a6a6a;
+            padding: 0 10px;
+            margin: 18px 0 10px;
+            font-weight: 700;
+        }
+
+        .nav-group-label:first-child {
+            margin-top: 0;
+        }
+
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .side-nav button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 11px 12px 11px 13px;
+            border: none;
+            border-left: 2px solid transparent;
+            background: transparent;
+            color: #a7a7a7;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 13.5px;
+            font-weight: 600;
+            letter-spacing: .2px;
+            border-radius: 0;
+            cursor: pointer;
+            text-align: left;
+            transition: .3s ease;
+            position: relative;
+        }
+
+        .side-nav button .material-symbols-outlined {
+            font-size: 19px;
+            flex-shrink: 0;
+        }
+
+        .side-nav button:hover {
+            color: #fff;
+            border-left-color: #3a3a3a;
+        }
+
+        .side-nav button.active {
+            background: transparent;
+            color: var(--pcolor);
+            border-left-color: var(--pcolor);
+        }
+
+        .sidebar-footer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .sidebar-footer img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .sidebar-footer h4 {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .sidebar-footer span {
+            color: #8a8a8a;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ================= MAIN AREA ================= */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .topbar {
+            background: var(--card);
+            border-bottom: 1px solid var(--line);
+            padding: 14px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .topbar-row1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--sub);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .breadcrumb .current {
+            color: var(--pcolor);
+        }
+
+        .topbarimgcontainer {
+            display: none;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .topbarimgcontainer .topbarmenu {
+            font-size: 22px;
+            display: none;
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .topbarimgcontainer .tlogo {
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tlogo img {
+            width: 110px;
+        }
+
+        .topbar-date {
+            font-size: 12px;
+            color: var(--sub);
+            font-weight: 700;
+        }
+
+        .topbar-row2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .topbar h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 25px;
+            color: var(--ink);
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg);
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            padding: 9px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13px;
+            width: 200px;
+            color: var(--ink);
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+
+        .search-box input::placeholder {
+            color: #9a9a94;
+        }
+
+        .search-box>.material-symbols-outlined {
+            color: var(--sub);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .icon-btn {
+            position: relative;
+            color: var(--sub);
+            cursor: pointer;
+            background: var(--bg);
+            border: 1px solid var(--line);
+            width: 38px;
+            height: 38px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn .dot {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--pcolor);
+        }
+
+        .topbar-avatar img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--pcolor);
+        }
+
+        .content-scroll {
+            padding: 22px 28px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .view {
+            display: none;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .view.active {
+            display: flex;
+        }
+
+        .d-btn {
+            padding: 10px 20px;
+            background: var(--dark);
+            border: 1px solid var(--dark);
+            color: #fff;
+            cursor: pointer;
+            transition: .3s ease;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            border-radius: 3px;
+            text-wrap: nowrap;
+        }
+
+        .d-btn:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: #000;
+        }
+
+        .d-btn.ghost {
+            background: transparent;
+            color: var(--dark);
+        }
+
+        .d-btn.ghost:hover {
+            background: var(--pcolor-dim);
+            color: var(--ink);
+        }
+
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            padding: 22px;
+            overflow-x: auto;
+            box-shadow: 0 4px 18px rgba(8, 8, 8, 0.03);
+        }
+
+        .panel h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 17px;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        .panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .panel-head h3 {
+            margin-bottom: 0;
+        }
+
+        .filter-chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-chips button {
+            padding: 7px 16px;
+            border-radius: 3px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--sub);
+            cursor: pointer;
+            font-family: 'Hanken Grotesk', sans-serif;
+            transition: .2s ease;
+        }
+
+        .filter-chips button.active,
+        .filter-chips button:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: #000;
+        }
+
+        /* ---------- BENTO GRID ---------- */
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .bento .span-8 {
+            grid-column: span 8;
+        }
+
+        .bento .span-4 {
+            grid-column: span 4;
+        }
+
+        .bento .span-6 {
+            grid-column: span 6;
+        }
+
+        .bento .span-12 {
+            grid-column: span 12;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--dark);
+            border-radius: 0;
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: .25s ease;
+        }
+
+        .stat-card:hover {
+            border-left-color: var(--pcolor);
+        }
+
+        .stat-card .material-symbols-outlined {
+            display: none;
+        }
+
+        .stat-card .stat-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .stat-card h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 34px;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .stat-card p {
+            font-size: 11.5px;
+            color: var(--sub);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .stat-card .delta {
+            font-size: 11.5px;
+            color: var(--good);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .stat-card .delta.down {
+            color: #c0263a;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 14px;
+            height: 180px;
+            padding-top: 10px;
+        }
+
+        .bar-chart .bar-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        .bar-chart .bar {
+            width: 60%;
+            background: linear-gradient(180deg, var(--pcolor), #1a8f1a);
+            border-radius: 6px 6px 0 0;
+            min-height: 6px;
+        }
+
+        .bar-chart .bar-col span {
+            font-size: 10.5px;
+            color: var(--sub);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .rank-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .rank-row {
+            display: grid;
+            grid-template-columns: 20px 1fr 40px;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .rank-row .rank-num {
+            font-family: 'Fraunces', serif;
+            font-size: 13px;
+            color: var(--sub);
+        }
+
+        .rank-row .rank-main {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .rank-row .rank-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .rank-row .rank-track {
+            width: 100%;
+            height: 4px;
+            background: var(--bg);
+        }
+
+        .rank-row .rank-fill {
+            height: 100%;
+            background: var(--pcolor);
+        }
+
+        .rank-row .rank-pct {
+            text-align: right;
+            font-family: 'Fraunces', serif;
+            font-size: 15px;
+            color: var(--ink);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .timeline .t-item {
+            display: flex;
+            gap: 14px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline .t-item:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 32px;
+            bottom: 0;
+            width: 1px;
+            background: var(--line);
+        }
+
+        .timeline .t-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--pcolor-dim);
+            color: #1a8f1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .timeline .t-body h5 {
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 3px;
+        }
+
+        .timeline .t-body p {
+            font-size: 12px;
+            color: var(--sub);
+        }
+
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .event-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px;
+            border-radius: 3px;
+            transition: .2s ease;
+        }
+
+        .event-item:hover {
+            background: var(--bg);
+        }
+
+        .event-date {
+            background: var(--dark);
+            color: #fff;
+            width: 46px;
+            height: 46px;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .event-date strong {
+            font-size: 15px;
+            font-family: 'Fraunces', serif;
+            line-height: 1;
+        }
+
+        .event-date span {
+            font-size: 9px;
+            text-transform: uppercase;
+        }
+
+        .event-info h5 {
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .event-info p {
+            font-size: 11.5px;
+            color: var(--sub);
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .quick-actions button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: none;
+            border-right: 1px solid var(--line);
+            background: transparent;
+            cursor: pointer;
+            font-family: 'Hanken Grotesk', sans-serif;
+            transition: .2s ease;
+        }
+
+        .quick-actions button:last-child {
+            border-right: none;
+        }
+
+        .quick-actions button:hover {
+            background: var(--bg);
+        }
+
+        .quick-actions button:hover span {
+            color: #1a8f1a;
+        }
+
+        .quick-actions .material-symbols-outlined {
+            color: var(--ink);
+            font-size: 19px;
+        }
+
+        .quick-actions span {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ink);
+            text-align: left;
+            transition: .2s ease;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead th {
+            text-align: left;
+            font-size: 11px;
+            color: var(--sub);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--line);
+            font-weight: 800;
+        }
+
+        tbody td {
+            padding: 13px 12px;
+            font-size: 13px;
+            color: var(--ink);
+            border-bottom: 1px solid #F0EFEA;
+            text-wrap: nowrap;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr {
+            transition: .2s ease;
+        }
+
+        tbody tr:hover {
+            background: var(--bg);
+        }
+
+        .cell-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .cell-item img {
+            width: 34px;
+            height: 34px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .badge.delivered {
+            background: rgba(30, 158, 90, 0.12);
+            color: var(--good);
+        }
+
+        .badge.transit {
+            background: var(--pcolor-dim);
+            color: #1a8f1a;
+        }
+
+        .badge.pending {
+            background: rgba(199, 138, 28, 0.12);
+            color: var(--warn);
+        }
+
+        .badge.active {
+            background: rgba(30, 158, 90, 0.12);
+            color: var(--good);
+        }
+
+        .badge.maintenance {
+            background: rgba(199, 138, 28, 0.12);
+            color: var(--warn);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .pagination button {
+            width: 32px;
+            height: 32px;
+            border-radius: 2px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .pagination button.active {
+            background: var(--dark);
+            border-color: var(--dark);
+            color: #fff;
+        }
+
+        /* agent grid */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .fleet-card {
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--card);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px;
+            transition: .3s ease;
+        }
+
+        .fleet-card:hover {
+            border-color: var(--pcolor);
+            box-shadow: 0 8px 20px rgba(63, 214, 63, 0.10);
+        }
+
+        .fleet-card img {
+            width: 76px;
+            height: 76px;
+            border-radius: 3px;
+            object-fit: cover;
+            object-position: top;
+            flex-shrink: 0;
+        }
+
+        .fleet-card-body {
+            flex: 1;
+        }
+
+        .fleet-card-body h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--ink);
+            margin-bottom: 5px;
+        }
+
+        .fleet-card-body p {
+            font-size: 11.5px;
+            color: var(--sub);
+            margin-bottom: 8px;
+        }
+
+        .fleet-card-body .contact-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .fleet-card-body .contact-row .material-symbols-outlined {
+            font-size: 15px;
+            color: #1a8f1a;
+            background: var(--pcolor-dim);
+            width: 26px;
+            height: 26px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .contact-row span {
+            cursor: pointer;
+        }
+
+        /* property gallery */
+        .wh-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .wh-card {
+            position: relative;
+            overflow: hidden;
+            height: 170px;
+            border-radius: 4px;
+            border: 1px solid var(--line);
+        }
+
+        .wh-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s ease;
+        }
+
+        .wh-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .wh-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(8, 8, 8, 0.05) 40%, rgba(8, 8, 8, 0.88) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 16px;
+        }
+
+        .wh-card .overlay h4 {
+            color: #fff;
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .wh-card .overlay span {
+            color: var(--pcolor);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .budget-row {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .budget-item h5 {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .budget-item h5 span {
+            color: var(--sub);
+            font-weight: 700;
+        }
+
+        .budget-track {
+            width: 100%;
+            height: 9px;
+            background: var(--bg);
+            border-radius: 3px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+        }
+
+        .budget-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1a8f1a, var(--pcolor));
+            border-radius: 3px;
+        }
+
+        .student-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .student-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid var(--line);
+        }
+
+        .student-row img {
+            width: 40px;
+            height: 40px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+
+        .student-row .s-info {
+            flex: 1;
+        }
+
+        .student-row .s-info h5 {
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .student-row .s-info p {
+            font-size: 11.5px;
+            color: var(--sub);
+        }
+
+        @media (max-width: 1250px) {
+            .bento .span-8 {
+                grid-column: span 12;
+            }
+
+            .bento .span-4 {
+                grid-column: span 12;
+            }
+
+            .bento .span-6 {
+                grid-column: span 12;
+            }
+        }
+
+        @media (max-width: 1100px) {
+
+            .stat-row,
+            .wh-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-actions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                position: fixed;
+                inset: 0px;
+                transform: translateX(-120%);
+                transition: .2s ease;
+                z-index: 9999;
+                width: 280px !important;
+            }
+
+            .sidebar-logo {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .sidebar.vis {
+                transform: translateX(0);
+            }
+
+            .sidebar.collapsed .nav-group-label,
+            .sidebar.collapsed .side-nav button span.label,
+            .sidebar.collapsed .sidebar-footer .who,
+            .sidebar.collapsed .sidebar-logo img {
+                display: initial;
+            }
+
+            .rail-toggle {
+                display: none;
+            }
+
+            .topbar>h2 {
+                display: none;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .topbar {
+                padding: 14px 16px;
+            }
+
+            .topbarimgcontainer {
+                display: flex;
+            }
+
+            .topbarimgcontainer .topbarmenu,
+            .topbarimgcontainer .tlogo {
+                display: flex;
+            }
+
+            .sidebar-top {
+                justify-content: space-between;
+            }
+
+            .sidebar-logo .adminclose {
+                display: block;
+            }
+
+            .content-scroll {
+                padding: 18px 16px 30px;
+            }
+
+            .fleet-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+
+            .stat-row,
+            .wh-grid,
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar-row2 {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            #topbarTitle {
+                display: none;
+            }
+
+            .topbar-date {
+                display: none;
+            }
+
+            .icon-btn {
+                width: 28px;
+                height: 28px;
+            }
+
+            .icon-btn span {
+                font-size: 20px;
+            }
+
+            .icon-btn .dot {
+                top: 2px;
+                right: 2px;
+                height: 6px;
+                width: 6px;
+            }
+
+            .topbar-avatar img {
+                width: 35px;
+                height: 35px;
+                margin-top: 4px;
+            }
+
+            .topbar-right {
+                gap: 10px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-logo">
+                <a href="index.html"><img src="./src/logo.webp" alt="Stackly Realty Logo"></a>
+                <span class="material-symbols-outlined adminclose">close</span>
+            </div>
+            <button class="rail-toggle" id="railToggle"><span
+                    class="material-symbols-outlined">chevron_left</span></button>
+        </div>
+
+        <div class="sidebar-scroll">
+            <span class="nav-group-label">Agency Management</span>
+            <nav class="side-nav">
+                <button class="active" onclick="showView('overview', this)"><span
+                        class="material-symbols-outlined">dashboard</span> <span class="label">Overview</span></button>
+                <button onclick="showView('orders', this)"><span class="material-symbols-outlined">assignment</span>
+                    <span class="label">Enquiries</span></button>
+                <button onclick="showView('staff', this)"><span class="material-symbols-outlined">badge</span>
+                    <span class="label">Agents</span></button>
+                <button onclick="showView('branches', this)"><span
+                        class="material-symbols-outlined">apartment</span>
+                    <span class="label">Properties</span></button>
+                <button onclick="showView('clients', this)"><span class="material-symbols-outlined">groups</span>
+                    <span class="label">Clients</span></button>
+                <button class="logoutbtn"><span class="material-symbols-outlined">logout</span>
+                    <span class="label">Logout</span></button>
+            </nav>
+
+        </div>
+
+        <div class="sidebar-footer">
+            <img src="./src/avartar_2.webp" alt="Admin">
+            <div class="who">
+                <h4 id="username">Meera Nair</h4>
+                <span>Branch Admin</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <div class="topbar">
+            <div class="topbar-row1">
+                <div class="breadcrumb">
+                    <span>Dashboard</span> <span class="material-symbols-outlined"
+                        style="font-size:14px;">chevron_right</span>
+                    <span class="current" id="crumbTitle">Overview</span>
+                </div>
+                <span class="topbar-date" id="topbarDate">Saturday, Aug 29 2026</span>
+            </div>
+
+            <div class="topbar-row2">
+                <div class="topbarimgcontainer">
+                    <span class="material-symbols-outlined topbarmenu">menu</span>
+                    <div class="tlogo">
+                        <a href="index.html"><img src="./src/logo.webp" alt="Stackly Realty Logo"></a>
+                    </div>
+                </div>
+                <h2 id="topbarTitle">Overview</h2>
+                <div class="topbar-right">
+                    <div class="search-box">
+                        <span class="material-symbols-outlined errorpage">search</span>
+                        <input type="text" placeholder="Search properties, agents...">
+                    </div>
+                    <div class="icon-btn errorpage"><span class="material-symbols-outlined">notifications</span><span
+                            class="dot"></span></div>
+                    <div class="icon-btn errorpage"><span class="material-symbols-outlined">mail</span></div>
+                    <div class="topbar-avatar"><img src="./src/avartar_2.webp" alt="Admin"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-scroll">
+
+            <!-- ========== 1. OVERVIEW VIEW ========== -->
+            <div class="view active" id="overview">
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">villa</span>
+                        <div class="stat-info">
+                            <h2>895+</h2>
+                            <p>Properties Listed</p>
+                            <span class="delta">+3.2% this month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">badge</span>
+                        <div class="stat-info">
+                            <h2>64</h2>
+                            <p>Active Agents</p>
+                            <span class="delta">+4 new this month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">apartment</span>
+                        <div class="stat-info">
+                            <h2>4</h2>
+                            <p>City Branches</p>
+                            <span class="delta">120+ areas covered</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">assignment</span>
+                        <div class="stat-info">
+                            <h2>642</h2>
+                            <p>Pending Enquiries</p>
+                            <span class="delta down">Follow-up needed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="errorpage"><span class="material-symbols-outlined">add_home</span><span>List
+                                Property</span></button>
+                        <button class="errorpage"><span
+                                class="material-symbols-outlined">assignment_add</span><span>New
+                                Enquiry</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined">badge</span><span>Add
+                                Agent</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined">summarize</span><span>Generate
+                                Report</span></button>
+                    </div>
+                </div>
+
+                <div class="bento">
+                    <div class="panel span-8">
+                        <div class="panel-head">
+                            <h3>Listings Trend</h3>
+                            <span class="topbar-date">Last 6 Months</span>
+                        </div>
+                        <div class="bar-chart">
+                            <div class="bar-col">
+                                <div class="bar" style="height:55%;"></div><span>Mar</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height:64%;"></div><span>Apr</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height:60%;"></div><span>May</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height:78%;"></div><span>Jun</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height:84%;"></div><span>Jul</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height:100%;"></div><span>Aug</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel span-4">
+                        <h3>Top Localities By Demand</h3>
+                        <div class="rank-list">
+                            <div class="rank-row">
+                                <span class="rank-num">01</span>
+                                <div class="rank-main">
+                                    <div class="rank-label"><span>OMR, Chennai</span></div>
+                                    <div class="rank-track">
+                                        <div class="rank-fill" style="width:82%;"></div>
+                                    </div>
+                                </div>
+                                <span class="rank-pct">82%</span>
+                            </div>
+                            <div class="rank-row">
+                                <span class="rank-num">02</span>
+                                <div class="rank-main">
+                                    <div class="rank-label"><span>Anna Nagar</span></div>
+                                    <div class="rank-track">
+                                        <div class="rank-fill" style="width:67%;"></div>
+                                    </div>
+                                </div>
+                                <span class="rank-pct">67%</span>
+                            </div>
+                            <div class="rank-row">
+                                <span class="rank-num">03</span>
+                                <div class="rank-main">
+                                    <div class="rank-label"><span>ECR Coastal Belt</span></div>
+                                    <div class="rank-track">
+                                        <div class="rank-fill" style="width:54%;"></div>
+                                    </div>
+                                </div>
+                                <span class="rank-pct">54%</span>
+                            </div>
+                            <div class="rank-row">
+                                <span class="rank-num">04</span>
+                                <div class="rank-main">
+                                    <div class="rank-label"><span>Velachery</span></div>
+                                    <div class="rank-track">
+                                        <div class="rank-fill" style="width:41%;"></div>
+                                    </div>
+                                </div>
+                                <span class="rank-pct">41%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel span-8">
+                        <div class="panel-head">
+                            <h3>Recent Enquiry Activity</h3>
+                            <button class="d-btn errorpage">View All</button>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Reference</th>
+                                    <th>Property Enquired</th>
+                                    <th>Latest Update</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="cell-item">#ENQ-2201</td>
+                                    <td>Green Meadows Villa</td>
+                                    <td>Site Visit Confirmed</td>
+                                    <td><span class="badge delivered">Closed</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cell-item">#ENQ-2198</td>
+                                    <td>Anna Nagar Office Space</td>
+                                    <td>Price Negotiation</td>
+                                    <td><span class="badge transit">In Progress</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cell-item">#ENQ-2194</td>
+                                    <td>Lakeview 2BHK Apartment</td>
+                                    <td>Awaiting Documents</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cell-item">#ENQ-2189</td>
+                                    <td>Coastal Road Plot</td>
+                                    <td>Booking Confirmed</td>
+                                    <td><span class="badge delivered">Closed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel span-4">
+                        <h3>Upcoming Site Visits</h3>
+                        <div class="event-list">
+                            <div class="event-item">
+                                <div class="event-date"><strong>03</strong><span>Sep</span></div>
+                                <div class="event-info">
+                                    <h5>Green Meadows Villa Walkthrough</h5>
+                                    <p>Client: Rahul Menon, 10:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date"><strong>09</strong><span>Sep</span></div>
+                                <div class="event-info">
+                                    <h5>Anna Nagar Office Handover</h5>
+                                    <p>Client: Sneha Pillai</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date"><strong>15</strong><span>Sep</span></div>
+                                <div class="event-info">
+                                    <h5>Open House - Lakeview Apartments</h5>
+                                    <p>All Interested Buyers</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date"><strong>22</strong><span>Sep</span></div>
+                                <div class="event-info">
+                                    <h5>Coastal Road Plot Registration</h5>
+                                    <p>Sub-Registrar Office</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel span-6">
+                        <h3>Portfolio Health</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Average Days On Market</td>
+                                    <td style="text-align:right;font-weight:800;color:var(--ink);">28 days</td>
+                                </tr>
+                                <tr>
+                                    <td>Properties Sold This Quarter</td>
+                                    <td style="text-align:right;font-weight:800;color:var(--ink);">142</td>
+                                </tr>
+                                <tr>
+                                    <td>Agents Active Today</td>
+                                    <td style="text-align:right;font-weight:800;color:var(--ink);">54 / 64</td>
+                                </tr>
+                                <tr>
+                                    <td>Client Complaints Pending</td>
+                                    <td style="text-align:right;font-weight:800;color:var(--ink);">3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel span-6">
+                        <h3>Recent Activity</h3>
+                        <div class="timeline">
+                            <div class="t-item">
+                                <div class="t-dot"><span class="material-symbols-outlined"
+                                        style="font-size:15px;">task_alt</span></div>
+                                <div class="t-body">
+                                    <h5>Enquiry #ENQ-2201 closed successfully</h5>
+                                    <p>Divya Krishnan · 10 minutes ago</p>
+                                </div>
+                            </div>
+                            <div class="t-item">
+                                <div class="t-dot"><span class="material-symbols-outlined"
+                                        style="font-size:15px;">person_add</span></div>
+                                <div class="t-body">
+                                    <h5>New agent onboarded - Kavya Reddy</h5>
+                                    <p>HR Office · 2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="t-item">
+                                <div class="t-dot"><span class="material-symbols-outlined"
+                                        style="font-size:15px;">event</span></div>
+                                <div class="t-body">
+                                    <h5>Open house schedule finalised</h5>
+                                    <p>Events Desk · 5 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="t-item">
+                                <div class="t-dot"><span class="material-symbols-outlined"
+                                        style="font-size:15px;">report</span></div>
+                                <div class="t-body">
+                                    <h5>Client complaint ticket #GR-045 raised</h5>
+                                    <p>Client Care · Yesterday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== 2. ENQUIRIES VIEW ========== -->
+            <div class="view" id="orders">
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">assignment</span>
+                        <div class="stat-info">
+                            <h2>642</h2>
+                            <p>Open Enquiries</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">move_to_inbox</span>
+                        <div class="stat-info">
+                            <h2>58</h2>
+                            <p>New This Week</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">task_alt</span>
+                        <div class="stat-info">
+                            <h2>3,410</h2>
+                            <p>Deals Closed This Year</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">priority_high</span>
+                        <div class="stat-info">
+                            <h2>12</h2>
+                            <p>Flagged Enquiries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-head">
+                        <h3>Enquiry Applications</h3>
+                        <button class="d-btn errorpage">New Enquiry</button>
+                    </div>
+
+                    <div class="filter-chips" style="margin-bottom:16px;">
+                        <button class="active errorpage">All</button>
+                        <button class="errorpage">Closed</button>
+                        <button class="errorpage">In Progress</button>
+                        <button class="errorpage">Pending</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Client</th>
+                                <th>Property</th>
+                                <th>Assigned Agent</th>
+                                <th>Date Received</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>#ENQ-2201</td>
+                                <td>Rahul Menon</td>
+                                <td>Green Meadows Villa</td>
+                                <td>Divya Krishnan</td>
+                                <td>Jul 08</td>
+                                <td><span class="badge delivered">Closed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>#ENQ-2198</td>
+                                <td>Sneha Pillai</td>
+                                <td>Anna Nagar Office Space</td>
+                                <td>Priya Suresh</td>
+                                <td>Jul 07</td>
+                                <td><span class="badge transit">In Progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>#ENQ-2194</td>
+                                <td>Arjun Nair</td>
+                                <td>Lakeview 2BHK Apartment</td>
+                                <td>Karthik Raja</td>
+                                <td>Jul 07</td>
+                                <td><span class="badge pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>#ENQ-2189</td>
+                                <td>Meghana Rao</td>
+                                <td>Coastal Road Plot</td>
+                                <td>Meera Nair</td>
+                                <td>Jul 06</td>
+                                <td><span class="badge delivered">Closed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>#ENQ-2183</td>
+                                <td>Vikram Das</td>
+                                <td>Green Meadows Villa</td>
+                                <td>Karthik Raja</td>
+                                <td>Jul 05</td>
+                                <td><span class="badge transit">In Progress</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="pagination">
+                        <button class="errorpage">&lt;</button>
+                        <button class="active errorpage">1</button>
+                        <button class="errorpage">2</button>
+                        <button class="errorpage">3</button>
+                        <button class="errorpage">&gt;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== 3. AGENTS VIEW ========== -->
+            <div class="view" id="staff">
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">badge</span>
+                        <div class="stat-info">
+                            <h2>64</h2>
+                            <p>Total Agents</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <div class="stat-info">
+                            <h2>18</h2>
+                            <p>Senior Agents</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">real_estate_agent</span>
+                        <div class="stat-info">
+                            <h2>46</h2>
+                            <p>Field Agents</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">event_busy</span>
+                        <div class="stat-info">
+                            <h2>7</h2>
+                            <p>On Leave</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento">
+                    <div class="panel span-8">
+                        <div class="panel-head">
+                            <h3>Agent Roster</h3>
+                            <div class="filter-chips">
+                                <button class="active errorpage">All</button>
+                                <button class="errorpage">Residential</button>
+                                <button class="errorpage">Commercial</button>
+                                <button class="errorpage">Rentals</button>
+                            </div>
+                        </div>
+                        <div class="fleet-grid">
+                            <div class="fleet-card">
+                                <img src="./src/avartar_1.webp" alt="Aravind Iyer">
+                                <div class="fleet-card-body">
+                                    <h4>Aravind Iyer</h4>
+                                    <p>Branch Head, Engineering Corridor · 6 Listings</p>
+                                    <span class="badge active">On Field</span>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="material-symbols-outlined errorpage">mail</span>
+                                    <span class="material-symbols-outlined errorpage">call</span>
+                                </div>
+                            </div>
+                            <div class="fleet-card">
+                                <img src="./src/avartar_2.webp" alt="Meera Nair">
+                                <div class="fleet-card-body">
+                                    <h4>Meera Nair</h4>
+                                    <p>Head, Commercial Sales · 5 Listings</p>
+                                    <span class="badge active">On Field</span>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="material-symbols-outlined errorpage">mail</span>
+                                    <span class="material-symbols-outlined errorpage">call</span>
+                                </div>
+                            </div>
+                            <div class="fleet-card">
+                                <img src="./src/avartar_3.webp" alt="Ravi Shankar">
+                                <div class="fleet-card-body">
+                                    <h4>Ravi Shankar</h4>
+                                    <p>Head, Rentals Desk · 4 Listings</p>
+                                    <span class="badge maintenance">On Leave</span>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="material-symbols-outlined errorpage">mail</span>
+                                    <span class="material-symbols-outlined errorpage">call</span>
+                                </div>
+                            </div>
+                            <div class="fleet-card">
+                                <img src="./src/team-3.webp" alt="Daniel Cho">
+                                <div class="fleet-card-body">
+                                    <h4>Daniel Cho</h4>
+                                    <p>Client Relations Lead · 4 Listings</p>
+                                    <span class="badge active">On Field</span>
+                                </div>
+                                <div class="contact-row">
+                                    <span class="material-symbols-outlined errorpage">mail</span>
+                                    <span class="material-symbols-outlined errorpage">call</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel span-4">
+                        <h3>On Leave Today</h3>
+                        <div class="event-list">
+                            <div class="event-item">
+                                <div class="event-date" style="background:#0a0a0a;">
+                                    <strong>29</strong><span>Aug</span>
+                                </div>
+                                <div class="event-info">
+                                    <h5>Ravi Shankar</h5>
+                                    <p>Rentals Desk · Back Sep 02</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date" style="background:#0a0a0a;">
+                                    <strong>29</strong><span>Aug</span>
+                                </div>
+                                <div class="event-info">
+                                    <h5>Sameer Qureshi</h5>
+                                    <p>Plots & Land · Back Sep 01</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date" style="background:#0a0a0a;">
+                                    <strong>30</strong><span>Aug</span>
+                                </div>
+                                <div class="event-info">
+                                    <h5>Fatima Sheikh</h5>
+                                    <p>Residential · Back Sep 03</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== 4. PROPERTIES VIEW ========== -->
+            <div class="view" id="branches">
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">apartment</span>
+                        <div class="stat-info">
+                            <h2>4</h2>
+                            <p>City Branches</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">villa</span>
+                        <div class="stat-info">
+                            <h2>895</h2>
+                            <p>Properties Listed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">key</span>
+                        <div class="stat-info">
+                            <h2>412</h2>
+                            <p>Available For Sale</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">home_work</span>
+                        <div class="stat-info">
+                            <h2>18</h2>
+                            <p>Featured Listings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Branch Locations</h3>
+                    <div class="wh-grid">
+                        <div class="wh-card">
+                            <img src="./src/banner.webp" alt="Engineering corridor branch">
+                            <div class="overlay">
+                                <h4>OMR Tech Corridor Branch</h4><span>324 Listings</span>
+                            </div>
+                        </div>
+                        <div class="wh-card">
+                            <img src="./src/banner2.webp" alt="Commercial district branch">
+                            <div class="overlay">
+                                <h4>Anna Nagar Business District</h4><span>286 Listings</span>
+                            </div>
+                        </div>
+                        <div class="wh-card">
+                            <img src="./src/banner3.webp" alt="Coastal branch">
+                            <div class="overlay">
+                                <h4>ECR Coastal Branch</h4><span>194 Listings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento">
+                    <div class="panel span-8">
+                        <h3>Branch Snapshot</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Branch</th>
+                                    <th>Focus Area</th>
+                                    <th>Active Agents</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OMR Tech Corridor Branch</td>
+                                    <td>Residential &amp; Rentals</td>
+                                    <td>22</td>
+                                    <td><span class="badge active">Fully Staffed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Anna Nagar Business District</td>
+                                    <td>Commercial &amp; Office Space</td>
+                                    <td>18</td>
+                                    <td><span class="badge active">Fully Staffed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>ECR Coastal Branch</td>
+                                    <td>Plots &amp; Vacation Homes</td>
+                                    <td>12</td>
+                                    <td><span class="badge maintenance">Hiring Open</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel span-4">
+                        <h3>Marketing Budget Usage</h3>
+                        <div class="budget-row">
+                            <div class="budget-item">
+                                <h5>Residential <span>78%</span></h5>
+                                <div class="budget-track">
+                                    <div class="budget-fill" style="width:78%;"></div>
+                                </div>
+                            </div>
+                            <div class="budget-item">
+                                <h5>Commercial <span>64%</span></h5>
+                                <div class="budget-track">
+                                    <div class="budget-fill" style="width:64%;"></div>
+                                </div>
+                            </div>
+                            <div class="budget-item">
+                                <h5>Rentals <span>52%</span></h5>
+                                <div class="budget-track">
+                                    <div class="budget-fill" style="width:52%;"></div>
+                                </div>
+                            </div>
+                            <div class="budget-item">
+                                <h5>Plots & Land <span>45%</span></h5>
+                                <div class="budget-track">
+                                    <div class="budget-fill" style="width:45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== 5. CLIENTS VIEW ========== -->
+            <div class="view" id="clients">
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">groups</span>
+                        <div class="stat-info">
+                            <h2>12,485</h2>
+                            <p>Total Clients</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">person_add</span>
+                        <div class="stat-info">
+                            <h2>648</h2>
+                            <p>New This Month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <div class="stat-info">
+                            <h2>1,120</h2>
+                            <p>Repeat Clients</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">support_agent</span>
+                        <div class="stat-info">
+                            <h2>21</h2>
+                            <p>Open Support Tickets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento">
+                    <div class="panel span-8">
+                        <div class="panel-head">
+                            <h3>Client Directory</h3>
+                            <button class="d-btn errorpage">Add Client</button>
+                        </div>
+
+                        <div class="filter-chips" style="margin-bottom:16px;">
+                            <button class="active errorpage">All</button>
+                            <button class="errorpage">Buyers</button>
+                            <button class="errorpage">Sellers</button>
+                            <button class="errorpage">Renters</button>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Email</th>
+                                    <th>Interest</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cell-item">Priya Sharma</td>
+                                    <td>priya.s@stacklyrealty.com</td>
+                                    <td>Green Meadows Villa</td>
+                                    <td>Buyer</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-item">Karthik Raj</td>
+                                    <td>karthik.r@stacklyrealty.com</td>
+                                    <td>Anna Nagar Office Space</td>
+                                    <td>Renter</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-item">Ananya Das</td>
+                                    <td>ananya.d@stacklyrealty.com</td>
+                                    <td>Lakeview 2BHK Apartment</td>
+                                    <td>Buyer</td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-item">Vikram Iyer</td>
+                                    <td>vikram.i@stacklyrealty.com</td>
+                                    <td>Coastal Road Plot</td>
+                                    <td>Seller</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            <button class="errorpage">&lt;</button>
+                            <button class="active errorpage">1</button>
+                            <button class="errorpage">2</button>
+                            <button class="errorpage">3</button>
+                            <button class="errorpage">&gt;</button>
+                        </div>
+                    </div>
+
+                    <div class="panel span-4">
+                        <h3>Open Support Tickets</h3>
+                        <div class="student-list">
+                            <div class="student-row">
+                                <img src="./src/team-1.webp" alt="Client">
+                                <div class="s-info">
+                                    <h5>Payment Confirmation Issue</h5>
+                                    <p>Priya Sharma · #TCK-1042</p>
+                                </div>
+                                <span class="badge pending">Open</span>
+                            </div>
+                            <div class="student-row">
+                                <img src="./src/team-2.webp" alt="Client">
+                                <div class="s-info">
+                                    <h5>Site Visit Reschedule</h5>
+                                    <p>Karthik Raj · #TCK-1039</p>
+                                </div>
+                                <span class="badge transit">In Progress</span>
+                            </div>
+                            <div class="student-row">
+                                <img src="./src/team-3.webp" alt="Client">
+                                <div class="s-info">
+                                    <h5>Loan Documentation Query</h5>
+                                    <p>Ananya Das · #TCK-1035</p>
+                                </div>
+                                <span class="badge pending">Open</span>
+                            </div>
+                            <div class="student-row">
+                                <img src="./src/team-4.webp" alt="Client">
+                                <div class="s-info">
+                                    <h5>Title Deed Registration Help</h5>
+                                    <p>Vikram Iyer · #TCK-1031</p>
+                                </div>
+                                <span class="badge delivered">Resolved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+
+        const topbarmenu = document.querySelector(".topbarmenu")
+        const adminclose = document.querySelector(".adminclose")
+        const sidebar = document.querySelector(".sidebar")
+        const railToggle = document.querySelector("#railToggle")
+
+        topbarmenu.addEventListener("click", () => {
+            sidebar.classList.toggle('vis')
+        })
+
+        adminclose.addEventListener("click", () => {
+            sidebar.classList.remove('vis')
+        })
+
+        railToggle.addEventListener("click", () => {
+            sidebar.classList.toggle('collapsed')
+            const icon = railToggle.querySelector('.material-symbols-outlined')
+            icon.textContent = sidebar.classList.contains('collapsed') ? 'chevron_right' : 'chevron_left'
+        })
+
+        const logoutbtn = document.querySelector(".logoutbtn")
+        logoutbtn.addEventListener("click", () => {
+            window.location.href = "index.html"
+        })
+
+        const username = document.querySelector("#username");
+        const email = localStorage.getItem("useremail");
+
+        if (email) {
+            username.textContent = email.split("@")[0];
+        }
+
+        let errorpage = document.querySelectorAll(".errorpage")
+        errorpage.forEach((error) => {
+            error.addEventListener("click", () => {
+                window.location.href = "404.html";
+            })
+        })
+
+        const titles = {
+            overview: "Overview",
+            orders: "Enquiries",
+            staff: "Agents",
+            branches: "Properties",
+            clients: "Clients"
+        };
+
+        function showView(id, btn) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            window.scrollTo({
+                top: "0px",
+                behavior: "smooth"
+            })
+
+            document.querySelectorAll('.side-nav button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.getElementById('topbarTitle').innerText = titles[id];
+            document.getElementById('crumbTitle').innerText = titles[id];
+            sidebar.classList.remove('vis')
+        }
+
+        // live date in topbar
+        const dateEl = document.getElementById('topbarDate');
+        const today = new Date();
+        dateEl.textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' });
+    </script>
+
+</body>
+
+</html>
