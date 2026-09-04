@@ -35,6 +35,10 @@
             overflow-x: hidden;
         }
 
+        :root{
+            --pcolor: rgb(63, 214, 63);
+        }
+
         .hero-section {
             display: flex;
             flex-direction: column;
@@ -44,8 +48,8 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-
-            padding: 40px;
+            padding-block: 40px;
+            padding-inline: clamp(40px,7vw,140px);
             min-height: 100vh;
             width: 100%;
         }
@@ -70,7 +74,7 @@
 
         .hero-eyebrow span {
             font-size: 10px;
-            color: white;
+            color: var(--pcolor);
         }
 
         .herocontent {
@@ -99,6 +103,7 @@
             background: url("./src/img1.webp") center/cover no-repeat;
             border-radius: 30px;
             position: relative;
+            z-index: 1;
         }
 
         .imgbox img {
@@ -112,14 +117,22 @@
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            background: gray;
+            background: rgba(0, 0, 0, 0.733);
+            backdrop-filter: blur(45px);
+            color: white;
             height: 50px;
             width: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
+            transition: .5s ease;
+            cursor: pointer;
         }
+
+         .imgbox .playbtn:hover{
+            color: var(--pcolor);
+         }
 
         .hero-content-bottom p {
             font-size: 18px;
@@ -135,14 +148,32 @@
         }
 
         .hpart2 div {
-            height: 130px;
-            width: 130px;
-            background: gray;
+            height: 150px;
+            width: 150px;
+            background: rgba(0, 0, 0, 0.733);
+            backdrop-filter: blur(45px);
+            border: 1px solid gray;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
+            transition: .5s ease;
+            cursor: pointer;
+
         }
+
+         .hpart2 div:hover{
+            transform: translateX(10px) translateY(4px) scale(0.9);
+         }
+
+         .hpart2 div:hover span{
+            color: var(--pcolor);
+         }
+
+          .hpart2 div span{
+            font-size: 32px;
+            color: white;
+          }
 
 
         .hero-footer {
@@ -160,7 +191,7 @@
 
         .hero-footer-content p {
             font-size: 16px;
-            margin-bottom: 5px;
+            margin-bottom: 5px; 
             color: white;
         }
 
@@ -321,7 +352,7 @@
 
             <div class="menuwrap">
                 <ul class="menus">
-                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="pages.html">Pages</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -366,7 +397,6 @@
 
                 <div>
                     <span class="material-symbols-outlined">arrow_outward</span>
-                    <span class="material-symbols-outlined"></span>
                 </div>
             </div>
 
@@ -388,6 +418,107 @@
         </div>
 
     </section>
+
+      <footer class="footer">
+
+        <div class="footerhead">
+            <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
+
+            <div class="footerform">
+                <input type="email" placeholder="Enter Your Email" id="subemail">
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer1">
+
+            <div class="fsec1">
+
+                <h2>About Company</h2>
+
+                <p>We strive to build long-term partnerships
+                    through excellence and customer
+                    satisfaction.</p>
+
+                <h1>Since 2007</h1>
+
+            </div>
+
+            <div class="fersec2">
+                <h2>Quick Links</h2>
+
+                <div class="footerlinks">
+
+                    <a href="index.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Home</a>
+                    <a href="about.html"><span class="material-symbols-outlined farrow">arrow_forward</span>About</a>
+                    <a href="pages.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pages</a>
+                    <a href="blog.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Blog</a>
+                    <a href="contact.html"><span
+                            class="material-symbols-outlined farrow">arrow_forward</span>Contact</a>
+
+                </div>
+            </div>
+
+            <div class="fersec2">
+                <h2>Services</h2>
+
+                <div class="footerlinks">
+
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Service</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pricing</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Team</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Terms &
+                        conditions</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Privacy
+                        Policy</a>
+
+                </div>
+            </div>
+
+            <div class="fersec2">
+
+                <h2>Office Address</h2>
+
+                <div class="footerlinks">
+                    <a href="404.html">123,Anna Nager </a>
+                    <a href="404.html">Chennai, Tamilnadu</a>
+                </div>
+
+                <h2>Email Address</h2>
+
+                <div class="footerlinks">
+                    <a href="404.html">admin@gmail.com</a>
+                    <a href="404.html">career@gmail.com</a>
+                </div>
+
+            </div>
+
+            <div class="fersec2">
+
+                <h2>Phone Number</h2>
+
+                <div class="footerlinks">
+                    <a href="404.html">+91 12345 67890</a>
+                    <a href="404.html">+91 09876 54321</a>
+                </div>
+
+                <h2>follow Us</h2>
+
+                <div class="footer-sotial-icons">
+                    <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer2">
+            <p>@ 2026 All Rights Reserved by Stackly</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
