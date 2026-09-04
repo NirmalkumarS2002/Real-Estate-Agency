@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate - Sign Up</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Hanken Grotesk", sans-serif;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        :root {
+            --pcolor: rgb(63, 214, 63);
+            --dark: #0d0f0d;
+            --sub: rgba(255, 255, 255, 0.65);
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* ===== full-bleed background, centered glass card, no split ===== */
+        .login-screen {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
+                url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1800&auto=format&fit=crop") center/cover no-repeat fixed;
+        }
+
+        .ls-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px clamp(20px, 5vw, 60px);
+        }
+
+        .ls-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .ls-logo span.material-symbols-outlined {
+            font-size: 28px;
+            color: var(--pcolor);
+        }
+
+        .ls-logo h2 {
+            color: white;
+            font-size: 21px;
+        }
+
+        .ls-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: .3s ease;
+        }
+
+        .ls-back:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: black;
+        }
+
+        .ls-back span {
+            font-size: 18px;
+        }
+
+        /* main body: card centered, floating stat chips around it on large screens */
+        .ls-body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px 60px;
+            position: relative;
+        }
+
+        .ls-chip {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: white;
+        }
+
+        .ls-chip span.material-symbols-outlined {
+            font-size: 26px;
+            color: var(--pcolor);
+        }
+
+        .ls-chip h3 {
+            font-size: 20px;
+            line-height: 1;
+            margin-bottom: 3px;
+        }
+
+        .ls-chip p {
+            font-size: 12px;
+            color: var(--sub);
+        }
+
+        .ls-chip-1 {
+            top: 8%;
+            left: 6%;
+        }
+
+        .ls-chip-2 {
+            bottom: 12%;
+            left: 8%;
+        }
+
+        .ls-chip-3 {
+            top: 14%;
+            right: 6%;
+        }
+
+        .ls-chip-4 {
+            bottom: 10%;
+            right: 7%;
+        }
+
+        @media (max-width:1150px) {
+            .ls-chip {
+                display: none;
+            }
+        }
+
+        /* the glass card itself */
+        .ls-card {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 24px;
+            padding: 44px 40px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .ls-card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #eefbee;
+            color: var(--pcolor);
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ls-card-badge span {
+            font-size: 8px;
+        }
+
+        .ls-card h1 {
+            font-size: 32px;
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .ls-card>p.ls-sub {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 26px;
+        }
+
+        /* pill-style role toggle */
+        .ls-toggle {
+            display: flex;
+            background: #f2f2f0;
+            border-radius: 30px;
+            padding: 5px;
+            margin-bottom: 26px;
+        }
+
+        .ls-toggle button {
+            flex: 1;
+            border: none;
+            background: none;
+            padding: 11px;
+            border-radius: 26px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #777;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .ls-toggle button.active {
+            background: var(--dark);
+            color: white;
+        }
+
+        /* two-up row for name + email on wider screens */
+        .ls-field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        /* boxed inputs with icons */
+        .ls-field {
+            margin-bottom: 16px;
+        }
+
+        .ls-field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .ls-input-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1.5px solid #e4e4e4;
+            border-radius: 12px;
+            padding: 4px 14px;
+            transition: .3s ease;
+        }
+
+        .ls-input-box:focus-within {
+            border-color: var(--pcolor);
+        }
+
+        .ls-input-box span.material-symbols-outlined {
+            font-size: 19px;
+            color: #999;
+        }
+
+        .ls-input-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 12px 10px;
+            font-size: 14.5px;
+            color: var(--dark);
+            width: 100%;
+            min-width: 0;
+        }
+
+        .ls-input-box .passeye {
+            cursor: pointer;
+        }
+
+        .ls-error {
+            color: #c0263a;
+            margin-top: 6px;
+            font-size: 11.5px;
+        }
+
+        .ls-terms {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 12.5px;
+            color: #666;
+            margin-bottom: 22px;
+            line-height: 1.5;
+        }
+
+        .ls-terms input {
+            accent-color: var(--pcolor);
+            margin-top: 3px;
+        }
+
+        .ls-terms a {
+            color: var(--dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .ls-terms a:hover {
+            color: var(--pcolor);
+        }
+
+        .ls-submit {
+            width: 100%;
+            padding: 15px;
+            background: var(--pcolor);
+            color: black;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: .3s ease;
+            margin-bottom: 22px;
+        }
+
+        .ls-submit:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        .ls-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .ls-divider::before,
+        .ls-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+
+        .ls-divider span {
+            font-size: 11px;
+            color: #999;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .ls-social {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .ls-social a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px;
+            border: 1.5px solid #e4e4e4;
+            border-radius: 12px;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 17px;
+            transition: .3s ease;
+        }
+
+        .ls-social a:hover {
+            border-color: var(--pcolor);
+            background: #eefbee;
+        }
+
+        .ls-card-foot {
+            text-align: center;
+            font-size: 13.5px;
+            color: #666;
+        }
+
+        .ls-card-foot a {
+            color: var(--pcolor);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .ls-card-foot a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width:560px) {
+            .ls-field-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width:480px) {
+            .ls-card {
+                padding: 34px 24px;
+            }
+
+            .ls-card h1 {
+                font-size: 26px;
+            }
+        }
+
+        .popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .popup.active {
+            display: flex;
+        }
+
+        .popup-box {
+            width: 340px;
+            background: white;
+            color: var(--dark);
+            border-radius: 18px;
+            padding: 34px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .success {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #eefbee;
+            color: var(--pcolor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 16px;
+        }
+
+        .popup-box h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .popup-box p {
+            color: #777;
+            margin-bottom: 22px;
+            font-size: 13px;
+        }
+
+        .popup-box button {
+            padding: 12px 36px;
+            border: none;
+            background: var(--pcolor);
+            color: black;
+            font-weight: 700;
+            font-size: 13px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .popup-box button:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="popup" id="popup">
+        <div class="popup-box">
+            <span class="material-symbols-outlined success">check_circle</span>
+            <h2>Account Created</h2>
+            <p>Welcome to RealEstate. Click OK to log in.</p>
+            <button id="okBtn">OK</button>
+        </div>
+    </div>
+
+    <div class="login-screen">
+
+        <div class="ls-top">
+            <a href="index.html" class="ls-logo">
+                <span class="material-symbols-outlined">home_work</span>
+                <h2>RealEstate</h2>
+            </a>
+            <a href="index.html" class="ls-back"><span class="material-symbols-outlined">arrow_back</span>Back to
+                Home</a>
+        </div>
+
+        <div class="ls-body">
+
+            <!-- floating stat chips, decorative on large screens -->
+            <div class="ls-chip ls-chip-1">
+                <span class="material-symbols-outlined">home_work</span>
+                <div>
+                    <h3>895+</h3>
+                    <p>Properties Listed</p>
+                </div>
+            </div>
+            <div class="ls-chip ls-chip-2">
+                <span class="material-symbols-outlined">groups</span>
+                <div>
+                    <h3>640+</h3>
+                    <p>Families Settled</p>
+                </div>
+            </div>
+            <div class="ls-chip ls-chip-3">
+                <span class="material-symbols-outlined">verified</span>
+                <div>
+                    <h3>18+</h3>
+                    <p>Years of Trust</p>
+                </div>
+            </div>
+            <div class="ls-chip ls-chip-4">
+                <span class="material-symbols-outlined">support_agent</span>
+                <div>
+                    <h3>32+</h3>
+                    <p>Expert Agents</p>
+                </div>
+            </div>
+
+            <div class="ls-card">
+                <p class="ls-card-badge"><span class="material-symbols-outlined">circle</span> Join RealEstate</p>
+                <h1>Create Your Account</h1>
+                <p class="ls-sub">Sign up to save properties, track enquiries, or list with us.</p>
+
+                <div class="ls-toggle">
+                    <button class="active" data-role="Client">Client</button>
+                    <button data-role="Agent">Agent</button>
+                </div>
+
+                <div class="ls-field-row">
+                    <div class="ls-field">
+                        <label>Full Name</label>
+                        <div class="ls-input-box">
+                            <span class="material-symbols-outlined">person</span>
+                            <input type="text" placeholder="Your name" id="log-name">
+                        </div>
+                        <p class="ls-error"></p>
+                    </div>
+
+                    <div class="ls-field">
+                        <label>Phone Number</label>
+                        <div class="ls-input-box">
+                            <span class="material-symbols-outlined">call</span>
+                            <input type="tel" placeholder="Your phone" id="log-phone">
+                        </div>
+                        <p class="ls-error"></p>
+                    </div>
+                </div>
+
+                <div class="ls-field">
+                    <label>Email Address</label>
+                    <div class="ls-input-box">
+                        <span class="material-symbols-outlined">mail</span>
+                        <input type="email" placeholder="you@realestate.com" id="log-email">
+                    </div>
+                    <p class="ls-error"></p>
+                </div>
+
+                <div class="ls-field">
+                    <label>Password</label>
+                    <div class="ls-input-box">
+                        <span class="material-symbols-outlined">lock</span>
+                        <input type="password" placeholder="Create a password" id="log-pass">
+                        <span class="material-symbols-outlined passeye">visibility_off</span>
+                    </div>
+                    <p class="ls-error"></p>
+                </div>
+
+                <div class="ls-field">
+                    <label>Confirm Password</label>
+                    <div class="ls-input-box">
+                        <span class="material-symbols-outlined">lock</span>
+                        <input type="password" placeholder="Re-enter your password" id="log-conpass">
+                        <span class="material-symbols-outlined passeye">visibility_off</span>
+                    </div>
+                    <p class="ls-error"></p>
+                </div>
+
+                <label class="ls-terms">
+                    <input type="checkbox" id="log-terms">
+                    <span>I agree to the <a href="404.html">Terms &amp; Conditions</a> and <a href="404.html">Privacy
+                            Policy</a></span>
+                </label>
+
+                <button class="ls-submit">Create Account<span
+                        class="material-symbols-outlined">arrow_forward</span></button>
+
+                <div class="ls-divider"><span>Or continue with</span></div>
+
+                <div class="ls-social">
+                    <a href="404.html"><i class="fa-brands fa-google"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-apple"></i></a>
+                </div>
+
+                <p class="ls-card-foot">Already have an account? <a href="login.html">Log In</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const nameInput = document.querySelector("#log-name");
+        const phoneInput = document.querySelector("#log-phone");
+        const email = document.querySelector("#log-email");
+        const password = document.querySelector("#log-pass");
+        const confirmPassword = document.querySelector("#log-conpass");
+        const termsCheck = document.querySelector("#log-terms");
+        const signBtn = document.querySelector(".ls-submit");
+
+        const roleTabs = document.querySelectorAll(".ls-toggle button");
+        const eyeIcons = document.querySelectorAll(".passeye");
+        const errorMsgs = document.querySelectorAll(".ls-error");
+
+        const popup = document.querySelector("#popup");
+        const okBtn = document.querySelector("#okBtn");
+
+        let selectedRole = "Client";
+
+        roleTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                roleTabs.forEach((t) => { t.classList.remove("active") })
+                tab.classList.add("active")
+                selectedRole = tab.dataset.role;
+            })
+        })
+
+        eyeIcons.forEach((eye, index) => {
+            eye.addEventListener("click", () => {
+                let input = index === 0 ? password : confirmPassword;
+                if (input.type === "password") {
+                    input.type = "text";
+                    eye.textContent = "visibility";
+                } else {
+                    input.type = "password";
+                    eye.textContent = "visibility_off";
+                }
+            })
+        })
+
+        nameInput.addEventListener("input", () => {
+            nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g, "");
+        });
+
+        phoneInput.addEventListener("input", () => {
+            phoneInput.value = phoneInput.value.replace(/[^0-9+\s]/g, "");
+        });
+
+        signBtn.addEventListener("click", () => {
+
+            let isvalid = true;
+            let logregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            let nameRegex = /^[A-Za-z\s]+$/
+            let phoneRegex = /^[0-9+\s]{7,15}$/
+
+            let fn = nameInput.value.trim()
+            let fph = phoneInput.value.trim()
+            let fe = email.value.trim()
+            let fp = password.value.trim()
+            let fcp = confirmPassword.value.trim()
+
+            errorMsgs.forEach((error) => { error.textContent = ""; })
+
+            if (fn == "") {
+                errorMsgs[0].textContent = "Enter Your Name";
+                isvalid = false;
+            }
+            else if (!nameRegex.test(fn)) {
+                errorMsgs[0].textContent = "Only letters are allowed";
+                isvalid = false;
+            }
+
+            if (fph == "") {
+                errorMsgs[1].textContent = "Enter Your Phone Number";
+                isvalid = false;
+            }
+            else if (!phoneRegex.test(fph)) {
+                errorMsgs[1].textContent = "Enter Valid Phone Number";
+                isvalid = false;
+            }
+
+            if (fe == "") {
+                errorMsgs[2].textContent = "Enter Your Email";
+                isvalid = false;
+            }
+            else if (!logregex.test(fe)) {
+                errorMsgs[2].textContent = "Enter Valid Email";
+                isvalid = false;
+            }
+
+            if (fp == "") {
+                errorMsgs[3].textContent = "Enter Your Password";
+                isvalid = false;
+            }
+            else if (fp.length < 6) {
+                errorMsgs[3].textContent = "Password must be at least 6 characters";
+                isvalid = false;
+            }
+
+            if (fcp == "") {
+                errorMsgs[4].textContent = "Confirm Your Password";
+                isvalid = false;
+            }
+            else if (fp !== fcp) {
+                errorMsgs[4].textContent = "Passwords do not match";
+                isvalid = false;
+            }
+
+            if (!termsCheck.checked) {
+                isvalid = false;
+                termsCheck.parentElement.style.color = "#c0263a";
+            } else {
+                termsCheck.parentElement.style.color = "#666";
+            }
+
+            if (isvalid) {
+                popup.classList.add("active")
+
+                okBtn.addEventListener("click", () => {
+                    localStorage.setItem("useremail", email.value)
+                    window.location.href = "login.html"
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
