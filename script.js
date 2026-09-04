@@ -13,5 +13,4 @@ menubtn.addEventListener("click",()=>{
         navbar.classList.remove("active")
     }
 
-
 })

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Esate - Home Page</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+<style>
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+    :root {
+        --pcolor: rgb(63, 214, 63);
+        --dark: #0d0f0d;
+    }
+
+    .ct-sections * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       /* font-family: "Hanken Grotesk", sans-serif;*/
+    }
+
+    .ct-sections a {
+        text-decoration: none;
+    }
+
+    .ct-sections ul {
+        list-style: none;
+    }
+
+    .ct-wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-inline: clamp(20px, 5vw, 60px);
+    }
+
+    .ct-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        margin-bottom: 16px;
+        color: var(--pcolor);
+        font-weight: 600;
+    }
+
+    .ct-eyebrow span {
+        font-size: 10px;
+    }
+
+    /* ===================== 1. CONTACT HERO ===================== */
+    .ct-hero {
+        position: relative;
+        padding-block: 150px 90px;
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
+    }
+
+    .ct-hero-inner {
+        max-width: 720px;
+    }
+
+    .ct-hero .ct-eyebrow {
+        color: var(--pcolor);
+    }
+
+    .ct-hero h1 {
+        font-size: 52px;
+        color: white;
+        line-height: 1.15;
+        margin-bottom: 20px;
+    }
+
+    .ct-hero p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 17px;
+        line-height: 1.65;
+        max-width: 600px;
+    }
+
+    @media (max-width:700px) {
+        .ct-hero {
+            padding-block: 130px 60px;
+        }
+
+        .ct-hero h1 {
+            font-size: 34px;
+        }
+    }
+
+    /* ===================== 2. CONTACT INFO CARDS ===================== */
+    .ct-info {
+        background: white;
+        padding-block: 90px;
+        margin-top: -60px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .ct-info-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+
+    .ct-info-card {
+        background: white;
+        border: 1px solid #eee;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        border-radius: 18px;
+        padding: 32px 26px;
+        transition: .4s ease;
+    }
+
+    .ct-info-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--pcolor);
+    }
+
+    .ct-info-icon {
+        height: 54px;
+        width: 54px;
+        border-radius: 50%;
+        background: #eefbee;
+        color: var(--pcolor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        margin-bottom: 22px;
+    }
+
+    .ct-info-card h3 {
+        font-size: 18px;
+        color: var(--dark);
+        margin-bottom: 10px;
+    }
+
+    .ct-info-card p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .ct-info-card a {
+        color: #444;
+        display: block;
+    }
+
+    .ct-info-card a:hover {
+        color: var(--pcolor);
+    }
+
+    @media (max-width:1000px) {
+        .ct-info-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:560px) {
+        .ct-info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ct-info {
+            margin-top: -40px;
+            padding-block: 70px;
+        }
+    }
+
+    /* ===================== 3. CONTACT FORM + IMAGE ===================== */
+    .ct-form-section {
+        background: #f5f6f4;
+        padding-block: 100px;
+    }
+
+    .ct-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: stretch;
+    }
+
+    .ct-form-img {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        min-height: 100%;
+    }
+
+    .ct-form-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .ct-form-note {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        right: 24px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 14px;
+        padding: 20px 22px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .ct-form-note span.material-symbols-outlined {
+        font-size: 30px;
+        color: var(--pcolor);
+    }
+
+    .ct-form-note p {
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .ct-form-box h1 {
+        font-size: 34px;
+        color: var(--dark);
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .ct-form-box>p {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 480px;
+    }
+
+    .ct-form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .ct-form-box input,
+    .ct-form-box select,
+    .ct-form-box textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 14.5px;
+        background: white;
+        color: var(--dark);
+        margin-bottom: 16px;
+        font-family: "Hanken Grotesk", sans-serif;
+    }
+
+    .ct-form-box textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .ct-form-box input:focus,
+    .ct-form-box select:focus,
+    .ct-form-box textarea:focus {
+        outline: none;
+        border-color: var(--pcolor);
+    }
+
+    .ct-form-box button {
+        padding: 15px 34px;
+        background: var(--dark);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    .ct-form-box button:hover {
+        background: var(--pcolor);
+        color: black;
+    }
+
+    @media (max-width:900px) {
+        .ct-form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ct-form-img {
+            height: 320px;
+        }
+    }
+
+    @media (max-width:560px) {
+        .ct-form-row {
+            grid-template-columns: 1fr;
+        }
+
+        .ct-form-box h1 {
+            font-size: 26px;
+        }
+    }
+
+    /* ===================== 4. OUR OFFICES ===================== */
+    .ct-offices {
+        background: white;
+        padding-block: 100px;
+    }
+
+    .ct-offices-top {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 55px;
+    }
+
+    .ct-offices-top .ct-eyebrow {
+        justify-content: center;
+    }
+
+    .ct-offices-top h1 {
+        font-size: 40px;
+        color: var(--dark);
+        line-height: 1.2;
+        margin-bottom: 14px;
+    }
+
+    .ct-offices-top p {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .ct-offices-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+    }
+
+    .ct-office-card {
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid #eee;
+    }
+
+    .ct-office-img {
+        height: 200px;
+    }
+
+    .ct-office-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .ct-office-body {
+        padding: 24px 24px 28px;
+    }
+
+    .ct-office-body h3 {
+        font-size: 18px;
+        color: var(--dark);
+        margin-bottom: 14px;
+    }
+
+    .ct-office-body div {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        font-size: 13.5px;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    .ct-office-body span.material-symbols-outlined {
+        font-size: 18px;
+        color: var(--pcolor);
+        margin-top: 1px;
+    }
+
+    @media (max-width:1000px) {
+        .ct-offices-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:650px) {
+        .ct-offices-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ct-offices-top h1 {
+            font-size: 28px;
+        }
+    }
+
+    /* ===================== 5. FAQ ===================== */
+    .ct-faq {
+        background: #f5f6f4;
+        padding-block: 100px;
+    }
+
+    .ct-faq-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 60px;
+    }
+
+    .ct-faq-left h1 {
+        font-size: 38px;
+        color: var(--dark);
+        line-height: 1.2;
+        margin-bottom: 16px;
+        max-width: 380px;
+    }
+
+    .ct-faq-left p {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.65;
+        max-width: 380px;
+    }
+
+    .ct-faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .ct-faq-item {
+        background: white;
+        border-radius: 14px;
+        padding: 22px 26px;
+        border: 1px solid #eee;
+    }
+
+    .ct-faq-item h3 {
+        font-size: 16.5px;
+        color: var(--dark);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .ct-faq-item h3 span.material-symbols-outlined {
+        color: var(--pcolor);
+        font-size: 20px;
+        min-width: 20px;
+    }
+
+    .ct-faq-item p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+        margin-top: 12px;
+    }
+
+    @media (max-width:900px) {
+        .ct-faq-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ct-faq-left h1,
+        .ct-faq-left p {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width:500px) {
+        .ct-faq-left h1 {
+            font-size: 28px;
+        }
+    }
+
+    /* ===================== 6. CTA STRIP ===================== */
+    .ct-cta {
+        padding-block: 30px 60px;
+        background: white;
+    }
+
+    .ct-cta-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-inline: clamp(20px, 5vw, 60px);
+    }
+
+    .ct-cta-box {
+        border-radius: 24px;
+        background: var(--dark);
+        padding: 60px clamp(24px, 6vw, 70px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .ct-cta-box h1 {
+        font-size: 32px;
+        color: white;
+        max-width: 480px;
+        line-height: 1.3;
+    }
+
+    .ct-cta-box p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 14.5px;
+        margin-top: 10px;
+        max-width: 440px;
+    }
+
+    .ct-cta-box a {
+        padding: 15px 32px;
+        background: var(--pcolor);
+        color: black;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    @media (max-width:800px) {
+        .ct-cta-box {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @media (max-width:500px) {
+        .ct-cta-box h1 {
+            font-size: 24px;
+        }
+    }
+</style>
+
+
+</head>
+
+<body>
+
+
+    <header class="header">
+
+        <a href="index.html" class="logoimg"><img src="./src/logo.webp" alt=""></a>
+
+
+
+        <div class="navbar">
+
+            <div class="menuwrap">
+                <ul class="menus">
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pages.html">Pages</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li  class="active"><a href="contact.html"   class="active">Contact</a></li>
+                </ul>
+
+
+                <div class="navbtns">
+                    <a href="login.html">Login</a>
+                    <a href="sign.html">Sign Up</a>
+                </div>
+            </div>
+
+            <div class="navicons">
+                <div class="callbtn"><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
+                <div class="menubtn"><span class="material-symbols-outlined menuspan">menu</span></div>
+            </div>
+
+    </header>
+<div class="ct-sections">
+
+    <!-- ===================== SECTION 1: CONTACT HERO ===================== -->
+    <section class="ct-hero">
+        <div class="ct-wrap ct-hero-inner">
+            <p class="ct-eyebrow"><span class="material-symbols-outlined">circle</span> Get In Touch</p>
+            <h1>Let's Talk About Your Next Property Move</h1>
+            <p>Whether you're buying your first home, listing a commercial space, or just have questions about the
+                local market, our team is ready to help. Reach out below and an agent will get back to you within
+                one business day.</p>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 2: CONTACT INFO CARDS ===================== -->
+    <section class="ct-info">
+        <div class="ct-wrap ct-info-grid">
+            <div class="ct-info-card">
+                <div class="ct-info-icon"><span class="material-symbols-outlined">call</span></div>
+                <h3>Call Us</h3>
+                <a href="tel:+911234567890">+91 12345 67890</a>
+                <a href="tel:+919876543210">+91 09876 54321</a>
+                <p style="margin-top:8px;">Mon to Sat, 9:00 AM to 7:00 PM</p>
+            </div>
+
+            <div class="ct-info-card">
+                <div class="ct-info-icon"><span class="material-symbols-outlined">mail</span></div>
+                <h3>Email Us</h3>
+                <a href="mailto:support@gmail.com">support@gmail.com</a>
+                <a href="mailto:admin@gmail.com">admin@gmail.com</a>
+                <p style="margin-top:8px;">We reply within 24 hours</p>
+            </div>
+
+            <div class="ct-info-card">
+                <div class="ct-info-icon"><span class="material-symbols-outlined">location_on</span></div>
+                <h3>Visit Us</h3>
+                <p>123, Anna Nagar, Chennai, Tamil Nadu</p>
+                <p style="margin-top:8px;">Drop by for a walk-in consultation</p>
+            </div>
+
+            <div class="ct-info-card">
+                <div class="ct-info-icon"><span class="material-symbols-outlined">schedule</span></div>
+                <h3>Working Hours</h3>
+                <p>Monday to Saturday: 9:00 AM to 7:00 PM</p>
+                <p style="margin-top:8px;">Sunday: By appointment only</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 3: CONTACT FORM ===================== -->
+    <section class="ct-form-section">
+        <div class="ct-wrap ct-form-grid">
+            <div class="ct-form-img">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1000&auto=format&fit=crop"
+                    alt="Agent discussing a property with clients">
+                <div class="ct-form-note">
+                    <span class="material-symbols-outlined">support_agent</span>
+                    <p>Prefer to talk it through? Call our front desk and we'll connect you with an agent who
+                        specialises in what you're looking for.</p>
+                </div>
+            </div>
+
+            <div class="ct-form-box">
+                <p class="ct-eyebrow"><span class="material-symbols-outlined">circle</span> Send a Message</p>
+                <h1>Tell Us What You're Looking For</h1>
+                <p>Share a few details about your requirement and one of our agents will reach out with matching
+                    listings and next steps.</p>
+
+                <form>
+                    <div class="ct-form-row">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <input type="email" placeholder="Email Address" required>
+                    <select>
+                        <option value="">I'm interested in...</option>
+                        <option value="buy">Buying a Property</option>
+                        <option value="sell">Selling a Property</option>
+                        <option value="rent">Renting a Property</option>
+                        <option value="commercial">Commercial Space</option>
+                    </select>
+                    <textarea placeholder="Tell us more about your requirement, budget, and preferred location"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 4: OUR OFFICES ===================== -->
+    <section class="ct-offices">
+        <div class="ct-wrap">
+            <div class="ct-offices-top">
+                <p class="ct-eyebrow"><span class="material-symbols-outlined">circle</span> Our Locations</p>
+                <h1>Visit One of Our Offices</h1>
+                <p>Our agents are spread across the city so you're never far from someone who knows your
+                    neighbourhood well.</p>
+            </div>
+
+            <div class="ct-offices-grid">
+                <div class="ct-office-card">
+                    <div class="ct-office-img">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=700&auto=format&fit=crop"
+                            alt="Anna Nagar office building">
+                    </div>
+                    <div class="ct-office-body">
+                        <h3>Anna Nagar (Head Office)</h3>
+                        <div><span class="material-symbols-outlined">location_on</span>123, Anna Nagar, Chennai,
+                            Tamil Nadu</div>
+                        <div><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
+                        <div><span class="material-symbols-outlined">schedule</span>Mon to Sat, 9:00 AM to 7:00 PM
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ct-office-card">
+                    <div class="ct-office-img">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=700&auto=format&fit=crop"
+                            alt="Adyar office building">
+                    </div>
+                    <div class="ct-office-body">
+                        <h3>Adyar Branch</h3>
+                        <div><span class="material-symbols-outlined">location_on</span>45, Lattice Bridge Road,
+                            Adyar, Chennai</div>
+                        <div><span class="material-symbols-outlined">call</span>+91 98765 43210</div>
+                        <div><span class="material-symbols-outlined">schedule</span>Mon to Sat, 10:00 AM to 6:30 PM
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ct-office-card">
+                    <div class="ct-office-img">
+                        <img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=700&auto=format&fit=crop"
+                            alt="Marina Bay office building">
+                    </div>
+                    <div class="ct-office-body">
+                        <h3>Marina Bay Branch</h3>
+                        <div><span class="material-symbols-outlined">location_on</span>78, Beach Road, Marina Bay,
+                            Chennai</div>
+                        <div><span class="material-symbols-outlined">call</span>+91 90000 11223</div>
+                        <div><span class="material-symbols-outlined">schedule</span>Mon to Sat, 10:00 AM to 6:00 PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 5: FAQ ===================== -->
+    <section class="ct-faq">
+        <div class="ct-wrap ct-faq-grid">
+            <div class="ct-faq-left">
+                <p class="ct-eyebrow"><span class="material-symbols-outlined">circle</span> Common Questions</p>
+                <h1>Frequently Asked Questions</h1>
+                <p>Answers to what most people ask us before their first visit. Still have a question? Reach out
+                    through the form above and we'll get back to you directly.</p>
+            </div>
+
+            <div class="ct-faq-list">
+                <div class="ct-faq-item">
+                    <h3>How soon will an agent contact me? <span
+                            class="material-symbols-outlined">expand_more</span></h3>
+                    <p>Most enquiries submitted through the form or a call are responded to within 24 hours on
+                        business days. Urgent enquiries can call our front desk directly for a same-day response.</p>
+                </div>
+                <div class="ct-faq-item">
+                    <h3>Do you charge a fee for property viewings? <span
+                            class="material-symbols-outlined">expand_more</span></h3>
+                    <p>No, property viewings are free for buyers and tenants. Our fees are structured around
+                        successful transactions and are explained upfront before any agreement is signed.</p>
+                </div>
+                <div class="ct-faq-item">
+                    <h3>Can you help me sell a property in a different city branch's area? <span
+                            class="material-symbols-outlined">expand_more</span></h3>
+                    <p>Yes, all three of our branches share listings and coordinate on cross-area transactions, so
+                        your agent can help regardless of which office they're based at.</p>
+                </div>
+                <div class="ct-faq-item">
+                    <h3>What documents should I bring for a first consultation? <span
+                            class="material-symbols-outlined">expand_more</span></h3>
+                    <p>For buyers, a valid ID and proof of budget approval helps. For sellers, property title
+                        documents and past tax receipts speed up the initial valuation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 6: CTA STRIP ===================== -->
+    <section class="ct-cta">
+        <div class="ct-cta-inner">
+            <div class="ct-cta-box">
+                <div>
+                    <h1>Still Not Sure Where to Start?</h1>
+                    <p>Call our front desk and we'll match you with the right agent for your requirement, free of
+                        charge.</p>
+                </div>
+                <a href="tel:+911234567890">Call +91 12345 67890</a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+      <footer class="footer">
+
+        <div class="footerhead">
+            <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
+
+            
+            <div>
+                <div class="footerform">
+                <input type="email" placeholder="Enter Your Email" id="subemail">
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+                <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
+            </div>
+        
+        </div>
+
+        <div class="footer1">
+
+            <div class="fsec1">
+
+                <h2>About Company</h2>
+
+                <p>We strive to build long-term partnerships
+                    through excellence and customer
+                    satisfaction.</p>
+
+                <h1>Since 2007</h1>
+
+            </div>
+
+            <div class="fersec2">
+                <h2>Quick Links</h2>
+
+                <div class="footerlinks">
+
+                    <a href="index.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Home</a>
+                    <a href="about.html"><span class="material-symbols-outlined farrow">arrow_forward</span>About</a>
+                    <a href="pages.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pages</a>
+                    <a href="blog.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Blog</a>
+                    <a href="contact.html"><span
+                            class="material-symbols-outlined farrow">arrow_forward</span>Contact</a>
+
+                </div>
+            </div>
+
+            <div class="fersec2">
+                <h2>Services</h2>
+
+                <div class="footerlinks">
+
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Service</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pricing</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Team</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Terms &
+                        conditions</a>
+                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Privacy
+                        Policy</a>
+
+                </div>
+            </div>
+
+            <div class="fersec2">
+
+                <h2>Office Address</h2>
+
+                <div class="footerlinks">
+                    <a href="404.html">123,Anna Nager </a>
+                    <a href="404.html">Chennai, Tamilnadu</a>
+                </div>
+
+                <h2>Email Address</h2>
+
+                <div class="footerlinks">
+                    <a href="404.html">admin@gmail.com</a>
+                    <a href="404.html">career@gmail.com</a>
+                </div>
+
+            </div>
+
+            <div class="fersec2">
+
+                <h2>Phone Number</h2>
+
+                <div class="footerlinks">
+                    <a href="404.html">+91 12345 67890</a>
+                    <a href="404.html">+91 09876 54321</a>
+                </div>
+
+                <h2>follow Us</h2>
+
+                <div class="footer-sotial-icons">
+                    <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer2">
+            <p>@ 2026 All Rights Reserved by Stackly</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
