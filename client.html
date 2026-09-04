@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackly Realty - Admin Dashboard</title>
+    <title>Stackly Realty - Client Dashboard</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
@@ -1102,7 +1102,7 @@
             color: var(--sub);
         }
 
-        /* ---------- new: listing gallery cards ---------- */
+        /* ---------- listing gallery cards ---------- */
         .listing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1184,7 +1184,7 @@
             font-weight: 700;
         }
 
-        /* ---------- new: pipeline / kanban for transactions ---------- */
+        /* ---------- pipeline / kanban for payments ---------- */
         .pipeline {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1227,7 +1227,7 @@
             color: var(--ink);
         }
 
-        /* ---------- new: message inbox ---------- */
+        /* ---------- message inbox ---------- */
         .inbox-list {
             display: flex;
             flex-direction: column;
@@ -1292,7 +1292,7 @@
             text-overflow: ellipsis;
         }
 
-        /* ---------- new: calendar ---------- */
+        /* ---------- calendar ---------- */
         .cal-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -1337,7 +1337,7 @@
             border-width: 2px;
         }
 
-        /* ---------- new: settings form ---------- */
+        /* ---------- settings form ---------- */
         .settings-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1604,31 +1604,31 @@
         </div>
 
         <div class="sidebar-scroll">
-            <span class="nav-group-label">Agency Management</span>
+            <span class="nav-group-label">My Real Estate</span>
             <nav class="side-nav">
                 <button class="active" onclick="showView('overview', this)"><span
-                        class="material-symbols-outlined">dashboard</span> <span class="label">Overview</span></button>
+                        class="material-symbols-outlined">dashboard</span> <span class="label">Dashboard</span></button>
                 <button onclick="showView('orders', this)"><span class="material-symbols-outlined">assignment</span>
-                    <span class="label">Enquiries</span><span class="badge-count">12</span></button>
+                    <span class="label">My Enquiries</span><span class="badge-count">3</span></button>
                 <button onclick="showView('listings', this)"><span
                         class="material-symbols-outlined">real_estate_agent</span>
-                    <span class="label">Listings</span></button>
+                    <span class="label">Saved Properties</span></button>
                 <button onclick="showView('staff', this)"><span class="material-symbols-outlined">badge</span>
-                    <span class="label">Agents</span></button>
+                    <span class="label">My Agent</span></button>
                 <button onclick="showView('branches', this)"><span
                         class="material-symbols-outlined">apartment</span>
-                    <span class="label">Properties</span></button>
+                    <span class="label">My Documents</span></button>
                 <button onclick="showView('clients', this)"><span class="material-symbols-outlined">groups</span>
-                    <span class="label">Clients</span></button>
+                    <span class="label">Refer & Earn</span></button>
             </nav>
 
-            <span class="nav-group-label">Insights &amp; Tools</span>
+            <span class="nav-group-label">Account & Support</span>
             <nav class="side-nav">
                 <button onclick="showView('deals', this)"><span
                         class="material-symbols-outlined">payments</span>
-                    <span class="label">Transactions</span></button>
+                    <span class="label">My Payments</span></button>
                 <button onclick="showView('messages', this)"><span class="material-symbols-outlined">forum</span>
-                    <span class="label">Messages</span><span class="badge-count">5</span></button>
+                    <span class="label">Messages</span><span class="badge-count">3</span></button>
                 <button onclick="showView('calendar', this)"><span
                         class="material-symbols-outlined">calendar_month</span>
                     <span class="label">Calendar</span></button>
@@ -1639,10 +1639,10 @@
         </div>
 
         <div class="sidebar-footer">
-            <img src="./src/avartar_2.webp" alt="Admin">
+            <img src="./src/avartar_2.webp" alt="Client">
             <div class="who">
-                <h4 id="username">Meera Nair</h4>
-                <span>Branch Admin</span>
+                <h4 id="username">Priya Sharma</h4>
+                <span>Premium Client</span>
             </div>
         </div>
     </aside>
@@ -1653,9 +1653,9 @@
         <div class="topbar">
             <div class="topbar-row1">
                 <div class="breadcrumb">
-                    <span>Dashboard</span> <span class="material-symbols-outlined"
+                    <span>My Account</span> <span class="material-symbols-outlined"
                         style="font-size:14px;">chevron_right</span>
-                    <span class="current" id="crumbTitle">Overview</span>
+                    <span class="current" id="crumbTitle">Dashboard</span>
                 </div>
                 <span class="topbar-date" id="topbarDate">Saturday, Aug 29 2026</span>
             </div>
@@ -1667,59 +1667,59 @@
                         <a href="index.html"><img src="./src/logo.webp" alt="Stackly Realty Logo"></a>
                     </div>
                 </div>
-                <h2 id="topbarTitle">Overview</h2>
+                <h2 id="topbarTitle">Welcome back, Priya</h2>
                 <div class="topbar-right">
                     <div class="search-box">
                         <span class="material-symbols-outlined errorpage">search</span>
-                        <input type="text" placeholder="Search properties, agents...">
+                        <input type="text" placeholder="Search properties, localities...">
                     </div>
                     <div class="icon-btn errorpage"><span class="material-symbols-outlined">notifications</span><span
                             class="dot"></span></div>
                     <div class="icon-btn errorpage"><span class="material-symbols-outlined">mail</span></div>
-                    <div class="topbar-avatar"><img src="./src/avartar_2.webp" alt="Admin"></div>
+                    <div class="topbar-avatar"><img src="./src/avartar_2.webp" alt="Client"></div>
                 </div>
             </div>
         </div>
 
         <div class="content-scroll">
 
-            <!-- ========== 1. OVERVIEW VIEW ========== -->
+            <!-- ========== 1. DASHBOARD VIEW ========== -->
             <div class="view active" id="overview">
 
                 <div class="stat-row">
                     <div class="stat-card">
                         <span class="material-symbols-outlined">villa</span>
                         <div class="stat-info">
-                            <h2>895+</h2>
-                            <p>Properties Listed</p>
-                            <span class="delta">+3.2% this month</span>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <span class="material-symbols-outlined">badge</span>
-                        <div class="stat-info">
-                            <h2>64</h2>
-                            <p>Active Agents</p>
-                            <span class="delta">+4 new this month</span>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <span class="material-symbols-outlined">apartment</span>
-                        <div class="stat-info">
-                            <h2>4</h2>
-                            <p>City Branches</p>
-                            <span class="delta">120+ areas covered</span>
+                            <h2>12</h2>
+                            <p>Saved Properties</p>
+                            <span class="delta">+2 this week</span>
                         </div>
                     </div>
 
                     <div class="stat-card">
                         <span class="material-symbols-outlined">assignment</span>
                         <div class="stat-info">
-                            <h2>642</h2>
-                            <p>Pending Enquiries</p>
-                            <span class="delta down">Follow-up needed</span>
+                            <h2>3</h2>
+                            <p>Active Enquiries</p>
+                            <span class="delta">1 awaiting reply</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">event</span>
+                        <div class="stat-info">
+                            <h2>2</h2>
+                            <p>Site Visits Scheduled</p>
+                            <span class="delta">Next: Sep 03</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">description</span>
+                        <div class="stat-info">
+                            <h2>2</h2>
+                            <p>Documents Pending</p>
+                            <span class="delta down">Action needed</span>
                         </div>
                     </div>
                 </div>
@@ -1727,39 +1727,39 @@
                 <div class="panel">
                     <h3>Quick Actions</h3>
                     <div class="quick-actions">
-                        <button class="errorpage"><span class="material-symbols-outlined">add_home</span><span>List
-                                Property</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined">search</span><span>Browse
+                                Properties</span></button>
                         <button class="errorpage"><span
-                                class="material-symbols-outlined">assignment_add</span><span>New
+                                class="material-symbols-outlined">assignment_add</span><span>Send
                                 Enquiry</span></button>
-                        <button class="errorpage"><span class="material-symbols-outlined">badge</span><span>Add
-                                Agent</span></button>
-                        <button class="errorpage"><span class="material-symbols-outlined">summarize</span><span>Generate
-                                Report</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined">event_available</span><span>Schedule
+                                Visit</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined">call</span><span>Contact
+                                My Agent</span></button>
                     </div>
                 </div>
 
                 <div class="bento">
                     <div class="panel span-8">
                         <div class="panel-head">
-                            <h3>Listings Trend</h3>
+                            <h3>Properties Viewed</h3>
                             <span class="topbar-date">Last 6 Months</span>
                         </div>
                         <div class="bar-chart">
                             <div class="bar-col">
-                                <div class="bar" style="height:55%;"></div><span>Mar</span>
+                                <div class="bar" style="height:35%;"></div><span>Mar</span>
                             </div>
                             <div class="bar-col">
-                                <div class="bar" style="height:64%;"></div><span>Apr</span>
+                                <div class="bar" style="height:48%;"></div><span>Apr</span>
                             </div>
                             <div class="bar-col">
-                                <div class="bar" style="height:60%;"></div><span>May</span>
+                                <div class="bar" style="height:42%;"></div><span>May</span>
                             </div>
                             <div class="bar-col">
-                                <div class="bar" style="height:78%;"></div><span>Jun</span>
+                                <div class="bar" style="height:66%;"></div><span>Jun</span>
                             </div>
                             <div class="bar-col">
-                                <div class="bar" style="height:84%;"></div><span>Jul</span>
+                                <div class="bar" style="height:80%;"></div><span>Jul</span>
                             </div>
                             <div class="bar-col">
                                 <div class="bar" style="height:100%;"></div><span>Aug</span>
@@ -1768,7 +1768,7 @@
                     </div>
 
                     <div class="panel span-4">
-                        <h3>Top Localities By Demand</h3>
+                        <h3>My Preferred Localities</h3>
                         <div class="rank-list">
                             <div class="rank-row">
                                 <span class="rank-num">01</span>
@@ -1815,7 +1815,7 @@
 
                     <div class="panel span-8">
                         <div class="panel-head">
-                            <h3>Recent Enquiry Activity</h3>
+                            <h3>My Enquiry Status</h3>
                             <button class="d-btn errorpage">View All</button>
                         </div>
 
@@ -1868,21 +1868,21 @@
                                 <div class="event-date"><strong>03</strong><span>Sep</span></div>
                                 <div class="event-info">
                                     <h5>Green Meadows Villa Walkthrough</h5>
-                                    <p>Client: Rahul Menon, 10:00 AM</p>
+                                    <p>With Divya Krishnan, 10:00 AM</p>
                                 </div>
                             </div>
                             <div class="event-item">
                                 <div class="event-date"><strong>09</strong><span>Sep</span></div>
                                 <div class="event-info">
                                     <h5>Anna Nagar Office Handover</h5>
-                                    <p>Client: Sneha Pillai</p>
+                                    <p>Loan documents required</p>
                                 </div>
                             </div>
                             <div class="event-item">
                                 <div class="event-date"><strong>15</strong><span>Sep</span></div>
                                 <div class="event-info">
                                     <h5>Open House - Lakeview Apartments</h5>
-                                    <p>All Interested Buyers</p>
+                                    <p>Optional, drop-in anytime</p>
                                 </div>
                             </div>
                             <div class="event-item">
@@ -1896,24 +1896,24 @@
                     </div>
 
                     <div class="panel span-6">
-                        <h3>Portfolio Health</h3>
+                        <h3>My Journey Snapshot</h3>
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>Average Days On Market</td>
+                                    <td>Days Since First Enquiry</td>
                                     <td style="text-align:right;font-weight:800;color:var(--ink);">28 days</td>
                                 </tr>
                                 <tr>
-                                    <td>Properties Sold This Quarter</td>
-                                    <td style="text-align:right;font-weight:800;color:var(--ink);">142</td>
+                                    <td>Properties Shortlisted</td>
+                                    <td style="text-align:right;font-weight:800;color:var(--ink);">12</td>
                                 </tr>
                                 <tr>
-                                    <td>Agents Active Today</td>
-                                    <td style="text-align:right;font-weight:800;color:var(--ink);">54 / 64</td>
+                                    <td>Budget Range Set</td>
+                                    <td style="text-align:right;font-weight:800;color:var(--ink);">₹60L - ₹1.5Cr</td>
                                 </tr>
                                 <tr>
-                                    <td>Client Complaints Pending</td>
-                                    <td style="text-align:right;font-weight:800;color:var(--ink);">3</td>
+                                    <td>Open Support Tickets</td>
+                                    <td style="text-align:right;font-weight:800;color:var(--ink);">1</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1926,32 +1926,32 @@
                                 <div class="t-dot"><span class="material-symbols-outlined"
                                         style="font-size:15px;">task_alt</span></div>
                                 <div class="t-body">
-                                    <h5>Enquiry #ENQ-2201 closed successfully</h5>
-                                    <p>Divya Krishnan · 10 minutes ago</p>
+                                    <h5>Site visit confirmed for Green Meadows Villa</h5>
+                                    <p>Agent: Divya Krishnan · 10 minutes ago</p>
                                 </div>
                             </div>
                             <div class="t-item">
                                 <div class="t-dot"><span class="material-symbols-outlined"
-                                        style="font-size:15px;">person_add</span></div>
+                                        style="font-size:15px;">favorite</span></div>
                                 <div class="t-body">
-                                    <h5>New agent onboarded - Kavya Reddy</h5>
-                                    <p>HR Office · 2 hours ago</p>
+                                    <h5>You saved Skyline 3BHK Apartment</h5>
+                                    <p>OMR, Chennai · 2 hours ago</p>
                                 </div>
                             </div>
                             <div class="t-item">
                                 <div class="t-dot"><span class="material-symbols-outlined"
-                                        style="font-size:15px;">event</span></div>
+                                        style="font-size:15px;">chat</span></div>
                                 <div class="t-body">
-                                    <h5>Open house schedule finalised</h5>
-                                    <p>Events Desk · 5 hours ago</p>
+                                    <h5>New message from your agent</h5>
+                                    <p>Priya Suresh · 5 hours ago</p>
                                 </div>
                             </div>
                             <div class="t-item">
                                 <div class="t-dot"><span class="material-symbols-outlined"
-                                        style="font-size:15px;">report</span></div>
+                                        style="font-size:15px;">upload_file</span></div>
                                 <div class="t-body">
-                                    <h5>Client complaint ticket #GR-045 raised</h5>
-                                    <p>Client Care · Yesterday</p>
+                                    <h5>Loan pre-approval letter uploaded</h5>
+                                    <p>Documents · Yesterday</p>
                                 </div>
                             </div>
                         </div>
@@ -1959,43 +1959,43 @@
                 </div>
             </div>
 
-            <!-- ========== 2. ENQUIRIES VIEW ========== -->
+            <!-- ========== 2. MY ENQUIRIES VIEW ========== -->
             <div class="view" id="orders">
                 <div class="stat-row">
                     <div class="stat-card">
                         <span class="material-symbols-outlined">assignment</span>
                         <div class="stat-info">
-                            <h2>642</h2>
+                            <h2>3</h2>
                             <p>Open Enquiries</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">move_to_inbox</span>
                         <div class="stat-info">
-                            <h2>58</h2>
-                            <p>New This Week</p>
+                            <h2>1</h2>
+                            <p>New Reply This Week</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">task_alt</span>
                         <div class="stat-info">
-                            <h2>3,410</h2>
-                            <p>Deals Closed This Year</p>
+                            <h2>2</h2>
+                            <p>Enquiries Closed</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">priority_high</span>
                         <div class="stat-info">
-                            <h2>12</h2>
-                            <p>Flagged Enquiries</p>
+                            <h2>1</h2>
+                            <p>Needs Your Response</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
                     <div class="panel-head">
-                        <h3>Enquiry Applications</h3>
-                        <button class="d-btn errorpage">New Enquiry</button>
+                        <h3>My Enquiries</h3>
+                        <button class="d-btn errorpage">Send New Enquiry</button>
                     </div>
 
                     <div class="filter-chips" style="margin-bottom:16px;">
@@ -2009,10 +2009,9 @@
                         <thead>
                             <tr>
                                 <th>Reference</th>
-                                <th>Client</th>
                                 <th>Property</th>
                                 <th>Assigned Agent</th>
-                                <th>Date Received</th>
+                                <th>Date Sent</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -2020,7 +2019,6 @@
                         <tbody>
                             <tr>
                                 <td>#ENQ-2201</td>
-                                <td>Rahul Menon</td>
                                 <td>Green Meadows Villa</td>
                                 <td>Divya Krishnan</td>
                                 <td>Jul 08</td>
@@ -2029,7 +2027,6 @@
 
                             <tr>
                                 <td>#ENQ-2198</td>
-                                <td>Sneha Pillai</td>
                                 <td>Anna Nagar Office Space</td>
                                 <td>Priya Suresh</td>
                                 <td>Jul 07</td>
@@ -2038,7 +2035,6 @@
 
                             <tr>
                                 <td>#ENQ-2194</td>
-                                <td>Arjun Nair</td>
                                 <td>Lakeview 2BHK Apartment</td>
                                 <td>Karthik Raja</td>
                                 <td>Jul 07</td>
@@ -2047,7 +2043,6 @@
 
                             <tr>
                                 <td>#ENQ-2189</td>
-                                <td>Meghana Rao</td>
                                 <td>Coastal Road Plot</td>
                                 <td>Meera Nair</td>
                                 <td>Jul 06</td>
@@ -2056,8 +2051,7 @@
 
                             <tr>
                                 <td>#ENQ-2183</td>
-                                <td>Vikram Das</td>
-                                <td>Green Meadows Villa</td>
+                                <td>Skyline 3BHK Apartment</td>
                                 <td>Karthik Raja</td>
                                 <td>Jul 05</td>
                                 <td><span class="badge transit">In Progress</span></td>
@@ -2069,48 +2063,47 @@
                         <button class="errorpage">&lt;</button>
                         <button class="active errorpage">1</button>
                         <button class="errorpage">2</button>
-                        <button class="errorpage">3</button>
                         <button class="errorpage">&gt;</button>
                     </div>
                 </div>
             </div>
 
-            <!-- ========== NEW: LISTINGS VIEW ========== -->
+            <!-- ========== 3. SAVED PROPERTIES VIEW ========== -->
             <div class="view" id="listings">
                 <div class="stat-row">
                     <div class="stat-card">
                         <span class="material-symbols-outlined">home_work</span>
                         <div class="stat-info">
-                            <h2>895</h2>
-                            <p>Total Listings</p>
+                            <h2>12</h2>
+                            <p>Saved Properties</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">verified</span>
                         <div class="stat-info">
-                            <h2>412</h2>
-                            <p>Available</p>
+                            <h2>8</h2>
+                            <p>Still Available</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">hourglass_top</span>
                         <div class="stat-info">
-                            <h2>96</h2>
+                            <h2>3</h2>
                             <p>Under Offer</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">sell</span>
                         <div class="stat-info">
-                            <h2>387</h2>
-                            <p>Sold / Rented</p>
+                            <h2>1</h2>
+                            <p>Recently Sold / Missed</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
                     <div class="panel-head">
-                        <h3>Live Listings</h3>
+                        <h3>Saved Properties</h3>
                         <div class="filter-chips">
                             <button class="active errorpage">All</button>
                             <button class="errorpage">Villas</button>
@@ -2124,7 +2117,7 @@
                         <div class="listing-card">
                             <div class="l-img">
                                 <img src="./src/banner.webp" alt="Green Meadows Villa">
-                                <span class="l-tag">Available</span>
+                                <span class="l-tag">Shortlisted</span>
                             </div>
                             <div class="l-body">
                                 <h4>Green Meadows Villa</h4>
@@ -2154,7 +2147,7 @@
                         <div class="listing-card">
                             <div class="l-img">
                                 <img src="./src/banner3.webp" alt="Lakeview 2BHK Apartment">
-                                <span class="l-tag">Available</span>
+                                <span class="l-tag">Shortlisted</span>
                             </div>
                             <div class="l-body">
                                 <h4>Lakeview 2BHK Apartment</h4>
@@ -2169,7 +2162,7 @@
                         <div class="listing-card">
                             <div class="l-img">
                                 <img src="./src/banner.webp" alt="Coastal Road Plot">
-                                <span class="l-tag">Sold</span>
+                                <span class="l-tag">Booked</span>
                             </div>
                             <div class="l-body">
                                 <h4>Coastal Road Plot</h4>
@@ -2184,7 +2177,7 @@
                         <div class="listing-card">
                             <div class="l-img">
                                 <img src="./src/banner2.webp" alt="Skyline 3BHK Apartment">
-                                <span class="l-tag">Available</span>
+                                <span class="l-tag">Shortlisted</span>
                             </div>
                             <div class="l-body">
                                 <h4>Skyline 3BHK Apartment</h4>
@@ -2199,7 +2192,7 @@
                         <div class="listing-card">
                             <div class="l-img">
                                 <img src="./src/banner3.webp" alt="Harbour View Warehouse">
-                                <span class="l-tag">Available</span>
+                                <span class="l-tag">Shortlisted</span>
                             </div>
                             <div class="l-body">
                                 <h4>Harbour View Warehouse</h4>
@@ -2216,41 +2209,40 @@
                         <button class="errorpage">&lt;</button>
                         <button class="active errorpage">1</button>
                         <button class="errorpage">2</button>
-                        <button class="errorpage">3</button>
                         <button class="errorpage">&gt;</button>
                     </div>
                 </div>
             </div>
 
-            <!-- ========== 3. AGENTS VIEW ========== -->
+            <!-- ========== 4. MY AGENT VIEW ========== -->
             <div class="view" id="staff">
                 <div class="stat-row">
                     <div class="stat-card">
-                        <span class="material-symbols-outlined">badge</span>
+                        <span class="material-symbols-outlined">schedule</span>
                         <div class="stat-info">
-                            <h2>64</h2>
-                            <p>Total Agents</p>
+                            <h2>12 min</h2>
+                            <p>Avg. Response Time</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">home_work</span>
+                        <div class="stat-info">
+                            <h2>6</h2>
+                            <p>Properties Shown To You</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">workspace_premium</span>
                         <div class="stat-info">
-                            <h2>18</h2>
-                            <p>Senior Agents</p>
+                            <h2>9 yrs</h2>
+                            <p>Agent Experience</p>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <span class="material-symbols-outlined">real_estate_agent</span>
+                        <span class="material-symbols-outlined">star</span>
                         <div class="stat-info">
-                            <h2>46</h2>
-                            <p>Field Agents</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="material-symbols-outlined">event_busy</span>
-                        <div class="stat-info">
-                            <h2>7</h2>
-                            <p>On Leave</p>
+                            <h2>4.8 / 5</h2>
+                            <p>Client Rating</p>
                         </div>
                     </div>
                 </div>
@@ -2258,21 +2250,21 @@
                 <div class="bento">
                     <div class="panel span-8">
                         <div class="panel-head">
-                            <h3>Agent Roster</h3>
+                            <h3>Your Support Team</h3>
                             <div class="filter-chips">
                                 <button class="active errorpage">All</button>
-                                <button class="errorpage">Residential</button>
-                                <button class="errorpage">Commercial</button>
-                                <button class="errorpage">Rentals</button>
+                                <button class="errorpage">Primary Agent</button>
+                                <button class="errorpage">Loan Advisor</button>
+                                <button class="errorpage">Legal Advisor</button>
                             </div>
                         </div>
                         <div class="fleet-grid">
                             <div class="fleet-card">
-                                <img src="./src/avartar_1.webp" alt="Aravind Iyer">
+                                <img src="./src/avartar_1.webp" alt="Divya Krishnan">
                                 <div class="fleet-card-body">
-                                    <h4>Aravind Iyer</h4>
-                                    <p>Branch Head, Engineering Corridor · 6 Listings</p>
-                                    <span class="badge active">On Field</span>
+                                    <h4>Divya Krishnan</h4>
+                                    <p>Your Primary Agent · Residential</p>
+                                    <span class="badge active">Available</span>
                                 </div>
                                 <div class="contact-row">
                                     <span class="material-symbols-outlined errorpage">mail</span>
@@ -2280,11 +2272,11 @@
                                 </div>
                             </div>
                             <div class="fleet-card">
-                                <img src="./src/avartar_2.webp" alt="Meera Nair">
+                                <img src="./src/avartar_2.webp" alt="Priya Suresh">
                                 <div class="fleet-card-body">
-                                    <h4>Meera Nair</h4>
-                                    <p>Head, Commercial Sales · 5 Listings</p>
-                                    <span class="badge active">On Field</span>
+                                    <h4>Priya Suresh</h4>
+                                    <p>Commercial Deals Specialist</p>
+                                    <span class="badge active">Available</span>
                                 </div>
                                 <div class="contact-row">
                                     <span class="material-symbols-outlined errorpage">mail</span>
@@ -2295,7 +2287,7 @@
                                 <img src="./src/avartar_3.webp" alt="Ravi Shankar">
                                 <div class="fleet-card-body">
                                     <h4>Ravi Shankar</h4>
-                                    <p>Head, Rentals Desk · 4 Listings</p>
+                                    <p>Home Loan Advisor</p>
                                     <span class="badge maintenance">On Leave</span>
                                 </div>
                                 <div class="contact-row">
@@ -2307,8 +2299,8 @@
                                 <img src="./src/team-3.webp" alt="Daniel Cho">
                                 <div class="fleet-card-body">
                                     <h4>Daniel Cho</h4>
-                                    <p>Client Relations Lead · 4 Listings</p>
-                                    <span class="badge active">On Field</span>
+                                    <p>Legal & Registration Advisor</p>
+                                    <span class="badge active">Available</span>
                                 </div>
                                 <div class="contact-row">
                                     <span class="material-symbols-outlined errorpage">mail</span>
@@ -2319,7 +2311,7 @@
                     </div>
 
                     <div class="panel span-4">
-                        <h3>On Leave Today</h3>
+                        <h3>Currently Unavailable</h3>
                         <div class="event-list">
                             <div class="event-item">
                                 <div class="event-date" style="background:#0a0a0a;">
@@ -2327,25 +2319,7 @@
                                 </div>
                                 <div class="event-info">
                                     <h5>Ravi Shankar</h5>
-                                    <p>Rentals Desk · Back Sep 02</p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <div class="event-date" style="background:#0a0a0a;">
-                                    <strong>29</strong><span>Aug</span>
-                                </div>
-                                <div class="event-info">
-                                    <h5>Sameer Qureshi</h5>
-                                    <p>Plots & Land · Back Sep 01</p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <div class="event-date" style="background:#0a0a0a;">
-                                    <strong>30</strong><span>Aug</span>
-                                </div>
-                                <div class="event-info">
-                                    <h5>Fatima Sheikh</h5>
-                                    <p>Residential · Back Sep 03</p>
+                                    <p>Loan Advisor · Back Sep 02</p>
                                 </div>
                             </div>
                         </div>
@@ -2353,58 +2327,58 @@
                 </div>
             </div>
 
-            <!-- ========== 4. PROPERTIES VIEW ========== -->
+            <!-- ========== 5. MY DOCUMENTS VIEW ========== -->
             <div class="view" id="branches">
                 <div class="stat-row">
                     <div class="stat-card">
-                        <span class="material-symbols-outlined">apartment</span>
+                        <span class="material-symbols-outlined">description</span>
                         <div class="stat-info">
-                            <h2>4</h2>
-                            <p>City Branches</p>
+                            <h2>9</h2>
+                            <p>Documents Uploaded</p>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <span class="material-symbols-outlined">villa</span>
+                        <span class="material-symbols-outlined">pending_actions</span>
                         <div class="stat-info">
-                            <h2>895</h2>
-                            <p>Properties Listed</p>
+                            <h2>2</h2>
+                            <p>Pending Your Signature</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="material-symbols-outlined">verified</span>
+                        <div class="stat-info">
+                            <h2>6</h2>
+                            <p>Verified By Agency</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">key</span>
                         <div class="stat-info">
-                            <h2>412</h2>
-                            <p>Available For Sale</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="material-symbols-outlined">home_work</span>
-                        <div class="stat-info">
-                            <h2>18</h2>
-                            <p>Featured Listings</p>
+                            <h2>1</h2>
+                            <p>Registrations In Progress</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <h3>Branch Locations</h3>
+                    <h3>Nearby Branch Offices</h3>
                     <div class="wh-grid">
                         <div class="wh-card">
                             <img src="./src/banner.webp" alt="Engineering corridor branch">
                             <div class="overlay">
-                                <h4>OMR Tech Corridor Branch</h4><span>324 Listings</span>
+                                <h4>OMR Tech Corridor Branch</h4><span>Book a visit</span>
                             </div>
                         </div>
                         <div class="wh-card">
                             <img src="./src/banner2.webp" alt="Commercial district branch">
                             <div class="overlay">
-                                <h4>Anna Nagar Business District</h4><span>286 Listings</span>
+                                <h4>Anna Nagar Business District</h4><span>Book a visit</span>
                             </div>
                         </div>
                         <div class="wh-card">
                             <img src="./src/banner3.webp" alt="Coastal branch">
                             <div class="overlay">
-                                <h4>ECR Coastal Branch</h4><span>194 Listings</span>
+                                <h4>ECR Coastal Branch</h4><span>Book a visit</span>
                             </div>
                         </div>
                     </div>
@@ -2412,64 +2386,52 @@
 
                 <div class="bento">
                     <div class="panel span-8">
-                        <h3>Branch Snapshot</h3>
+                        <h3>My Document Checklist</h3>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Branch</th>
-                                    <th>Focus Area</th>
-                                    <th>Active Agents</th>
+                                    <th>Document</th>
+                                    <th>Property</th>
+                                    <th>Last Updated</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>OMR Tech Corridor Branch</td>
-                                    <td>Residential &amp; Rentals</td>
-                                    <td>22</td>
-                                    <td><span class="badge active">Fully Staffed</span></td>
+                                    <td>Loan Pre-Approval Letter</td>
+                                    <td>Anna Nagar Office Space</td>
+                                    <td>Aug 28</td>
+                                    <td><span class="badge active">Verified</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Anna Nagar Business District</td>
-                                    <td>Commercial &amp; Office Space</td>
-                                    <td>18</td>
-                                    <td><span class="badge active">Fully Staffed</span></td>
+                                    <td>Sale Agreement Draft</td>
+                                    <td>Coastal Road Plot</td>
+                                    <td>Aug 20</td>
+                                    <td><span class="badge maintenance">Awaiting Signature</span></td>
                                 </tr>
                                 <tr>
-                                    <td>ECR Coastal Branch</td>
-                                    <td>Plots &amp; Vacation Homes</td>
-                                    <td>12</td>
-                                    <td><span class="badge maintenance">Hiring Open</span></td>
+                                    <td>KYC & Identity Proof</td>
+                                    <td>All Properties</td>
+                                    <td>Jul 30</td>
+                                    <td><span class="badge active">Verified</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
                     <div class="panel span-4">
-                        <h3>Marketing Budget Usage</h3>
+                        <h3>Registration Progress</h3>
                         <div class="budget-row">
                             <div class="budget-item">
-                                <h5>Residential <span>78%</span></h5>
+                                <h5>Coastal Road Plot <span>78%</span></h5>
                                 <div class="budget-track">
                                     <div class="budget-fill" style="width:78%;"></div>
                                 </div>
                             </div>
                             <div class="budget-item">
-                                <h5>Commercial <span>64%</span></h5>
+                                <h5>Anna Nagar Office Space <span>40%</span></h5>
                                 <div class="budget-track">
-                                    <div class="budget-fill" style="width:64%;"></div>
-                                </div>
-                            </div>
-                            <div class="budget-item">
-                                <h5>Rentals <span>52%</span></h5>
-                                <div class="budget-track">
-                                    <div class="budget-fill" style="width:52%;"></div>
-                                </div>
-                            </div>
-                            <div class="budget-item">
-                                <h5>Plots & Land <span>45%</span></h5>
-                                <div class="budget-track">
-                                    <div class="budget-fill" style="width:45%;"></div>
+                                    <div class="budget-fill" style="width:40%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -2477,34 +2439,34 @@
                 </div>
             </div>
 
-            <!-- ========== 5. CLIENTS VIEW ========== -->
+            <!-- ========== 6. REFER & EARN VIEW ========== -->
             <div class="view" id="clients">
                 <div class="stat-row">
                     <div class="stat-card">
                         <span class="material-symbols-outlined">groups</span>
                         <div class="stat-info">
-                            <h2>12,485</h2>
-                            <p>Total Clients</p>
+                            <h2>6</h2>
+                            <p>Friends Referred</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">person_add</span>
                         <div class="stat-info">
-                            <h2>648</h2>
-                            <p>New This Month</p>
+                            <h2>2</h2>
+                            <p>Referrals This Month</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">workspace_premium</span>
                         <div class="stat-info">
-                            <h2>1,120</h2>
-                            <p>Repeat Clients</p>
+                            <h2>₹18,000</h2>
+                            <p>Rewards Earned</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">support_agent</span>
                         <div class="stat-info">
-                            <h2>21</h2>
+                            <h2>1</h2>
                             <p>Open Support Tickets</p>
                         </div>
                     </div>
@@ -2513,50 +2475,43 @@
                 <div class="bento">
                     <div class="panel span-8">
                         <div class="panel-head">
-                            <h3>Client Directory</h3>
-                            <button class="d-btn errorpage">Add Client</button>
+                            <h3>Your Referrals</h3>
+                            <button class="d-btn errorpage">Invite a Friend</button>
                         </div>
 
                         <div class="filter-chips" style="margin-bottom:16px;">
                             <button class="active errorpage">All</button>
-                            <button class="errorpage">Buyers</button>
-                            <button class="errorpage">Sellers</button>
-                            <button class="errorpage">Renters</button>
+                            <button class="errorpage">Reward Earned</button>
+                            <button class="errorpage">In Progress</button>
                         </div>
 
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Client</th>
+                                    <th>Friend</th>
                                     <th>Email</th>
                                     <th>Interest</th>
-                                    <th>Type</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="cell-item">Priya Sharma</td>
-                                    <td>priya.s@stacklyrealty.com</td>
-                                    <td>Green Meadows Villa</td>
-                                    <td>Buyer</td>
-                                </tr>
-                                <tr>
                                     <td class="cell-item">Karthik Raj</td>
-                                    <td>karthik.r@stacklyrealty.com</td>
+                                    <td>karthik.r@example.com</td>
                                     <td>Anna Nagar Office Space</td>
-                                    <td>Renter</td>
+                                    <td><span class="badge delivered">Reward Earned</span></td>
                                 </tr>
                                 <tr>
                                     <td class="cell-item">Ananya Das</td>
-                                    <td>ananya.d@stacklyrealty.com</td>
+                                    <td>ananya.d@example.com</td>
                                     <td>Lakeview 2BHK Apartment</td>
-                                    <td>Buyer</td>
+                                    <td><span class="badge transit">In Progress</span></td>
                                 </tr>
                                 <tr>
                                     <td class="cell-item">Vikram Iyer</td>
-                                    <td>vikram.i@stacklyrealty.com</td>
+                                    <td>vikram.i@example.com</td>
                                     <td>Coastal Road Plot</td>
-                                    <td>Seller</td>
+                                    <td><span class="badge delivered">Reward Earned</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -2565,43 +2520,34 @@
                             <button class="errorpage">&lt;</button>
                             <button class="active errorpage">1</button>
                             <button class="errorpage">2</button>
-                            <button class="errorpage">3</button>
                             <button class="errorpage">&gt;</button>
                         </div>
                     </div>
 
                     <div class="panel span-4">
-                        <h3>Open Support Tickets</h3>
+                        <h3>My Support Tickets</h3>
                         <div class="student-list">
                             <div class="student-row">
-                                <img src="./src/team-1.webp" alt="Client">
+                                <img src="./src/team-1.webp" alt="Support">
                                 <div class="s-info">
                                     <h5>Payment Confirmation Issue</h5>
-                                    <p>Priya Sharma · #TCK-1042</p>
+                                    <p>#TCK-1042</p>
                                 </div>
                                 <span class="badge pending">Open</span>
                             </div>
                             <div class="student-row">
-                                <img src="./src/team-2.webp" alt="Client">
+                                <img src="./src/team-2.webp" alt="Support">
                                 <div class="s-info">
                                     <h5>Site Visit Reschedule</h5>
-                                    <p>Karthik Raj · #TCK-1039</p>
+                                    <p>#TCK-1039</p>
                                 </div>
                                 <span class="badge transit">In Progress</span>
                             </div>
                             <div class="student-row">
-                                <img src="./src/team-3.webp" alt="Client">
-                                <div class="s-info">
-                                    <h5>Loan Documentation Query</h5>
-                                    <p>Ananya Das · #TCK-1035</p>
-                                </div>
-                                <span class="badge pending">Open</span>
-                            </div>
-                            <div class="student-row">
-                                <img src="./src/team-4.webp" alt="Client">
+                                <img src="./src/team-4.webp" alt="Support">
                                 <div class="s-info">
                                     <h5>Title Deed Registration Help</h5>
-                                    <p>Vikram Iyer · #TCK-1031</p>
+                                    <p>#TCK-1031</p>
                                 </div>
                                 <span class="badge delivered">Resolved</span>
                             </div>
@@ -2610,106 +2556,96 @@
                 </div>
             </div>
 
-            <!-- ========== NEW: TRANSACTIONS VIEW ========== -->
+            <!-- ========== 7. MY PAYMENTS VIEW ========== -->
             <div class="view" id="deals">
                 <div class="stat-row">
                     <div class="stat-card">
                         <span class="material-symbols-outlined">payments</span>
                         <div class="stat-info">
-                            <h2>₹48.6 Cr</h2>
-                            <p>Deal Value This Year</p>
+                            <h2>₹38 L</h2>
+                            <p>Total Paid So Far</p>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <span class="material-symbols-outlined">handshake</span>
+                        <span class="material-symbols-outlined">event_upcoming</span>
                         <div class="stat-info">
-                            <h2>142</h2>
-                            <p>Deals Closed This Quarter</p>
+                            <h2>₹6.5 L</h2>
+                            <p>Next Payment Due</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">percent</span>
                         <div class="stat-info">
                             <h2>2.5%</h2>
-                            <p>Average Commission</p>
+                            <p>Agency Commission</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">pending_actions</span>
                         <div class="stat-info">
-                            <h2>34</h2>
-                            <p>Deals In Pipeline</p>
+                            <h2>₹72 L</h2>
+                            <p>Outstanding Balance</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel">
                     <div class="panel-head">
-                        <h3>Deal Pipeline</h3>
-                        <button class="d-btn errorpage">Add Deal</button>
+                        <h3>Payment Milestones</h3>
+                        <button class="d-btn errorpage">Make a Payment</button>
                     </div>
 
                     <div class="pipeline">
                         <div class="pipeline-col">
-                            <h4>Enquiry</h4>
-                            <div class="pipeline-card">
-                                <h5>Lakeview 2BHK Apartment</h5>
-                                <p>Ananya Das · Karthik Raja</p>
-                                <span class="p-val">₹62 L</span>
-                            </div>
-                            <div class="pipeline-card">
-                                <h5>Skyline 3BHK Apartment</h5>
-                                <p>Meghana Rao · Priya Suresh</p>
-                                <span class="p-val">₹1.2 Cr</span>
-                            </div>
-                        </div>
-                        <div class="pipeline-col">
-                            <h4>Site Visit</h4>
-                            <div class="pipeline-card">
-                                <h5>Green Meadows Villa</h5>
-                                <p>Rahul Menon · Divya Krishnan</p>
-                                <span class="p-val">₹2.4 Cr</span>
-                            </div>
-                        </div>
-                        <div class="pipeline-col">
-                            <h4>Negotiation</h4>
-                            <div class="pipeline-card">
-                                <h5>Anna Nagar Office Space</h5>
-                                <p>Sneha Pillai · Priya Suresh</p>
-                                <span class="p-val">₹85 L</span>
-                            </div>
-                            <div class="pipeline-card">
-                                <h5>Harbour View Warehouse</h5>
-                                <p>Vikram Das · Karthik Raja</p>
-                                <span class="p-val">₹3.6 Cr</span>
-                            </div>
-                        </div>
-                        <div class="pipeline-col">
-                            <h4>Closed</h4>
+                            <h4>Booking</h4>
                             <div class="pipeline-card">
                                 <h5>Coastal Road Plot</h5>
-                                <p>Vikram Iyer · Meera Nair</p>
-                                <span class="p-val">₹1.1 Cr</span>
+                                <p>Paid on Jul 06</p>
+                                <span class="p-val">₹11 L</span>
+                            </div>
+                        </div>
+                        <div class="pipeline-col">
+                            <h4>Agreement</h4>
+                            <div class="pipeline-card">
+                                <h5>Anna Nagar Office Space</h5>
+                                <p>Due Sep 10</p>
+                                <span class="p-val">₹17 L</span>
+                            </div>
+                        </div>
+                        <div class="pipeline-col">
+                            <h4>Registration</h4>
+                            <div class="pipeline-card">
+                                <h5>Green Meadows Villa</h5>
+                                <p>Due Sep 22</p>
+                                <span class="p-val">₹48 L</span>
+                            </div>
+                        </div>
+                        <div class="pipeline-col">
+                            <h4>Possession</h4>
+                            <div class="pipeline-card">
+                                <h5>Lakeview 2BHK Apartment</h5>
+                                <p>Estimated Nov 2026</p>
+                                <span class="p-val">₹62 L</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ========== NEW: MESSAGES VIEW ========== -->
+            <!-- ========== 8. MESSAGES VIEW ========== -->
             <div class="view" id="messages">
                 <div class="stat-row">
                     <div class="stat-card">
                         <span class="material-symbols-outlined">forum</span>
                         <div class="stat-info">
-                            <h2>5</h2>
+                            <h2>3</h2>
                             <p>Unread Messages</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">chat</span>
                         <div class="stat-info">
-                            <h2>32</h2>
+                            <h2>4</h2>
                             <p>Active Conversations</p>
                         </div>
                     </div>
@@ -2717,14 +2653,14 @@
                         <span class="material-symbols-outlined">schedule</span>
                         <div class="stat-info">
                             <h2>12 min</h2>
-                            <p>Avg. Response Time</p>
+                            <p>Avg. Agent Response Time</p>
                         </div>
                     </div>
                     <div class="stat-card">
                         <span class="material-symbols-outlined">thumb_up</span>
                         <div class="stat-info">
-                            <h2>96%</h2>
-                            <p>Client Satisfaction</p>
+                            <h2>4.8/5</h2>
+                            <p>Your Satisfaction Rating</p>
                         </div>
                     </div>
                 </div>
@@ -2735,77 +2671,77 @@
                         <div class="filter-chips">
                             <button class="active errorpage">All</button>
                             <button class="errorpage">Unread</button>
-                            <button class="errorpage">Clients</button>
-                            <button class="errorpage">Agents</button>
+                            <button class="errorpage">My Agent</button>
+                            <button class="errorpage">Support</button>
                         </div>
                     </div>
 
                     <div class="inbox-list">
                         <div class="inbox-row unread errorpage">
-                            <img src="./src/team-1.webp" alt="Priya Sharma">
+                            <img src="./src/avartar_1.webp" alt="Divya Krishnan">
                             <div class="inbox-body">
                                 <div class="inbox-top">
-                                    <h5>Priya Sharma</h5>
+                                    <h5>Divya Krishnan (Agent)</h5>
                                     <span class="inbox-time">9:42 AM</span>
                                 </div>
-                                <p>Can we push the Green Meadows Villa visit to Sunday?</p>
+                                <p>Your Green Meadows Villa visit is confirmed for Sunday.</p>
                             </div>
                         </div>
                         <div class="inbox-row unread errorpage">
-                            <img src="./src/team-2.webp" alt="Karthik Raj">
+                            <img src="./src/avartar_2.webp" alt="Priya Suresh">
                             <div class="inbox-body">
                                 <div class="inbox-top">
-                                    <h5>Karthik Raj</h5>
+                                    <h5>Priya Suresh (Agent)</h5>
                                     <span class="inbox-time">Yesterday</span>
                                 </div>
-                                <p>Sharing the loan pre-approval letter for the office space deal.</p>
+                                <p>Sharing the revised quote for the office space deal.</p>
                             </div>
                         </div>
                         <div class="inbox-row unread errorpage">
-                            <img src="./src/avartar_1.webp" alt="Aravind Iyer">
+                            <img src="./src/team-1.webp" alt="Support Team">
                             <div class="inbox-body">
                                 <div class="inbox-top">
-                                    <h5>Aravind Iyer (Agent)</h5>
+                                    <h5>Client Support</h5>
                                     <span class="inbox-time">Yesterday</span>
                                 </div>
-                                <p>Client wants a revised quote on the Skyline apartment.</p>
-                            </div>
-                        </div>
-                        <div class="inbox-row errorpage">
-                            <img src="./src/team-3.webp" alt="Ananya Das">
-                            <div class="inbox-body">
-                                <div class="inbox-top">
-                                    <h5>Ananya Das</h5>
-                                    <span class="inbox-time">Mon</span>
-                                </div>
-                                <p>Thank you for the smooth registration process!</p>
-                            </div>
-                        </div>
-                        <div class="inbox-row errorpage">
-                            <img src="./src/team-4.webp" alt="Vikram Iyer">
-                            <div class="inbox-body">
-                                <div class="inbox-top">
-                                    <h5>Vikram Iyer</h5>
-                                    <span class="inbox-time">Mon</span>
-                                </div>
-                                <p>Following up on the title deed documentation status.</p>
+                                <p>Your payment confirmation ticket has been updated.</p>
                             </div>
                         </div>
                         <div class="inbox-row errorpage">
                             <img src="./src/avartar_3.webp" alt="Ravi Shankar">
                             <div class="inbox-body">
                                 <div class="inbox-top">
-                                    <h5>Ravi Shankar (Agent)</h5>
+                                    <h5>Ravi Shankar (Loan Advisor)</h5>
+                                    <span class="inbox-time">Mon</span>
+                                </div>
+                                <p>Loan pre-approval letter received, thank you!</p>
+                            </div>
+                        </div>
+                        <div class="inbox-row errorpage">
+                            <img src="./src/team-4.webp" alt="Registration Desk">
+                            <div class="inbox-body">
+                                <div class="inbox-top">
+                                    <h5>Registration Desk</h5>
+                                    <span class="inbox-time">Mon</span>
+                                </div>
+                                <p>Following up on your title deed documentation status.</p>
+                            </div>
+                        </div>
+                        <div class="inbox-row errorpage">
+                            <img src="./src/team-3.webp" alt="Daniel Cho">
+                            <div class="inbox-body">
+                                <div class="inbox-top">
+                                    <h5>Daniel Cho (Legal Advisor)</h5>
                                     <span class="inbox-time">Last week</span>
                                 </div>
-                                <p>Back from leave on Sep 02, reassign my pending visits.</p>
+                                <p>Your sale agreement draft is ready for review.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ========== NEW: CALENDAR VIEW ========== -->
+            <!-- ========== 9. CALENDAR VIEW ========== -->
             <div class="view" id="calendar">
                 <div class="bento">
                     <div class="panel span-8">
@@ -2897,7 +2833,6 @@
             </div>
 
 
-       
 
         </div>
     </main>
@@ -2949,13 +2884,13 @@
         })
 
         const titles = {
-            overview: "Overview",
-            orders: "Enquiries",
-            listings: "Listings",
-            staff: "Agents",
-            branches: "Properties",
-            clients: "Clients",
-            deals: "Transactions",
+            overview: "Dashboard",
+            orders: "My Enquiries",
+            listings: "Saved Properties",
+            staff: "My Agent",
+            branches: "My Documents",
+            clients: "Refer & Earn",
+            deals: "My Payments",
             messages: "Messages",
             calendar: "Calendar",
             settings: "Settings"
@@ -2973,7 +2908,7 @@
             document.querySelectorAll('.side-nav button').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            document.getElementById('topbarTitle').innerText = titles[id];
+            document.getElementById('topbarTitle').innerText = id === 'overview' ? 'Welcome back, Priya' : titles[id];
             document.getElementById('crumbTitle').innerText = titles[id];
             sidebar.classList.remove('vis')
         }
