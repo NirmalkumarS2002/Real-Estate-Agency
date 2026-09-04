@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Not Found - Stackly Realty</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pcolor: rgb(63, 214, 63);
+            --pcolor-dim: rgba(63, 214, 63, .12);
+            --dark: #0a0a0a;
+            --ink: #101210;
+            --sub: #6f6f6f;
+            --line: #E7E7E3;
+            --bg: #F7F6F2;
+            --card: #FFFFFF;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'Hanken Grotesk', sans-serif;
+            color: var(--ink);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* faint blueprint grid backdrop, like a site plan */
+        .grid-backdrop {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--line) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 10%, transparent 75%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 26px 40px;
+        }
+
+        header a {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: clamp(120px, 13vw, 150px);
+        }
+
+        header .tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sub);
+        }
+
+        main {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 24px 60px;
+        }
+
+        .plot-marker {
+            position: relative;
+            width: 118px;
+            height: 118px;
+            margin-bottom: 28px;
+        }
+
+        .plot-marker svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--dark);
+            color: var(--pcolor);
+            padding: 7px 16px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            margin-bottom: 22px;
+            border-radius: 3px;
+        }
+
+        .eyebrow .material-symbols-outlined {
+            font-size: 16px;
+        }
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: clamp(48px, 9vw, 108px);
+            line-height: .95;
+            color: var(--ink);
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: var(--pcolor);
+        }
+
+        .lede {
+            font-family: 'Fraunces', serif;
+            font-weight: 400;
+            font-size: clamp(19px, 2.4vw, 25px);
+            color: var(--ink);
+            margin-top: 18px;
+            max-width: 560px;
+        }
+
+        .lede-sub {
+            font-size: 14.5px;
+            color: var(--sub);
+            max-width: 460px;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        .lede-sub strong {
+            color: var(--ink);
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 34px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            border-radius: 3px;
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid var(--dark);
+            transition: .25s ease;
+        }
+
+        .btn.solid {
+            background: var(--dark);
+            color: #fff;
+        }
+
+        .btn.solid:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: #000;
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--ink);
+            border-color: var(--line);
+        }
+
+        .btn.ghost:hover {
+            border-color: var(--dark);
+            background: var(--card);
+        }
+
+        .btn .material-symbols-outlined {
+            font-size: 18px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            padding: 12px 18px;
+            margin-top: 38px;
+            width: min(420px, 90vw);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13.5px;
+            width: 100%;
+            color: var(--ink);
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+
+        .search-box input::placeholder {
+            color: #9a9a94;
+        }
+
+        .search-box .material-symbols-outlined {
+            color: var(--sub);
+            font-size: 19px;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .quick-links a {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--sub);
+            text-decoration: none;
+            padding: 7px 14px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            transition: .2s ease;
+        }
+
+        .quick-links a:hover {
+            color: var(--ink);
+            border-color: var(--dark);
+        }
+
+        footer {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 22px;
+            font-size: 11.5px;
+            color: var(--sub);
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 560px) {
+            header {
+                padding: 20px;
+            }
+
+            .actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-backdrop"></div>
+
+    <header>
+        <a href="index.html"><img src="./src/logo.webp" alt="Stackly Realty"></a>
+        <span class="tag">Chennai · Since 2011</span>
+    </header>
+
+    <main>
+        <div class="plot-marker">
+            <svg viewBox="0 0 118 118" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="59" cy="59" r="56" fill="none" stroke="#E7E7E3" stroke-width="1.5" />
+                <circle cx="59" cy="59" r="40" fill="none" stroke="#E7E7E3" stroke-width="1.5"
+                    stroke-dasharray="4 5" />
+                <path d="M59 30 C43 30 32 42 32 56 C32 76 59 96 59 96 C59 96 86 76 86 56 C86 42 75 30 59 30 Z"
+                    fill="none" stroke="#0a0a0a" stroke-width="2.5" />
+                <circle cx="59" cy="55" r="10" fill="rgb(63,214,63)" />
+            </svg>
+        </div>
+
+        <div class="eyebrow"><span class="material-symbols-outlined">signpost</span> Off the map</div>
+
+        <h1>404<span>.</span></h1>
+        <p class="lede">This listing has moved, sold, or never existed.</p>
+        <p class="lede-sub">The page you're looking for isn't on our books anymore. It might have been taken off
+            the market, renamed, or the link just has the wrong address. <strong>Try the dashboard</strong> or
+            search for what you need below.</p>
+
+        <div class="search-box">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="Search properties, localities...">
+        </div>
+
+        <div class="actions">
+            <a href="admin.html" class="btn solid"><span class="material-symbols-outlined">dashboard</span> Back to
+                Dashboard</a>
+            <a href="index.html" class="btn ghost"><span class="material-symbols-outlined">home</span> Go to
+                Homepage</a>
+        </div>
+
+        <div class="quick-links">
+            <a href="admin.html">Saved Properties</a>
+            <a href="admin.html">My Enquiries</a>
+            <a href="admin.html">Contact My Agent</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Stackly Realty. Need help? Reach us at <span style="color:var(--ink);font-weight:700;">support@stacklyrealty.com</span>
+    </footer>
+
+</body>
+
+</html>
