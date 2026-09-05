@@ -9,8 +9,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&display=swap"
@@ -1581,10 +1580,10 @@
                 gap: 10px;
             }
 
-              .fleet-card img {
-            width: 36px;
-            height: 36px;
-        }
+            .fleet-card img {
+                width: 36px;
+                height: 36px;
+            }
 
         }
     </style>
@@ -1615,8 +1614,7 @@
                     <span class="label">Listings</span></button>
                 <button onclick="showView('staff', this)"><span class="material-symbols-outlined">badge</span>
                     <span class="label">Agents</span></button>
-                <button onclick="showView('branches', this)"><span
-                        class="material-symbols-outlined">apartment</span>
+                <button onclick="showView('branches', this)"><span class="material-symbols-outlined">apartment</span>
                     <span class="label">Properties</span></button>
                 <button onclick="showView('clients', this)"><span class="material-symbols-outlined">groups</span>
                     <span class="label">Clients</span></button>
@@ -1624,8 +1622,7 @@
 
             <span class="nav-group-label">Insights &amp; Tools</span>
             <nav class="side-nav">
-                <button onclick="showView('deals', this)"><span
-                        class="material-symbols-outlined">payments</span>
+                <button onclick="showView('deals', this)"><span class="material-symbols-outlined">payments</span>
                     <span class="label">Transactions</span></button>
                 <button onclick="showView('messages', this)"><span class="material-symbols-outlined">forum</span>
                     <span class="label">Messages</span><span class="badge-count">5</span></button>
@@ -1729,8 +1726,7 @@
                     <div class="quick-actions">
                         <button class="errorpage"><span class="material-symbols-outlined">add_home</span><span>List
                                 Property</span></button>
-                        <button class="errorpage"><span
-                                class="material-symbols-outlined">assignment_add</span><span>New
+                        <button class="errorpage"><span class="material-symbols-outlined">assignment_add</span><span>New
                                 Enquiry</span></button>
                         <button class="errorpage"><span class="material-symbols-outlined">badge</span><span>Add
                                 Agent</span></button>
@@ -2897,7 +2893,7 @@
             </div>
 
 
-       
+
 
         </div>
     </main>
@@ -2929,11 +2925,15 @@
         })
 
         const username = document.querySelector("#username");
-        const email = localStorage.getItem("useremail");
+
+        let email=localStorage.getItem("useremail")
+   
 
         if (email) {
             username.textContent = email.split("@")[0];
         }
+
+
 
         let errorpage = document.querySelectorAll(".errorpage")
         errorpage.forEach((error) => {

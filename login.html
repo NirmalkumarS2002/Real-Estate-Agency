@@ -584,6 +584,7 @@
 
     </div>
 
+
     <script>
         const email = document.querySelector("#log-email");
         const password = document.querySelector("#log-pass");
@@ -598,69 +599,92 @@
 
         let selectedRole = "Client";
 
-        roleTabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                roleTabs.forEach((t) => { t.classList.remove("active") })
-                tab.classList.add("active")
-                selectedRole = tab.dataset.role;
+        roleTabs.forEach((tabs) => {
+
+            tabs.addEventListener("click", () => {
+
+                roleTabs.forEach((f) => f.classList.remove("active"))
+
+                tabs.classList.add("active")
+
+                selectedRole = tabs.dataset.role;
+
             })
+
         })
 
         eyeIcon.addEventListener("click", () => {
+
             if (eyeIcon.textContent == "visibility_off") {
-                eyeIcon.textContent = "visibility"
                 password.type = "text"
+                eyeIcon.textContent = "visibility"
             }
+
             else {
-                eyeIcon.textContent = "visibility_off"
                 password.type = "password"
+                eyeIcon.textContent = "visibility_off"
             }
+
         })
 
         loginBtn.addEventListener("click", () => {
 
             let isvalid = true;
-            let logregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-            let fe = email.value.trim()
-            let fp = password.value.trim()
+            errorMsgs.forEach((err) => {
+                err.textContent = ""
+            })
 
-            errorMsgs.forEach((error) => { error.textContent = ""; })
+            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-            if (fe == "") {
-                errorMsgs[0].textContent = "Enter Your Email";
-                isvalid = false;
-            }
-            else if (!logregex.test(fe)) {
-                errorMsgs[0].textContent = "Enter Valid Email";
+
+            if (email.value.trim() == "") {
+                errorMsgs[0].textContent = "enter your email"
                 isvalid = false;
             }
 
-            if (fp == "") {
-                errorMsgs[1].textContent = "Enter Your Password";
-                isvalid = false;
-            }
-            else if (fp.length < 6) {
-                errorMsgs[1].textContent = "Password must be at least 6 characters";
+            else if (!regex.test(email.value.trim())) {
+                errorMsgs[0].textContent = "enter valid email"
                 isvalid = false;
             }
 
-            if (isvalid) {
+            if (password.value.trim() == "") {
+                errorMsgs[1].textContent = "enter your passowrd"
+                isvalid = false;
+            }
+
+            else if (password.value.length<6) {
+                errorMsgs[1].textContent = "password must be in 6 chars"
+                isvalid = false;
+            }
+
+            localStorage.setItem("useremail",email.value)
+
+            if(isvalid){
+
                 popup.classList.add("active")
 
-                okBtn.addEventListener("click", () => {
-                    localStorage.setItem("useremail", email.value)
 
-                    if (selectedRole == "Client") {
-                        window.location.href = "client.html"
+                okBtn.addEventListener("click",()=>{
+
+                    if(selectedRole="Client"){
+                        window.location.href="admin.html"
                     }
-                    else {
-                        window.location.href = "admin.html"
+                    else{
+                        window.location.href="client.html"
                     }
+
                 })
             }
+
         })
+
+
+
     </script>
+
+
+
 </body>
 
 </html>
