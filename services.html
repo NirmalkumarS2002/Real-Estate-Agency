@@ -18,9 +18,8 @@
 
     <link rel="stylesheet" href="style.css">
 
-<style>
-
-      * {
+    <style>
+        * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
@@ -36,597 +35,608 @@
         }
 
 
-    :root {
-        --pcolor: rgb(63, 214, 63);
-        --dark: #0d0f0d;
-    }
+        :root {
+            --pcolor: rgb(63, 214, 63);
+            --dark: #0d0f0d;
+        }
 
-    .sv-sections * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        .sv-sections * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .sv-sections a {
-        text-decoration: none;
-    }
+        .sv-sections a {
+            text-decoration: none;
+        }
 
-    .sv-sections ul {
-        list-style: none;
-    }
+        .sv-sections ul {
+            list-style: none;
+        }
 
-    .sv-wrap {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-inline: clamp(20px, 5vw, 60px);
-    }
+        .sv-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-inline: clamp(20px, 5vw, 60px);
+        }
 
-    .sv-eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 15px;
-        margin-bottom: 16px;
-        color: var(--pcolor);
-        font-weight: 600;
-    }
+        .sv-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            margin-bottom: 16px;
+            color: var(--pcolor);
+            font-weight: 600;
+        }
 
-    .sv-eyebrow span {
-        font-size: 10px;
-    }
+        .sv-eyebrow span {
+            font-size: 10px;
+        }
 
-     .ab-banner {
+        .ab-banner {
             background: linear-gradient(125deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
                 url("./src/banner2.webp");
-                background-position: bottom;
+            background-position: bottom;
         }
-   
-    /* ===================== 2. CORE SERVICES GRID ===================== */
-    .sv-services {
-        background: white;
-        padding-block: 100px;
-    }
 
-    .sv-services-top {
-        max-width: 640px;
-        margin-bottom: 50px;
-    }
-
-    .sv-services-top h1 {
-        font-size: 42px;
-        color: var(--dark);
-        line-height: 1.2;
-        margin-bottom: 16px;
-    }
-
-    .sv-services-top p {
-        color: #555;
-        font-size: 15.5px;
-        line-height: 1.65;
-    }
-
-    .sv-services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-    }
-
-    .sv-service-card {
-        border-radius: 18px;
-        overflow: hidden;
-        border: 1px solid #eee;
-        transition: .4s ease;
-    }
-
-    .sv-service-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    .sv-service-img {
-        height: 200px;
-        position: relative;
-    }
-
-    .sv-service-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .sv-service-icon {
-        position: absolute;
-        bottom: -26px;
-        left: 24px;
-        height: 54px;
-        width: 54px;
-        border-radius: 14px;
-        background: var(--pcolor);
-        color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        border: 4px solid white;
-    }
-
-    .sv-service-body {
-        padding: 40px 24px 28px;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    .sv-service-body h3 {
-        font-size: 19px;
-        color: var(--dark);
-        margin-bottom: 10px;
-    }
-
-    .sv-service-body p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 10px;
-        flex: 1;
-        min-height:90px;
-    }
-
-    .sv-service-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 14px;
-        color: var(--dark);
-        font-weight: 600;
-    }
-
-    .sv-service-link span {
-        font-size: 18px;
-        color: var(--pcolor);
-        transition: .3s ease;
-    }
-
-    .sv-service-card:hover .sv-service-link span {
-        transform: translateX(4px);
-    }
-
-    @media (max-width:1000px) {
-        .sv-services-grid {
-            grid-template-columns: 1fr 1fr;
+        /* ===================== 2. CORE SERVICES GRID ===================== */
+        .sv-services {
+            background: white;
+            padding-block: 100px;
         }
-    }
 
-    @media (max-width:600px) {
-        .sv-services-grid {
-            grid-template-columns: 1fr;
+        .sv-services-top {
+            max-width: 640px;
+            margin-bottom: 50px;
         }
 
         .sv-services-top h1 {
-            font-size: 30px;
+            font-size: 42px;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
         }
-    }
 
-    /* ===================== 3. HOW WE DELIVER (PROCESS) ===================== */
-    .sv-deliver {
-        background: var(--dark);
-        padding-block: 100px;
-    }
+        .sv-services-top p {
+            color: #555;
+            font-size: 15.5px;
+            line-height: 1.65;
+        }
 
-    .sv-deliver-grid {
-        display: grid;
-        grid-template-columns: 0.85fr 1.15fr;
-        gap: 60px;
-        align-items: center;
-    }
+        .sv-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
 
-    .sv-deliver-img {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        height: 520px;
-    }
+        .sv-service-card {
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: .4s ease;
+        }
 
-    .sv-deliver-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+        .sv-service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
 
-    .sv-deliver-content h1 {
-        font-size: 40px;
-        color: white;
-        line-height: 1.2;
-        margin-bottom: 18px;
-        max-width: 920px;
-    }
+        .sv-service-img {
+            height: 200px;
+            position: relative;
+        }
 
-    .sv-deliver-content>p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 15px;
-        line-height: 1.6;
-        max-width: 900px;
-        margin-bottom: 34px;
-    }
+        .sv-service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .sv-deliver-steps {
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-    }
+        .sv-service-icon {
+            position: absolute;
+            bottom: -26px;
+            left: 24px;
+            height: 54px;
+            width: 54px;
+            border-radius: 14px;
+            background: var(--pcolor);
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            border: 4px solid white;
+        }
 
-    .sv-deliver-steps li {
-        display: flex;
-        gap: 18px;
-        align-items: flex-start;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
-        padding-top: 22px;
-    }
+        .sv-service-body {
+            padding: 40px 24px 28px;
 
-    .sv-deliver-steps li:first-child {
-        border-top: none;
-        padding-top: 0;
-    }
+            display: flex;
+            flex-direction: column;
+        }
 
-    .sv-deliver-num {
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--pcolor);
-        min-width: 30px;
-    }
+        .sv-service-body h3 {
+            font-size: 19px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
 
-    .sv-deliver-steps h3 {
-        font-size: 17px;
-        color: white;
-        margin-bottom: 6px;
-    }
+        .sv-service-body p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            flex: 1;
+            min-height: 90px;
+        }
 
-    .sv-deliver-steps p {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.55;
-        max-width: 840px;
-    }
+        .sv-service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--dark);
+            font-weight: 600;
+        }
 
-    @media (max-width:950px) {
+        .sv-service-link span {
+            font-size: 18px;
+            color: var(--pcolor);
+            transition: .3s ease;
+        }
+
+        .sv-service-card:hover .sv-service-link span {
+            transform: translateX(4px);
+        }
+
+        @media (max-width:1000px) {
+            .sv-services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:600px) {
+            .sv-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sv-services-top h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* ===================== 3. HOW WE DELIVER (PROCESS) ===================== */
+        .sv-deliver {
+            background: var(--dark);
+            padding-block: 100px;
+        }
+
         .sv-deliver-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 60px;
+            align-items: center;
         }
-
-          .sv-deliver-content h1{
-            max-width: 100%;
-          }
-
-           .sv-deliver-content  p{
-            max-width: 100%;
-           }
 
         .sv-deliver-img {
-            height: 360px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 520px;
         }
-    }
 
-    @media (max-width:500px) {
+        .sv-deliver-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .sv-deliver-content h1 {
-            font-size: 28px;
+            font-size: 40px;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            max-width: 920px;
         }
-    }
 
-    /* ===================== 4. SERVICE PACKAGES / PRICING ===================== */
-    .sv-pricing {
-        background: #f5f6f4;
-        padding-block: 100px;
-    }
+        .sv-deliver-content>p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-bottom: 34px;
+        }
 
-    .sv-pricing-top {
-        text-align: center;
-        max-width: 620px;
-        margin: 0 auto 55px;
-    }
+        .sv-deliver-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
 
-    .sv-pricing-top .sv-eyebrow {
-        justify-content: center;
-    }
+        .sv-deliver-steps li {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 22px;
+        }
 
-    .sv-pricing-top h1 {
-        font-size: 42px;
-        color: var(--dark);
-        line-height: 1.2;
-        margin-bottom: 14px;
-    }
+        .sv-deliver-steps li:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
 
-    .sv-pricing-top p {
-        color: #555;
-        font-size: 15px;
-        line-height: 1.6;
-    }
+        .sv-deliver-num {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--pcolor);
+            min-width: 30px;
+        }
 
-    .sv-pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-    }
+        .sv-deliver-steps h3 {
+            font-size: 17px;
+            color: white;
+            margin-bottom: 6px;
+        }
 
-    .sv-price-card {
-        background: white;
-        border-radius: 18px;
-        padding: 38px 30px;
-        border: 1px solid #eee;
-        transition: .4s ease;
-    }
+        .sv-deliver-steps p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.55;
+            max-width: 840px;
+        }
 
-    .sv-price-card.sv-featured {
-        background: var(--dark);
-        border-color: var(--dark);
-        transform: scale(1.04);
-    }
+        @media (max-width:950px) {
+            .sv-deliver-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .sv-price-card:hover {
-        transform: translateY(-6px);
-    }
+            .sv-deliver-content h1 {
+                max-width: 100%;
+            }
 
-    .sv-price-card.sv-featured:hover {
-        transform: scale(1.04) translateY(-6px);
-    }
+            .sv-deliver-content p {
+                max-width: 100%;
+            }
 
-    .sv-price-tag {
-        display: inline-block;
-        background: #eefbee;
-        color: var(--pcolor);
-        font-size: 12.5px;
-        font-weight: 700;
-        padding: 5px 14px;
-        border-radius: 20px;
-        margin-bottom: 20px;
-    }
+            .sv-deliver-img {
+                height: 360px;
+            }
+        }
 
-    .sv-featured .sv-price-tag {
-        background: var(--pcolor);
-        color: black;
-    }
+        @media (max-width:500px) {
+            .sv-deliver-content h1 {
+                font-size: 28px;
+            }
+        }
 
-    .sv-price-card h3 {
-        font-size: 22px;
-        color: var(--dark);
-        margin-bottom: 10px;
-    }
+        /* ===================== 4. SERVICE PACKAGES / PRICING ===================== */
+        .sv-pricing {
+            background: #f5f6f4;
+            padding-block: 100px;
+        }
 
-    .sv-featured h3 {
-        color: white;
-    }
+        .sv-pricing-top {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 55px;
+        }
 
-    .sv-price-card>p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.55;
-        margin-bottom: 24px;
-        min-height: 62px;
-    }
+        .sv-pricing-top .sv-eyebrow {
+            justify-content: center;
+        }
 
-    .sv-featured>p {
-        color: rgba(255, 255, 255, 0.65);
-    }
+        .sv-pricing-top h1 {
+            font-size: 42px;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
 
-    .sv-price-card h2 {
-        font-size: 36px;
-        color: var(--dark);
-        margin-bottom: 24px;
-    }
+        .sv-pricing-top p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
 
-    .sv-featured h2 {
-        color: var(--pcolor);
-    }
-
-    .sv-price-card h2 span {
-        font-size: 14px;
-        font-weight: 400;
-        color: #888;
-    }
-
-    .sv-featured h2 span {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    .sv-price-list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 30px;
-    }
-
-    .sv-price-list li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        color: #555;
-    }
-
-    .sv-featured .sv-price-list li {
-        color: rgba(255, 255, 255, 0.75);
-    }
-
-    .sv-price-list span {
-        font-size: 18px;
-        color: var(--pcolor);
-    }
-
-    .sv-price-card a {
-        display: block;
-        text-align: center;
-        padding: 13px;
-        border-radius: 30px;
-        border: 1px solid var(--dark);
-        color: var(--dark);
-        font-size: 14.5px;
-        font-weight: 600;
-        transition: .4s ease;
-    }
-
-    .sv-price-card a:hover {
-        background: var(--pcolor);
-        border-color: var(--pcolor);
-    }
-
-    .sv-featured a {
-        background: var(--pcolor);
-        border-color: var(--pcolor);
-        color: black;
-    }
-
-    @media (max-width:1000px) {
         .sv-pricing-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .sv-price-card {
+            background: white;
+            border-radius: 18px;
+            padding: 38px 30px;
+            border: 1px solid #eee;
+            transition: .4s ease;
         }
 
         .sv-price-card.sv-featured {
-            transform: none;
+            background: var(--dark);
+            border-color: var(--dark);
+            transform: scale(1.04);
+        }
+
+        .sv-price-card:hover {
+            transform: translateY(-6px);
         }
 
         .sv-price-card.sv-featured:hover {
-            transform: translateY(-6px);
+            transform: scale(1.04) translateY(-6px);
         }
-    }
 
-    @media (max-width:500px) {
-        .sv-pricing-top h1 {
-            font-size: 30px;
+        .sv-price-tag {
+            display: inline-block;
+            background: #eefbee;
+            color: var(--pcolor);
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
-    }
 
-    /* ===================== 5. SPECIALIZED SERVICES LIST ===================== */
-    .sv-specialized {
-        background: white;
-        padding-block: 100px;
-    }
-
-    .sv-spec-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .sv-spec-row {
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-        padding: 26px;
-        border-radius: 16px;
-        border: 1px solid #eee;
-        transition: .4s ease;
-    }
-
-    .sv-spec-row:hover {
-        border-color: var(--pcolor);
-        background: #fafffa;
-    }
-
-    .sv-spec-icon {
-        min-width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        background: var(--dark);
-        color: var(--pcolor);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-    }
-
-    .sv-spec-row h3 {
-        font-size: 17px;
-        color: var(--dark);
-        margin-bottom: 8px;
-    }
-
-    .sv-spec-row p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.55;
-    }
-
-    @media (max-width:900px) {
-        .sv-spec-grid {
-            grid-template-columns: 1fr;
+        .sv-featured .sv-price-tag {
+            background: var(--pcolor);
+            color: black;
         }
-    }
 
-    /* ===================== 6. CTA BANNER ===================== */
-    .sv-cta {
-        padding-block: 0px 60px;
-        background: white;
-    }
+        .sv-price-card h3 {
+            font-size: 22px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
 
-    .sv-cta-inner {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-inline: clamp(20px, 5vw, 60px);
-    }
+        .sv-featured h3 {
+            color: white;
+        }
 
-    .sv-cta-box {
-        position: relative;
-        border-radius: 24px;
-        overflow: hidden;
-        padding: 80px clamp(24px, 6vw, 80px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-        background: linear-gradient(120deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./src/image_30.webp") center/cover no-repeat;
-    }
+        .sv-price-card>p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.55;
+            margin-bottom: 24px;
+            min-height: 62px;
+        }
 
-    .sv-cta-box h1 {
-        font-size: 38px;
-        color: white;
-        max-width: 540px;
-        line-height: 1.25;
-    }
+        .sv-featured>p {
+            color: rgba(255, 255, 255, 0.65);
+        }
 
-    .sv-cta-box p {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 15px;
-        margin-top: 12px;
-        max-width: 460px;
-    }
+        .sv-price-card h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
 
-    .sv-cta-actions {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-    }
+        .sv-featured h2 {
+            color: var(--pcolor);
+        }
 
-    .sv-cta-actions a {
-        padding: 14px 30px;
-        border-radius: 30px;
-        font-size: 15px;
-        white-space: nowrap;
-        color: white;
-    }
+        .sv-price-card h2 span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #888;
+        }
 
-    .sv-cta-actions a:first-child {
-        background: var(--pcolor);
-        color: black;
-        font-weight: 600;
-    }
+        .sv-featured h2 span {
+            color: rgba(255, 255, 255, 0.5);
+        }
 
-    .sv-cta-actions a:last-child {
-        border: 1px solid white;
-    }
-
-    @media (max-width:900px) {
-        .sv-cta-box {
+        .sv-price-list {
+            display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            padding: 50px 30px;
+            gap: 12px;
+            margin-bottom: 30px;
         }
-    }
 
-    @media (max-width:500px) {
-        .sv-cta-box h1 {
-            font-size: 26px;
+        .sv-price-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
         }
-    }
-</style>
+
+        .sv-featured .sv-price-list li {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .sv-price-list span {
+            font-size: 18px;
+            color: var(--pcolor);
+        }
+
+        .sv-price-card a {
+            display: block;
+            text-align: center;
+            padding: 13px;
+            border-radius: 30px;
+            border: 1px solid var(--dark);
+            color: var(--dark);
+            font-size: 14.5px;
+            font-weight: 600;
+            transition: .4s ease;
+        }
+
+        .sv-price-card a:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+        }
+
+        .sv-featured a {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: black;
+        }
+
+        @media (max-width:1000px) {
+            .sv-pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sv-price-card.sv-featured {
+                transform: none;
+            }
+
+            .sv-price-card.sv-featured:hover {
+                transform: translateY(-6px);
+            }
+        }
+
+        @media (max-width:500px) {
+            .sv-pricing-top h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* ===================== 5. SPECIALIZED SERVICES LIST ===================== */
+        .sv-specialized {
+            background: white;
+            padding-block: 100px;
+        }
+
+        .sv-spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .sv-spec-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 26px;
+            border-radius: 16px;
+            border: 1px solid #eee;
+            transition: .4s ease;
+        }
+
+        .sv-spec-row:hover {
+            border-color: var(--pcolor);
+            background: #fafffa;
+        }
+
+        .sv-spec-icon {
+            min-width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--dark);
+            color: var(--pcolor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .sv-spec-row h3 {
+            font-size: 17px;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .sv-spec-row p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.55;
+        }
+
+        @media (max-width:900px) {
+            .sv-spec-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================== 6. CTA BANNER ===================== */
+        .sv-cta {
+            padding-block: 0px 60px;
+            background: white;
+        }
+
+        .sv-cta-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-inline: clamp(20px, 5vw, 60px);
+        }
+
+        .sv-cta-box {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            padding: 80px clamp(24px, 6vw, 80px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            background: linear-gradient(120deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./src/image_30.webp") center/cover no-repeat;
+        }
+
+        .sv-cta-box h1 {
+            font-size: 38px;
+            color: white;
+            max-width: 540px;
+            line-height: 1.25;
+        }
+
+        .sv-cta-box p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 15px;
+            margin-top: 12px;
+            max-width: 460px;
+        }
+
+        .sv-cta-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .sv-cta-actions a {
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 15px;
+            white-space: nowrap;
+            color: white;
+            transition: .5s ease;
+        }
+
+        .sv-cta-actions a:first-child {
+            background: var(--pcolor);
+            color: black;
+            font-weight: 600;
+        }
+
+        .sv-cta-actions a:last-child {
+            border: 1px solid white;
+        }
+
+      .sv-cta-actions a:first-child:hover {
+            color: white;
+        }
+
+       .sv-cta-actions a:last-child:hover {
+            background: var(--pcolor);
+            color: black;
+            border-color: black;
+        }
+
+        @media (max-width:900px) {
+            .sv-cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 50px 30px;
+            }
+        }
+
+        @media (max-width:500px) {
+            .sv-cta-box h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
 
 
 </head>
@@ -644,10 +654,10 @@
 
             <div class="menuwrap">
                 <ul class="menus">
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="pages.html">Pages</a></li>
-                    <li  class="active"><a href="services.html"  class="active">Services</a></li>
+                    <li class="active"><a href="services.html" class="active">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
 
@@ -659,430 +669,461 @@
             </div>
 
             <div class="navicons">
-                <div class="callbtn"><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
+                <div class="callbtn errorpage"><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
                 <div class="menubtn"><span class="material-symbols-outlined menuspan">menu</span></div>
             </div>
 
     </header>
 
-    
-<div class="sv-sections">
+
+    <div class="sv-sections">
 
 
         <div class="ab-sections">
 
             <section class="ab-banner">
-        <div class="ab-banner-content">
-            <span class="reveal delay-1"> Our Real Estate Services</span>
-            <h1 class="reveal delay-2">Services</h1>
-            <div class="ab-crumb reveal delay-3">
-                <a href="index.html">Home</a>
-                <span class="material-symbols-outlined">chevron_right</span>
-                <span>Services</span>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===================== SECTION 2: CORE SERVICES GRID ===================== -->
-    <section class="sv-services">
-        <div class="sv-wrap">
-            <div class="sv-services-top">
-                <p class="sv-eyebrow"><span class="material-symbols-outlined">circle</span> Core Services</p>
-                <h1>Everything You Need Under One Agency</h1>
-                <p>Each service is run by agents who specialise in exactly that area, so you're never getting
-                    generalist advice on a decision this important.</p>
-            </div>
-
-            <div class="sv-services-grid">
-                <div class="sv-service-card">
-                    <div class="sv-service-img">
-                        <img src="./src/image_22.webp"
-                            alt="Property buying service">
-                        <div class="sv-service-icon"><span class="material-symbols-outlined">home_work</span></div>
-                    </div>
-                    <div class="sv-service-body">
-                        <h3>Property Buying</h3>
-                        <p>We shortlist homes that match your budget and lifestyle, arrange viewings, and negotiate
-                            the final price on your behalf.</p>
-                        <a class="sv-service-link" href="404.html">Learn More <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
+                <div class="ab-banner-content">
+                    <span class="reveal delay-1"> Our Real Estate Services</span>
+                    <h1 class="reveal delay-2">Services</h1>
+                    <div class="ab-crumb reveal delay-3">
+                        <a href="index.html">Home</a>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span>Services</span>
                     </div>
                 </div>
+            </section>
 
-                <div class="sv-service-card">
-                    <div class="sv-service-img">
-                        <img src="./src/image_23.webp"
-                            alt="Property selling service">
-                        <div class="sv-service-icon"><span class="material-symbols-outlined">sell</span></div>
-                    </div>
-                    <div class="sv-service-body">
-                        <h3>Property Selling</h3>
-                        <p>From market valuation to staging advice and buyer screening, we handle the sale process so
-                            you close at the right price.</p>
-                        <a class="sv-service-link" href="404.html">Learn More <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
 
-                <div class="sv-service-card">
-                    <div class="sv-service-img">
-                        <img src="./src/image_24.webp"
-                            alt="Rental management service">
-                        <div class="sv-service-icon"><span class="material-symbols-outlined">key</span></div>
+            <!-- ===================== SECTION 2: CORE SERVICES GRID ===================== -->
+            <section class="sv-services">
+                <div class="sv-wrap">
+                    <div class="sv-services-top">
+                        <p class="sv-eyebrow reveal-left delay-1"><span class="material-symbols-outlined">circle</span>
+                            Core Services</p>
+                        <h1 class="reveal-left delay-2">Everything You Need Under One Agency</h1>
+                        <p class="reveal-left delay-3">Each service is run by agents who specialise in exactly that
+                            area, so you're never getting
+                            generalist advice on a decision this important.</p>
                     </div>
-                    <div class="sv-service-body">
-                        <h3>Rentals &amp; Leasing</h3>
-                        <p>We match tenants to verified listings and support landlords with tenant screening and
-                            lease documentation.</p>
-                        <a class="sv-service-link" href="404.html">Learn More <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
 
-                <div class="sv-service-card">
-                    <div class="sv-service-img">
-                        <img src="./src/image_25.webp"
-                            alt="Commercial real estate service">
-                        <div class="sv-service-icon"><span
-                                class="material-symbols-outlined">apartment</span></div>
-                    </div>
-                    <div class="sv-service-body">
-                        <h3>Commercial Real Estate</h3>
-                        <p>Office spaces, retail units, and warehouses, sourced and negotiated by agents who
-                            understand business needs.</p>
-                        <a class="sv-service-link" href="404.html">Learn More <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
+                    <div class="sv-services-grid">
+                        <div class="sv-service-card reveal delay-1">
+                            <div class="sv-service-img">
+                                <img src="./src/image_22.webp" alt="Property buying service">
+                                <div class="sv-service-icon"><span class="material-symbols-outlined">home_work</span>
+                                </div>
+                            </div>
+                            <div class="sv-service-body">
+                                <h3>Property Buying</h3>
+                                <p>We shortlist homes that match your budget and lifestyle, arrange viewings, and
+                                    negotiate
+                                    the final price on your behalf.</p>
+                                <a class="sv-service-link" href="404.html">Learn More <span
+                                        class="material-symbols-outlined">arrow_forward</span></a>
+                            </div>
+                        </div>
 
-                <div class="sv-service-card">
-                    <div class="sv-service-img">
-                        <img src="./src/image_26.webp"
-                            alt="Property valuation service">
-                        <div class="sv-service-icon"><span class="material-symbols-outlined">query_stats</span>
+                        <div class="sv-service-card reveal delay-2">
+                            <div class="sv-service-img">
+                                <img src="./src/image_23.webp" alt="Property selling service">
+                                <div class="sv-service-icon"><span class="material-symbols-outlined">sell</span></div>
+                            </div>
+                            <div class="sv-service-body">
+                                <h3>Property Selling</h3>
+                                <p>From market valuation to staging advice and buyer screening, we handle the sale
+                                    process so
+                                    you close at the right price.</p>
+                                <a class="sv-service-link" href="404.html">Learn More <span
+                                        class="material-symbols-outlined">arrow_forward</span></a>
+                            </div>
+                        </div>
+
+                        <div class="sv-service-card reveal delay-3">
+                            <div class="sv-service-img">
+                                <img src="./src/image_24.webp" alt="Rental management service">
+                                <div class="sv-service-icon"><span class="material-symbols-outlined">key</span></div>
+                            </div>
+                            <div class="sv-service-body">
+                                <h3>Rentals &amp; Leasing</h3>
+                                <p>We match tenants to verified listings and support landlords with tenant screening and
+                                    lease documentation.</p>
+                                <a class="sv-service-link" href="404.html">Learn More <span
+                                        class="material-symbols-outlined">arrow_forward</span></a>
+                            </div>
+                        </div>
+
+                        <div class="sv-service-card reveal delay-1">
+                            <div class="sv-service-img">
+                                <img src="./src/image_25.webp" alt="Commercial real estate service">
+                                <div class="sv-service-icon"><span class="material-symbols-outlined">apartment</span>
+                                </div>
+                            </div>
+                            <div class="sv-service-body">
+                                <h3>Commercial Real Estate</h3>
+                                <p>Office spaces, retail units, and warehouses, sourced and negotiated by agents who
+                                    understand business needs.</p>
+                                <a class="sv-service-link" href="404.html">Learn More <span
+                                        class="material-symbols-outlined">arrow_forward</span></a>
+                            </div>
+                        </div>
+
+                        <div class="sv-service-card reveal delay-2">
+                            <div class="sv-service-img">
+                                <img src="./src/image_26.webp" alt="Property valuation service">
+                                <div class="sv-service-icon"><span class="material-symbols-outlined">query_stats</span>
+                                </div>
+                            </div>
+                            <div class="sv-service-body">
+                                <h3>Property Valuation</h3>
+                                <p>Get an accurate, data-backed estimate of your property's current market value before
+                                    you
+                                    list or refinance.</p>
+                                <a class="sv-service-link" href="404.html">Learn More <span
+                                        class="material-symbols-outlined">arrow_forward</span></a>
+                            </div>
+                        </div>
+
+                        <div class="sv-service-card reveal delay-3">
+                            <div class="sv-service-img">
+                                <img src="./src/image_27.webp" alt="Property management service">
+                                <div class="sv-service-icon"><span
+                                        class="material-symbols-outlined">home_repair_service</span>
+                                </div>
+                            </div>
+                            <div class="sv-service-body">
+                                <h3>Property Management</h3>
+                                <p>Ongoing maintenance, rent collection, and tenant coordination for owners who want a
+                                    hands-off investment.</p>
+                                <a class="sv-service-link" href="404.html">Learn More <span
+                                        class="material-symbols-outlined">arrow_forward</span></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="sv-service-body">
-                        <h3>Property Valuation</h3>
-                        <p>Get an accurate, data-backed estimate of your property's current market value before you
-                            list or refinance.</p>
-                        <a class="sv-service-link" href="404.html">Learn More <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 3: HOW WE DELIVER ===================== -->
+            <section class="sv-deliver ">
+                <div class="sv-wrap sv-deliver-grid">
+                    <div class="sv-deliver-img reveal-left">
+                        <img src="./src/image_28.webp" alt="Agents reviewing property documents">
+                    </div>
+
+                    <div class="sv-deliver-content reveal-right">
+                        <p class="sv-eyebrow"><span class="material-symbols-outlined">circle</span> How We Deliver</p>
+                        <h1>A Process Built Around Getting It Right the First Time</h1>
+                        <p>We don't hand you a stack of listings and disappear. Every service follows the same
+                            structured
+                            process so nothing falls through the cracks, from the first call to the day you get your
+                            keys.
+                        </p>
+
+                        <ul class="sv-deliver-steps">
+                            <li>
+                                <span class="sv-deliver-num">01</span>
+                                <div>
+                                    <h3>Understand Your Requirement</h3>
+                                    <p>We start with a detailed consultation covering budget, timeline, and must-haves
+                                        before any listing is shared.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="sv-deliver-num">02</span>
+                                <div>
+                                    <h3>Match You With a Specialist</h3>
+                                    <p>You're assigned an agent who focuses specifically on your service and area, not a
+                                        generalist handling everything.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="sv-deliver-num">03</span>
+                                <div>
+                                    <h3>Handle the Paperwork</h3>
+                                    <p>Our operations team manages contracts, verification, and compliance so deals
+                                        close on
+                                        schedule.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="sv-deliver-num">04</span>
+                                <div>
+                                    <h3>Stay Available After Closing</h3>
+                                    <p>Questions after the deal is done are common. Your agent stays reachable well past
+                                        the
+                                        closing date.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="sv-service-card">
-                    <div class="sv-service-img">
-                        <img src="./src/image_27.webp"
-                            alt="Property management service">
-                        <div class="sv-service-icon"><span class="material-symbols-outlined">home_repair_service</span>
+            <!-- ===================== SECTION 4: SERVICE PACKAGES ===================== -->
+            <section class="sv-pricing reveal">
+                <div class="sv-wrap">
+                    <div class="sv-pricing-top">
+                        <p class="sv-eyebrow reveal delay-1"><span class="material-symbols-outlined">circle</span>
+                            Service Packages</p>
+                        <h1 class="reveal delay-2">Choose the Level of Support You Need</h1>
+                        <p class="reveal delay-3">Whether you need a single transaction handled or ongoing management,
+                            pick a package that fits
+                            your involvement.</p>
+                    </div>
+
+                    <div class="sv-pricing-grid">
+                        <div class="sv-price-card reveal delay-1">
+                            <span class="sv-price-tag">Essential</span>
+                            <h3>Single Transaction</h3>
+                            <p>Best for a one-time buy, sell, or rental with agent support through to closing.</p>
+                            <h2>2% <span>of transaction value</span></h2>
+                            <ul class="sv-price-list">
+                                <li><span class="material-symbols-outlined">check_circle</span>Dedicated agent</li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Property valuation report
+                                </li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Contract &amp; paperwork
+                                    support</li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Up to 5 property viewings
+                                </li>
+                            </ul>
+                            <a href="404.html">Get Started</a>
+                        </div>
+
+                        <div class="sv-price-card sv-featured reveal delay-2">
+                            <span class="sv-price-tag">Most Popular</span>
+                            <h3>Full Service</h3>
+                            <p>Ideal for buyers and sellers who want end-to-end support including negotiation strategy.
+                            </p>
+                            <h2>3.5% <span>of transaction value</span></h2>
+                            <ul class="sv-price-list">
+                                <li><span class="material-symbols-outlined">check_circle</span>Everything in Essential
+                                </li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Unlimited property
+                                    viewings
+                                </li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Dedicated negotiation
+                                    support
+                                </li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Legal document review
+                                </li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Priority agent response
+                                    time
+                                </li>
+                            </ul>
+                            <a href="404.html">Get Started</a>
+                        </div>
+
+                        <div class="sv-price-card reveal delay-3">
+                            <span class="sv-price-tag">Ongoing</span>
+                            <h3>Property Management</h3>
+                            <p>For landlords who want their rental property managed without day-to-day involvement.</p>
+                            <h2>8% <span>of monthly rent</span></h2>
+                            <ul class="sv-price-list">
+                                <li><span class="material-symbols-outlined">check_circle</span>Tenant screening &amp;
+                                    placement</li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Monthly rent collection
+                                </li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Maintenance coordination
+                                </li>
+                                <li><span class="material-symbols-outlined">check_circle</span>Quarterly property
+                                    inspection
+                                </li>
+                            </ul>
+                            <a href="404.html">Get Started</a>
                         </div>
                     </div>
-                    <div class="sv-service-body">
-                        <h3>Property Management</h3>
-                        <p>Ongoing maintenance, rent collection, and tenant coordination for owners who want a
-                            hands-off investment.</p>
-                        <a class="sv-service-link" href="404.html">Learn More <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- ===================== SECTION 3: HOW WE DELIVER ===================== -->
-    <section class="sv-deliver">
-        <div class="sv-wrap sv-deliver-grid">
-            <div class="sv-deliver-img">
-                <img src="./src/image_28.webp"
-                    alt="Agents reviewing property documents">
-            </div>
-
-            <div class="sv-deliver-content">
-                <p class="sv-eyebrow"><span class="material-symbols-outlined">circle</span> How We Deliver</p>
-                <h1>A Process Built Around Getting It Right the First Time</h1>
-                <p>We don't hand you a stack of listings and disappear. Every service follows the same structured
-                    process so nothing falls through the cracks, from the first call to the day you get your keys.
-                </p>
-
-                <ul class="sv-deliver-steps">
-                    <li>
-                        <span class="sv-deliver-num">01</span>
-                        <div>
-                            <h3>Understand Your Requirement</h3>
-                            <p>We start with a detailed consultation covering budget, timeline, and must-haves
-                                before any listing is shared.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="sv-deliver-num">02</span>
-                        <div>
-                            <h3>Match You With a Specialist</h3>
-                            <p>You're assigned an agent who focuses specifically on your service and area, not a
-                                generalist handling everything.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="sv-deliver-num">03</span>
-                        <div>
-                            <h3>Handle the Paperwork</h3>
-                            <p>Our operations team manages contracts, verification, and compliance so deals close on
-                                schedule.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="sv-deliver-num">04</span>
-                        <div>
-                            <h3>Stay Available After Closing</h3>
-                            <p>Questions after the deal is done are common. Your agent stays reachable well past the
-                                closing date.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SECTION 4: SERVICE PACKAGES ===================== -->
-    <section class="sv-pricing">
-        <div class="sv-wrap">
-            <div class="sv-pricing-top">
-                <p class="sv-eyebrow"><span class="material-symbols-outlined">circle</span> Service Packages</p>
-                <h1>Choose the Level of Support You Need</h1>
-                <p>Whether you need a single transaction handled or ongoing management, pick a package that fits
-                    your involvement.</p>
-            </div>
-
-            <div class="sv-pricing-grid">
-                <div class="sv-price-card">
-                    <span class="sv-price-tag">Essential</span>
-                    <h3>Single Transaction</h3>
-                    <p>Best for a one-time buy, sell, or rental with agent support through to closing.</p>
-                    <h2>2% <span>of transaction value</span></h2>
-                    <ul class="sv-price-list">
-                        <li><span class="material-symbols-outlined">check_circle</span>Dedicated agent</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Property valuation report</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Contract &amp; paperwork
-                            support</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Up to 5 property viewings</li>
-                    </ul>
-                    <a href="404.html">Get Started</a>
-                </div>
-
-                <div class="sv-price-card sv-featured">
-                    <span class="sv-price-tag">Most Popular</span>
-                    <h3>Full Service</h3>
-                    <p>Ideal for buyers and sellers who want end-to-end support including negotiation strategy.</p>
-                    <h2>3.5% <span>of transaction value</span></h2>
-                    <ul class="sv-price-list">
-                        <li><span class="material-symbols-outlined">check_circle</span>Everything in Essential</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Unlimited property viewings
-                        </li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Dedicated negotiation support
-                        </li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Legal document review</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Priority agent response time
-                        </li>
-                    </ul>
-                    <a href="404.html">Get Started</a>
-                </div>
-
-                <div class="sv-price-card">
-                    <span class="sv-price-tag">Ongoing</span>
-                    <h3>Property Management</h3>
-                    <p>For landlords who want their rental property managed without day-to-day involvement.</p>
-                    <h2>8% <span>of monthly rent</span></h2>
-                    <ul class="sv-price-list">
-                        <li><span class="material-symbols-outlined">check_circle</span>Tenant screening &amp;
-                            placement</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Monthly rent collection</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Maintenance coordination</li>
-                        <li><span class="material-symbols-outlined">check_circle</span>Quarterly property inspection
-                        </li>
-                    </ul>
-                    <a href="404.html">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SECTION 5: SPECIALIZED SERVICES ===================== -->
-    <section class="sv-specialized">
-        <div class="sv-wrap">
-            <div class="sv-services-top">
-                <p class="sv-eyebrow"><span class="material-symbols-outlined">circle</span> Additional Support</p>
-                <h1>Specialized Services for Specific Needs</h1>
-                <p>Beyond the core transaction, we offer focused support for situations that need extra expertise.
-                </p>
-            </div>
-
-            <div class="sv-spec-grid">
-                <div class="sv-spec-row">
-                    <div class="sv-spec-icon"><span class="material-symbols-outlined">gavel</span></div>
-                    <div>
-                        <h3>Legal &amp; Documentation Support</h3>
-                        <p>Title verification, encumbrance checks, and registration assistance handled by our
-                            in-house legal coordinators.</p>
-                    </div>
-                </div>
-
-                <div class="sv-spec-row">
-                    <div class="sv-spec-icon"><span class="material-symbols-outlined">currency_exchange</span></div>
-                    <div>
-                        <h3>Mortgage &amp; Financing Assistance</h3>
-                        <p>We connect buyers with lending partners and help compare loan terms to find the best fit.
+            <!-- ===================== SECTION 5: SPECIALIZED SERVICES ===================== -->
+            <section class="sv-specialized reveal">
+                <div class="sv-wrap">
+                    <div class="sv-services-top">
+                        <p class="sv-eyebrow reveal-left delay-1"><span class="material-symbols-outlined">circle</span>
+                            Additional Support</p>
+                        <h1 class="reveal-left delay-2">Specialized Services for Specific Needs</h1>
+                        <p class="reveal-left delay-3">Beyond the core transaction, we offer focused support for
+                            situations that need extra expertise.
                         </p>
                     </div>
+
+                    <div class="sv-spec-grid">
+                        <div class="sv-spec-row reveal delay-1">
+                            <div class="sv-spec-icon"><span class="material-symbols-outlined">gavel</span></div>
+                            <div>
+                                <h3>Legal &amp; Documentation Support</h3>
+                                <p>Title verification, encumbrance checks, and registration assistance handled by our
+                                    in-house legal coordinators.</p>
+                            </div>
+                        </div>
+
+                        <div class="sv-spec-row reveal delay-2">
+                            <div class="sv-spec-icon"><span class="material-symbols-outlined">currency_exchange</span>
+                            </div>
+                            <div>
+                                <h3>Mortgage &amp; Financing Assistance</h3>
+                                <p>We connect buyers with lending partners and help compare loan terms to find the best
+                                    fit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="sv-spec-row reveal delay-3">
+                            <div class="sv-spec-icon"><span class="material-symbols-outlined">design_services</span>
+                            </div>
+                            <div>
+                                <h3>Staging &amp; Presentation</h3>
+                                <p>Simple, effective staging recommendations that help sellers get better offers,
+                                    faster.</p>
+                            </div>
+                        </div>
+
+                        <div class="sv-spec-row reveal delay-4">
+                            <div class="sv-spec-icon"><span class="material-symbols-outlined">travel_explore</span>
+                            </div>
+                            <div>
+                                <h3>Relocation Assistance</h3>
+                                <p>Moving from another city? We help with area orientation, school zones, and commute
+                                    planning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 6: CTA BANNER ===================== -->
+            <section class="sv-cta reveal">
+                <div class="sv-cta-inner">
+                    <div class="sv-cta-box">
+                        <div>
+                            <h1 class="reveal-left delay-1">Not Sure Which Service Fits Your Situation?</h1>
+                            <p class="reveal-left delay-2">Tell us what you're trying to do and we'll recommend the
+                                right service and package, free of
+                                obligation.</p>
+                        </div>
+                        <div class="sv-cta-actions">
+                            <a href="404.html" class="reveal-right delay-1">Talk to an Agent</a>
+                            <a href="404.html" class="reveal-right delay-2">Browse Listings</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+
+        <footer class="footer">
+
+            <div class="footerhead">
+                <a href="index.html" class="reveal-left"><img src="./src/logo.webp" alt="Company Logo"
+                        class="footerlogo"></a>
+
+
+                <div class="reveal-right">
+                    <div class="footerform">
+                        <input type="email" placeholder="Enter Your Email" id="subemail">
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+
+                    <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
                 </div>
 
-                <div class="sv-spec-row">
-                    <div class="sv-spec-icon"><span class="material-symbols-outlined">design_services</span></div>
-                    <div>
-                        <h3>Staging &amp; Presentation</h3>
-                        <p>Simple, effective staging recommendations that help sellers get better offers, faster.</p>
+            </div>
+
+            <div class="footer1">
+
+                <div class="fsec1 reveal-left delay-1">
+
+                    <h2>About Company</h2>
+
+                    <p>We strive to build long-term partnerships
+                        through excellence and customer
+                        satisfaction.</p>
+
+                    <h1>Since 2007</h1>
+
+                </div>
+
+                <div class="fersec2 reveal-left delay-2">
+                    <h2>Quick Links</h2>
+
+                    <div class="footerlinks">
+
+                        <a href="index.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Home</a>
+                        <a href="about.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>About</a>
+                        <a href="pages.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Pages</a>
+                        <a href="blog.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Blog</a>
+                        <a href="contact.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Contact</a>
+
                     </div>
                 </div>
 
-                <div class="sv-spec-row">
-                    <div class="sv-spec-icon"><span class="material-symbols-outlined">travel_explore</span></div>
-                    <div>
-                        <h3>Relocation Assistance</h3>
-                        <p>Moving from another city? We help with area orientation, school zones, and commute
-                            planning.</p>
+                <div class="fersec2 reveal-left delay-3">
+                    <h2>Services</h2>
+
+                    <div class="footerlinks">
+
+                        <a href="404.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Service</a>
+                        <a href="404.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Pricing</a>
+                        <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Team</a>
+                        <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Terms &
+                            conditions</a>
+                        <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Privacy
+                            Policy</a>
+
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===================== SECTION 6: CTA BANNER ===================== -->
-    <section class="sv-cta">
-        <div class="sv-cta-inner">
-            <div class="sv-cta-box">
-                <div>
-                    <h1>Not Sure Which Service Fits Your Situation?</h1>
-                    <p>Tell us what you're trying to do and we'll recommend the right service and package, free of
-                        obligation.</p>
-                </div>
-                <div class="sv-cta-actions">
-                    <a href="404.html">Talk to an Agent</a>
-                    <a href="404.html">Browse Listings</a>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="fersec2 reveal-right delay-2">
 
-</div>
+                    <h2>Office Address</h2>
 
+                    <div class="footerlinks">
+                        <a href="404.html">123,Anna Nager </a>
+                        <a href="404.html">Chennai, Tamilnadu</a>
+                    </div>
 
-      <footer class="footer">
+                    <h2>Email Address</h2>
 
-        <div class="footerhead">
-            <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
-
-            
-            <div>
-                <div class="footerform">
-                <input type="email" placeholder="Enter Your Email" id="subemail">
-                <button class="subscribe-btn">Subscribe</button>
-            </div>
-                <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
-            </div>
-        
-        </div>
-
-        <div class="footer1">
-
-            <div class="fsec1">
-
-                <h2>About Company</h2>
-
-                <p>We strive to build long-term partnerships
-                    through excellence and customer
-                    satisfaction.</p>
-
-                <h1>Since 2007</h1>
-
-            </div>
-
-            <div class="fersec2">
-                <h2>Quick Links</h2>
-
-                <div class="footerlinks">
-
-                    <a href="index.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Home</a>
-                    <a href="about.html"><span class="material-symbols-outlined farrow">arrow_forward</span>About</a>
-                    <a href="pages.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pages</a>
-                    <a href="blog.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Blog</a>
-                    <a href="contact.html"><span
-                            class="material-symbols-outlined farrow">arrow_forward</span>Contact</a>
+                    <div class="footerlinks">
+                        <a href="404.html">admin@gmail.com</a>
+                        <a href="404.html">career@gmail.com</a>
+                    </div>
 
                 </div>
-            </div>
 
-            <div class="fersec2">
-                <h2>Services</h2>
+                <div class="fersec2 reveal-right delay-1">
 
-                <div class="footerlinks">
+                    <h2>Phone Number</h2>
 
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Service</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pricing</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Team</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Terms &
-                        conditions</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Privacy
-                        Policy</a>
+                    <div class="footerlinks">
+                        <a href="404.html">+91 12345 67890</a>
+                        <a href="404.html">+91 09876 54321</a>
+                    </div>
 
-                </div>
-            </div>
+                    <h2>follow Us</h2>
 
-            <div class="fersec2">
+                    <div class="footer-sotial-icons">
+                        <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
 
-                <h2>Office Address</h2>
-
-                <div class="footerlinks">
-                    <a href="404.html">123,Anna Nager </a>
-                    <a href="404.html">Chennai, Tamilnadu</a>
-                </div>
-
-                <h2>Email Address</h2>
-
-                <div class="footerlinks">
-                    <a href="404.html">admin@gmail.com</a>
-                    <a href="404.html">career@gmail.com</a>
                 </div>
 
             </div>
 
-            <div class="fersec2">
-
-                <h2>Phone Number</h2>
-
-                <div class="footerlinks">
-                    <a href="404.html">+91 12345 67890</a>
-                    <a href="404.html">+91 09876 54321</a>
-                </div>
-
-                <h2>follow Us</h2>
-
-                <div class="footer-sotial-icons">
-                    <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-
+            <div class="footer2 reveal">
+                <p>@ 2026 All Rights Reserved by Stackly</p>
             </div>
-
-        </div>
-
-        <div class="footer2">
-            <p>@ 2026 All Rights Reserved by Stackly</p>
-        </div>
-    </footer>
-
-     <script src="./js/script.js"></script>
+        </footer>
+        <script src="./js/script.js"></script>
 </body>
 
 </html>

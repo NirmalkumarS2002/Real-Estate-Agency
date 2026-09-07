@@ -80,3 +80,24 @@ subbtn.addEventListener("click", (e) => {
 })
 
 
+
+
+// reveal animation 
+
+const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("showed");
+        }
+    })
+}, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+})
+
+document.querySelectorAll(".reveal, .reveal-right, .reveal-left").forEach((el) => {
+    observer1.observe(el)
+})
+
+

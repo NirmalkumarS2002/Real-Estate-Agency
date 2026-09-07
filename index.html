@@ -1189,6 +1189,7 @@
             font-size: 15px;
             white-space: nowrap;
             color: white;
+            transition: .5s ease;
         }
 
         .cta-actions a:first-child {
@@ -1197,8 +1198,19 @@
             font-weight: 600;
         }
 
+        
+
         .cta-actions a:last-child {
             border: 1px solid white;
+        }
+
+          .cta-actions a:first-child:hover{
+            color: white;
+          }
+        .cta-actions a:last-child:hover{
+            background: var(--pcolor);
+            color: black;
+            border-color: black;
         }
 
         @media (max-width:900px) {
@@ -1327,13 +1339,13 @@
         <section class="categories">
             <div class="re-wrap">
                 <div class="cat-head">
-                    <h1>Browse Properties by Category</h1>
-                    <p>From cosy apartments to sprawling estates, find the property type that fits the life you're
+                    <h1 class="reveal-left">Browse Properties by Category</h1>
+                    <p class="reveal-right">From cosy apartments to sprawling estates, find the property type that fits the life you're
                         planning.</p>
                 </div>
 
                 <div class="cat-grid">
-                    <div class="cat-card">
+                    <div class="cat-card reveal delay-1">
                         <img src="./src/image_33.webp" alt="Residential Homes">
                         <div class="cat-inner">
                             <div>
@@ -1345,7 +1357,7 @@
                         </div>
                     </div>
 
-                    <div class="cat-card">
+                    <div class="cat-card reveal delay-2">
                         <img src="./src/image_34.webp" alt="Commercial Buildings">
                         <div class="cat-inner">
                             <div>
@@ -1357,7 +1369,7 @@
                         </div>
                     </div>
 
-                    <div class="cat-card">
+                    <div class="cat-card reveal delay-3">
                         <img src="./src/image_35.webp" alt="Apartments for Rent">
                         <div class="cat-inner">
                             <div>
@@ -1369,7 +1381,7 @@
                         </div>
                     </div>
 
-                    <div class="cat-card">
+                    <div class="cat-card reveal delay-4">
                         <img src="./src/image_36.webp" alt="Land and Plots">
                         <div class="cat-inner">
                             <div>
@@ -1389,15 +1401,15 @@
             <div class="re-wrap">
                 <div class="feat-top">
                     <div>
-                        <p class="re-eyebrow"><span class="material-symbols-outlined">circle</span> Handpicked For You
+                        <p class="re-eyebrow reveal-left"><span class="material-symbols-outlined">circle</span> Handpicked For You
                         </p>
-                        <h1>Featured Properties This Week</h1>
+                        <h1 class="reveal-left">Featured Properties This Week</h1>
                     </div>
-                    <a href="pages.html" class="feat-btn errorpage">View All Properties</a>
+                    <a href="pages.html" class="feat-btn errorpage reveal-right">View All Properties</a>
                 </div>
 
                 <div class="feat-grid">
-                    <div class="feat-card">
+                    <div class="feat-card reveal delay-1">
                         <div class="feat-img">
                             <img src="./src/image_37.webp" alt="Modern Villa">
                             <span class="feat-tag">For Sale</span>
@@ -1415,7 +1427,7 @@
                         </div>
                     </div>
 
-                    <div class="feat-card">
+                    <div class="feat-card reveal delay-2">
                         <div class="feat-img">
                             <img src="./src/image_38.webp" alt="City Apartment">
                             <span class="feat-tag">For Rent</span>
@@ -1433,7 +1445,7 @@
                         </div>
                     </div>
 
-                    <div class="feat-card">
+                    <div class="feat-card reveal delay-3">
                         <div class="feat-img">
                             <img src="./src/image_39.webp" alt="Family Bungalow">
                             <span class="feat-tag">For Sale</span>
@@ -1457,22 +1469,22 @@
         <!-- ===================== SECTION 4: WHY CHOOSE US ===================== -->
         <section class="whyus">
             <div class="re-wrap whyus-grid">
-                <div class="whyus-img">
+                <div class="whyus-img  reveal-left">
                     <img src="./src/image_40.webp" alt="Happy homeowners">
-                    <div class="whyus-badge">
+                    <div class="whyus-badge  reveal-left delay-1">
                         <h2>98%</h2>
                         <p>Client satisfaction across all closed deals</p>
                     </div>
                 </div>
 
-                <div class="whyus-content">
-                    <p class="re-eyebrow"><span class="material-symbols-outlined">circle</span> Why Choose Us</p>
-                    <h1>A Trusted Partner For Every Step of Your Move</h1>
-                    <p>We combine local market knowledge with a dedicated team, so every buyer, seller, and renter gets
+                <div class="whyus-content  reveal-right">
+                    <p class="re-eyebrow reveal-right"><span class="material-symbols-outlined">circle</span> Why Choose Us</p>
+                    <h1 class="reveal-right delay-1">A Trusted Partner For Every Step of Your Move</h1>
+                    <p class="reveal-right delay-2">We combine local market knowledge with a dedicated team, so every buyer, seller, and renter gets
                         guidance built around their goals, not a one-size-fits-all pitch.</p>
 
                     <ul class="whyus-list">
-                        <li>
+                        <li class="reveal-right delay-3">
                             <div class="whyus-icon"><span class="material-symbols-outlined">verified</span></div>
                             <div>
                                 <h3>Verified Listings Only</h3>
@@ -1480,14 +1492,14 @@
                                     what you get.</p>
                             </div>
                         </li>
-                        <li>
+                        <li class="reveal-right delay-4">
                             <div class="whyus-icon"><span class="material-symbols-outlined">support_agent</span></div>
                             <div>
                                 <h3>Dedicated Local Agents</h3>
                                 <p>You're paired with an agent who knows the neighbourhood, not a call centre queue.</p>
                             </div>
                         </li>
-                        <li>
+                        <li class="reveal-right delay-5">
                             <div class="whyus-icon"><span class="material-symbols-outlined">payments</span></div>
                             <div>
                                 <h3>Transparent Pricing</h3>
@@ -1503,30 +1515,30 @@
         <section class="process">
             <div class="re-wrap">
                 <div class="process-top">
-                    <p class="re-eyebrow"><span class="material-symbols-outlined">circle</span> How It Works</p>
-                    <h1>Finding Your Property in Four Simple Steps</h1>
+                    <p class="re-eyebrow reveal delay-1"><span class="material-symbols-outlined">circle</span> How It Works</p>
+                    <h1 class="reveal delay-2">Finding Your Property in Four Simple Steps</h1>
                 </div>
 
                 <div class="process-grid">
-                    <div class="process-card">
+                    <div class="process-card reveal-left">
                         <p class="process-num">01</p>
                         <span class="material-symbols-outlined">search</span>
                         <h3>Search Listings</h3>
                         <p>Filter by location, budget, and property type to shortlist your matches.</p>
                     </div>
-                    <div class="process-card">
+                    <div class="process-card reveal-left">
                         <p class="process-num">02</p>
                         <span class="material-symbols-outlined">calendar_month</span>
                         <h3>Book a Visit</h3>
                         <p>Schedule a walkthrough at a time that works for you, in person or virtually.</p>
                     </div>
-                    <div class="process-card">
+                    <div class="process-card reveal-right">
                         <p class="process-num">03</p>
                         <span class="material-symbols-outlined">handshake</span>
                         <h3>Negotiate Terms</h3>
                         <p>Our agents handle the back and forth so you get a fair, well-informed deal.</p>
                     </div>
-                    <div class="process-card">
+                    <div class="process-card reveal-right">
                         <p class="process-num">04</p>
                         <span class="material-symbols-outlined">key</span>
                         <h3>Close &amp; Move In</h3>
@@ -1547,7 +1559,7 @@
                 </div>
 
                 <div class="test-grid">
-                    <div class="test-card">
+                    <div class="test-card reveal delay-1">
                         <p class="test-stars">★★★★★</p>
                         <p class="test-quote">The team found us a home that matched our budget and our wish list within
                             two weeks. Every step was explained clearly, with no surprises at closing.</p>
@@ -1560,7 +1572,7 @@
                         </div>
                     </div>
 
-                    <div class="test-card">
+                    <div class="test-card reveal delay-2">
                         <p class="test-stars">★★★★★</p>
                         <p class="test-quote">Renting through this agency was the smoothest experience I've had. My
                             agent was responsive and genuinely looked out for what I needed.</p>
@@ -1573,7 +1585,7 @@
                         </div>
                     </div>
 
-                    <div class="test-card">
+                    <div class="test-card reveal delay-3">
                         <p class="test-stars">★★★★★</p>
                         <p class="test-quote">We sold our commercial space for well above the market estimate, thanks to
                             their negotiation skills and understanding of the local market.</p>
@@ -1593,12 +1605,12 @@
         <section class="agents">
             <div class="re-wrap">
                 <div class="agents-top">
-                    <p class="re-eyebrow"><span class="material-symbols-outlined">circle</span> Our Team</p>
-                    <h1>Meet the Agents Behind Your Next Move</h1>
+                    <p class="re-eyebrow reveal delay-1"><span class="material-symbols-outlined">circle</span> Our Team</p>
+                    <h1 class="reveal delay-2">Meet the Agents Behind Your Next Move</h1>
                 </div>
 
                 <div class="agents-grid">
-                    <div class="agent-card">
+                    <div class="agent-card reveal delay-1">
                         <div class="agent-img">
                             <img src="./src/image_44.webp" alt="Agent portrait">
                             <div class="agent-social">
@@ -1611,7 +1623,7 @@
                         <p>Residential Specialist</p>
                     </div>
 
-                    <div class="agent-card">
+                    <div class="agent-card reveal delay-2">
                         <div class="agent-img">
                             <img src="./src/image_45.webp" alt="Agent portrait">
                             <div class="agent-social">
@@ -1624,7 +1636,7 @@
                         <p>Commercial Advisor</p>
                     </div>
 
-                    <div class="agent-card">
+                    <div class="agent-card reveal delay-3">
                         <div class="agent-img">
                             <img src="./src/image_46.webp" alt="Agent portrait">
                             <div class="agent-social">
@@ -1637,7 +1649,7 @@
                         <p>Rental Consultant</p>
                     </div>
 
-                    <div class="agent-card">
+                    <div class="agent-card reveal delay-4">
                         <div class="agent-img">
                             <img src="./src/image_47.webp" alt="Agent portrait">
                             <div class="agent-social">
@@ -1654,17 +1666,17 @@
         </section>
 
         <!-- ===================== SECTION 8: CTA BANNER ===================== -->
-        <section class="cta-banner">
+        <section class="cta-banner reveal">
             <div class="cta-inner">
                 <div class="cta-box">
                     <div>
-                        <h1>Ready to Find a Place You'll Love Coming Home To?</h1>
-                        <p>Talk to one of our agents today and get a shortlist of properties matched to your budget and
+                        <h1 class="reveal-left delay-1">Ready to Find a Place You'll Love Coming Home To?</h1>
+                        <p class="reveal-left delay-2">Talk to one of our agents today and get a shortlist of properties matched to your budget and
                             lifestyle within 24 hours.</p>
                     </div>
-                    <div class="cta-actions">
-                        <a href="404.html">Book a Consultation</a>
-                        <a href="404.html">Browse Listings</a>
+                    <div class="cta-actions ">
+                        <a href="404.html" class="reveal-right delay-1">Book a Consultation</a>
+                        <a href="404.html" class="reveal-right delay-2">Browse Listings</a>
                     </div>
                 </div>
             </div>
@@ -1675,10 +1687,10 @@
     <footer class="footer">
 
         <div class="footerhead">
-            <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
+            <a href="index.html" class="reveal-left"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
 
 
-            <div>
+            <div class="reveal-right">
                 <div class="footerform">
                     <input type="email" placeholder="Enter Your Email" id="subemail">
                     <button class="subscribe-btn">Subscribe</button>
@@ -1691,7 +1703,7 @@
 
         <div class="footer1">
 
-            <div class="fsec1">
+            <div class="fsec1 reveal-left delay-1">
 
                 <h2>About Company</h2>
 
@@ -1703,7 +1715,7 @@
 
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-left delay-2">
                 <h2>Quick Links</h2>
 
                 <div class="footerlinks">
@@ -1718,7 +1730,7 @@
                 </div>
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-left delay-3">
                 <h2>Services</h2>
 
                 <div class="footerlinks">
@@ -1734,7 +1746,7 @@
                 </div>
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-right delay-2">
 
                 <h2>Office Address</h2>
 
@@ -1752,7 +1764,7 @@
 
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-right delay-1">
 
                 <h2>Phone Number</h2>
 
@@ -1774,7 +1786,7 @@
 
         </div>
 
-        <div class="footer2">
+        <div class="footer2 reveal">
             <p>@ 2026 All Rights Reserved by Stackly</p>
         </div>
     </footer>

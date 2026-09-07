@@ -535,6 +535,12 @@
         white-space: nowrap;
     }
 
+     .ct-cta-box a:hover {
+        color: white;
+    }
+
+
+
     @media (max-width:800px) {
         .ct-cta-box {
             flex-direction: column;
@@ -580,7 +586,7 @@
             </div>
 
             <div class="navicons">
-                <div class="callbtn"><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
+                <div class="callbtn errorpage"><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
                 <div class="menubtn"><span class="material-symbols-outlined menuspan">menu</span></div>
             </div>
 
@@ -605,7 +611,7 @@
     <!-- ===================== SECTION 2: CONTACT INFO CARDS ===================== -->
     <section class="ct-info">
         <div class="ct-wrap ct-info-grid">
-            <div class="ct-info-card errorpage">
+            <div class="ct-info-card errorpage reveal delay-1">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">call</span></div>
                 <h3>Call Us</h3>
                 <a href="404.html">+91 12345 67890</a>
@@ -613,7 +619,7 @@
                 <p style="margin-top:8px;">Mon to Sat, 9:00 AM to 7:00 PM</p>
             </div>
 
-            <div class="ct-info-card errorpage">
+            <div class="ct-info-card errorpage reveal delay-2">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">mail</span></div>
                 <h3>Email Us</h3>
                 <a href="404.html">support@gmail.com</a>
@@ -621,14 +627,14 @@
                 <p style="margin-top:8px;">We reply within 24 hours</p>
             </div>
 
-            <div class="ct-info-card errorpage">
+            <div class="ct-info-card errorpage reveal delay-3">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">location_on</span></div>
                 <h3>Visit Us</h3>
                 <p>123, Anna Nagar, Chennai, Tamil Nadu</p>
                 <p style="margin-top:8px;">Drop by for a walk-in consultation</p>
             </div>
 
-            <div class="ct-info-card errorpage">
+            <div class="ct-info-card errorpage reveal delay-4">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">schedule</span></div>
                 <h3>Working Hours</h3>
                 <p>Monday to Saturday: 9:00 AM to 7:00 PM</p>
@@ -640,7 +646,7 @@
     <!-- ===================== SECTION 3: CONTACT FORM ===================== -->
     <section class="ct-form-section">
         <div class="ct-wrap ct-form-grid">
-            <div class="ct-form-img">
+            <div class="ct-form-img reveal-left">
                 <img src="./src/img1.webp"
                     alt="Agent discussing a property with clients">
                 <div class="ct-form-note">
@@ -650,7 +656,7 @@
                 </div>
             </div>
 
-            <div class="ct-form-box">
+            <div class="ct-form-box reveal-right">
                 <p class="ct-eyebrow"><span class="material-symbols-outlined">circle</span> Send a Message</p>
                 <h1>Tell Us What You're Looking For</h1>
                 <p>Share a few details about your requirement and one of our agents will reach out with matching
@@ -703,17 +709,17 @@
     </section>
 
     <!-- ===================== SECTION 4: OUR OFFICES ===================== -->
-    <section class="ct-offices">
+    <section class="ct-offices reveal">
         <div class="ct-wrap">
             <div class="ct-offices-top">
-                <p class="ct-eyebrow"><span class="material-symbols-outlined">circle</span> Our Locations</p>
-                <h1>Visit One of Our Offices</h1>
-                <p>Our agents are spread across the city so you're never far from someone who knows your
+                <p class="ct-eyebrow reveal delay-1"><span class="material-symbols-outlined">circle</span> Our Locations</p>
+                <h1 class="reveal delay-2">Visit One of Our Offices</h1>
+                <p class="reveal delay-3">Our agents are spread across the city so you're never far from someone who knows your
                     neighbourhood well.</p>
             </div>
 
             <div class="ct-offices-grid">
-                <div class="ct-office-card">
+                <div class="ct-office-card reveal-left">
                     <div class="ct-office-img">
                         <img src="./src/image_30.webp"
                             alt="Anna Nagar office building">
@@ -728,7 +734,7 @@
                     </div>
                 </div>
 
-                <div class="ct-office-card">
+                <div class="ct-office-card reveal">
                     <div class="ct-office-img">
                         <img src="./src/image_31.webp"
                             alt="Adyar office building">
@@ -743,7 +749,7 @@
                     </div>
                 </div>
 
-                <div class="ct-office-card">
+                <div class="ct-office-card reveal-right">
                     <div class="ct-office-img">
                         <img src="./src/image_32.webp"
                             alt="Marina Bay office building">
@@ -762,35 +768,35 @@
     </section>
 
     <!-- ===================== SECTION 5: FAQ ===================== -->
-    <section class="ct-faq">
+    <section class="ct-faq reveal">
         <div class="ct-wrap ct-faq-grid">
             <div class="ct-faq-left">
-                <p class="ct-eyebrow"><span class="material-symbols-outlined">circle</span> Common Questions</p>
-                <h1>Frequently Asked Questions</h1>
-                <p>Answers to what most people ask us before their first visit. Still have a question? Reach out
+                <p class="ct-eyebrow  reveal-left delay-1"><span class="material-symbols-outlined">circle</span> Common Questions</p>
+                <h1 class="reveal-left delay-2">Frequently Asked Questions</h1>
+                <p class="reveal-left delay-3">Answers to what most people ask us before their first visit. Still have a question? Reach out
                     through the form above and we'll get back to you directly.</p>
             </div>
 
             <div class="ct-faq-list">
-                <div class="ct-faq-item">
+                <div class="ct-faq-item reveal-right delay-1">
                     <h3>How soon will an agent contact me? <span
                             class="material-symbols-outlined arrow">expand_more</span></h3>
                     <p class="para active">Most enquiries submitted through the form or a call are responded to within 24 hours on
                         business days. Urgent enquiries can call our front desk directly for a same-day response.</p>
                 </div>
-                <div class="ct-faq-item">
+                <div class="ct-faq-item reveal-right delay-2">
                     <h3>Do you charge a fee for property viewings? <span
                             class="material-symbols-outlined arrow">expand_more</span></h3>
                     <p class="para">No, property viewings are free for buyers and tenants. Our fees are structured around
                         successful transactions and are explained upfront before any agreement is signed.</p>
                 </div>
-                <div class="ct-faq-item">
+                <div class="ct-faq-item reveal-right delay-3">
                     <h3>Can you help me sell a property in a different city branch's area? <span
                             class="material-symbols-outlined arrow">expand_more</span></h3>
                     <p class="para">Yes, all three of our branches share listings and coordinate on cross-area transactions, so
                         your agent can help regardless of which office they're based at.</p>
                 </div>
-                <div class="ct-faq-item">
+                <div class="ct-faq-item reveal-right delay-4">
                     <h3>What documents should I bring for a first consultation? <span
                             class="material-symbols-outlined arrow">expand_more</span></h3>
                     <p class="para">For buyers, a valid ID and proof of budget approval helps. For sellers, property title
@@ -801,15 +807,15 @@
     </section>
 
     <!-- ===================== SECTION 6: CTA STRIP ===================== -->
-    <section class="ct-cta">
+    <section class="ct-cta reveal">
         <div class="ct-cta-inner">
             <div class="ct-cta-box">
                 <div>
-                    <h1>Still Not Sure Where to Start?</h1>
-                    <p>Call our front desk and we'll match you with the right agent for your requirement, free of
+                    <h1 class="reveal-left delay-1">Still Not Sure Where to Start?</h1>
+                    <p class="reveal-left delay-2">Call our front desk and we'll match you with the right agent for your requirement, free of
                         charge.</p>
                 </div>
-                <a href="404.html">Call +91 12345 67890</a>
+                <a href="404.html" class="reveal-right">Call +91 12345 67890</a>
             </div>
         </div>
     </section>
@@ -817,25 +823,27 @@
 </div>
 
 
-      <footer class="footer">
+  
+    <footer class="footer">
 
         <div class="footerhead">
-            <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
+            <a href="index.html" class="reveal-left"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
 
-            
-            <div>
+
+            <div class="reveal-right">
                 <div class="footerform">
-                <input type="email" placeholder="Enter Your Email" id="subemail">
-                <button class="subscribe-btn">Subscribe</button>
-            </div>
+                    <input type="email" placeholder="Enter Your Email" id="subemail">
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
+
                 <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
             </div>
-        
+
         </div>
 
         <div class="footer1">
 
-            <div class="fsec1">
+            <div class="fsec1 reveal-left delay-1">
 
                 <h2>About Company</h2>
 
@@ -847,7 +855,7 @@
 
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-left delay-2">
                 <h2>Quick Links</h2>
 
                 <div class="footerlinks">
@@ -862,7 +870,7 @@
                 </div>
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-left delay-3">
                 <h2>Services</h2>
 
                 <div class="footerlinks">
@@ -878,7 +886,7 @@
                 </div>
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-right delay-2">
 
                 <h2>Office Address</h2>
 
@@ -896,7 +904,7 @@
 
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-right delay-1">
 
                 <h2>Phone Number</h2>
 
@@ -918,7 +926,7 @@
 
         </div>
 
-        <div class="footer2">
+        <div class="footer2 reveal">
             <p>@ 2026 All Rights Reserved by Stackly</p>
         </div>
     </footer>

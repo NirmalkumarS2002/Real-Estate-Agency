@@ -387,14 +387,14 @@
             color: var(--dark);
             line-height: 1.2;
             margin-bottom: 18px;
-            max-width: 520px;
+            max-width: 620px;
         }
 
         .values-content>p {
             color: #555;
             font-size: 15.5px;
             line-height: 1.65;
-            max-width: 520px;
+            max-width: 720px;
             margin-bottom: 34px;
         }
 
@@ -434,7 +434,7 @@
             font-size: 14px;
             color: #666;
             line-height: 1.55;
-            max-width: 460px;
+            max-width: 960px;
         }
 
         @media (max-width:950px) {
@@ -603,6 +603,7 @@
             font-size: 15px;
             white-space: nowrap;
             color: white;
+            transition: .5s ease;
         }
 
         .ab-cta-actions a:first-child {
@@ -611,8 +612,20 @@
             font-weight: 600;
         }
 
+        .ab-cta-actions a:first-child:hover {
+            color: white;
+        }
+
         .ab-cta-actions a:last-child {
             border: 1px solid white;
+        }
+
+
+
+        .ab-cta-actions a:last-child:hover {
+            background: var(--pcolor);
+            color: black;
+            border-color: black;
         }
 
         .ab-cta-stats {
@@ -683,7 +696,7 @@
             </div>
 
             <div class="navicons">
-                <div class="callbtn"><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
+                <div class="callbtn errorpage"><span class="material-symbols-outlined">call</span>+91 12345 67890</div>
                 <div class="menubtn"><span class="material-symbols-outlined menuspan">menu</span></div>
             </div>
 
@@ -707,23 +720,29 @@
         <section class="ab-hero">
             <div class="ab-wrap ab-hero-grid">
                 <div class="ab-hero-content">
-                    <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> About Our Agency</p>
-                    <h1>Helping Families and Businesses Find the Right Address Since 2007</h1>
-                    <p>What started as a two-person office in Anna Nagar has grown into one of the city's most trusted
+                    <p class="ab-eyebrow reveal-left"><span class="material-symbols-outlined">circle</span> About Our
+                        Agency</p>
+                    <h1 class="reveal-left delay-1">Helping Families and Businesses Find the Right Address Since 2007
+                    </h1>
+                    <p class="reveal-left delay-2">What started as a two-person office in Anna Nagar has grown into one
+                        of the city's most trusted
                         real estate agencies. Over the last eighteen years, we've helped hundreds of families move into
                         homes that actually fit their lives, and helped business owners find spaces that support how
                         they work.</p>
-                    <p>We believe property decisions shouldn't feel rushed or confusing. Every client works with a
+                    <p class="reveal-left delay-3">We believe property decisions shouldn't feel rushed or confusing.
+                        Every client works with a
                         dedicated agent who takes the time to understand their budget, priorities, and timeline before a
                         single listing is shared, so the properties you see are ones worth seeing.</p>
 
                 </div>
 
-                <div class="ab-hero-images">
-                    <img class="ab-img-tall" src="./src/image_50.webp" alt="Real estate office team at work">
+                <div class="ab-hero-images reveal-right">
+                    <img class="ab-img-tall reveal delay-1" src="./src/image_50.webp"
+                        alt="Real estate office team at work">
                     <div class="ab-img-col">
-                        <img class="ab-img-short" src="./src/image_51.webp" alt="Agent showing a property to clients">
-                        <div class="ab-badge-card">
+                        <img class="ab-img-short reveal delay-2" src="./src/image_51.webp"
+                            alt="Agent showing a property to clients">
+                        <div class="ab-badge-card reveal delay-3">
                             <h2>18+</h2>
                             <p>Years building trust in the local property market</p>
                         </div>
@@ -736,27 +755,29 @@
         <section class="mission">
             <div class="ab-wrap">
                 <div class="mission-top">
-                    <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> What Drives Us</p>
-                    <h1>Our Mission, Vision, and the Way We Work</h1>
-                    <p>These three ideas shape every listing we take on, every negotiation we run, and every
+                    <p class="ab-eyebrow reveal-left delay-1"><span class="material-symbols-outlined">circle</span> What
+                        Drives Us</p>
+                    <h1 class=" reveal-left delay-2">Our Mission, Vision, and the Way We Work</h1>
+                    <p class=" reveal-left delay-3">These three ideas shape every listing we take on, every negotiation
+                        we run, and every
                         conversation we have with a client, whether it's their first home or their fifth investment
                         property.</p>
                 </div>
 
                 <div class="mission-grid">
-                    <div class="mission-card">
+                    <div class="mission-card reveal delay-1">
                         <span class="material-symbols-outlined">flag</span>
                         <h3>Our Mission</h3>
                         <p>To make property buying, selling, and renting straightforward by pairing honest advice with
                             real local expertise, so clients make decisions with full confidence.</p>
                     </div>
-                    <div class="mission-card">
+                    <div class="mission-card reveal delay-2">
                         <span class="material-symbols-outlined">visibility</span>
                         <h3>Our Vision</h3>
                         <p>To be the agency people recommend to their own family, known for listings that are accurately
                             represented and deals that close without last-minute surprises.</p>
                     </div>
-                    <div class="mission-card">
+                    <div class="mission-card reveal delay-3">
                         <span class="material-symbols-outlined">diversity_3</span>
                         <h3>Our Approach</h3>
                         <p>We match every client with an agent who specialises in that property type and area, backed by
@@ -767,7 +788,7 @@
         </section>
 
         <!-- ===================== SECTION 3: OUR JOURNEY / TIMELINE ===================== -->
-        <section class="journey">
+        <section class="journey reveal">
             <div class="ab-wrap">
                 <div class="journey-top">
                     <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> Our Journey</p>
@@ -776,28 +797,28 @@
                 </div>
 
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal delay-1">
                         <div class="timeline-dot"></div>
                         <h2>2007</h2>
                         <h3>Agency Founded</h3>
                         <p>Opened our first office in Anna Nagar with a team of three, focused on residential resale.
                         </p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal delay-2">
                         <div class="timeline-dot"></div>
                         <h2>2013</h2>
                         <h3>Commercial Desk Launched</h3>
                         <p>Added a dedicated commercial leasing and sales division to serve growing local businesses.
                         </p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal delay-3">
                         <div class="timeline-dot"></div>
                         <h2>2019</h2>
                         <h3>500th Property Sold</h3>
                         <p>Crossed 500 successful closings and expanded coverage to five neighbourhoods across the city.
                         </p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal delay-4">
                         <div class="timeline-dot"></div>
                         <h2>2026</h2>
                         <h3>32-Agent Team</h3>
@@ -810,11 +831,11 @@
         <!-- ===================== SECTION 4: CORE VALUES ===================== -->
         <section class="values">
             <div class="ab-wrap values-grid">
-                <div class="values-img">
+                <div class="values-img reveal-left">
                     <img src="./src/image_46.webp" alt="Agent and client shaking hands">
                 </div>
 
-                <div class="values-content">
+                <div class="values-content reveal-right">
                     <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> Core Values</p>
                     <h1>The Principles Behind Every Deal We Close</h1>
                     <p>Values are easy to write down and hard to practice consistently. Here's what we hold every agent
@@ -860,13 +881,14 @@
         <section class="leadership">
             <div class="ab-wrap">
                 <div class="leadership-top">
-                    <h1>The Leadership Behind the Agency</h1>
-                    <p>A team with decades of combined experience across residential, commercial, and rental markets.
+                    <h1 class="reveal-left">The Leadership Behind the Agency</h1>
+                    <p class="reveal-right">A team with decades of combined experience across residential, commercial,
+                        and rental markets.
                     </p>
                 </div>
 
                 <div class="leadership-grid">
-                    <div class="leader-card">
+                    <div class="leader-card reveal delay-1">
                         <div class="leader-img">
                             <img src="./src/team-1.webp" alt="Founder portrait">
                         </div>
@@ -878,7 +900,7 @@
                         </div>
                     </div>
 
-                    <div class="leader-card">
+                    <div class="leader-card reveal delay-2">
                         <div class="leader-img">
                             <img src="./src/team-2.webp" alt="Director portrait">
                         </div>
@@ -889,7 +911,7 @@
                         </div>
                     </div>
 
-                    <div class="leader-card">
+                    <div class="leader-card reveal delay-3">
                         <div class="leader-img">
                             <img src="./src/team-3.webp" alt="Operations head portrait">
                         </div>
@@ -904,14 +926,14 @@
         </section>
 
         <!-- ===================== SECTION 6: CTA / STATS BANNER ===================== -->
-        <section class="ab-cta">
+        <section class="ab-cta reveal">
             <div class="ab-cta-inner">
                 <div class="ab-cta-box">
                     <div class="ab-cta-top">
-                        <h1>Eighteen Years In, We're Still Just Getting Started</h1>
+                        <h1 class="reveal-left">Eighteen Years In, We're Still Just Getting Started</h1>
                         <div class="ab-cta-actions">
-                            <a href="404.html">Talk to Our Team</a>
-                            <a href="404.html">See Our Listings</a>
+                            <a href="404.html" class="reveal-right delay-1">Talk to Our Team</a>
+                            <a href="404.html" class="reveal-right delay-2">See Our Listings</a>
                         </div>
                     </div>
 
@@ -939,17 +961,20 @@
 
     </div>
 
+
     <footer class="footer">
 
         <div class="footerhead">
-            <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
+            <a href="index.html" class="reveal-left"><img src="./src/logo.webp" alt="Company Logo"
+                    class="footerlogo"></a>
 
 
-            <div>
+            <div class="reveal-right">
                 <div class="footerform">
                     <input type="email" placeholder="Enter Your Email" id="subemail">
                     <button class="subscribe-btn">Subscribe</button>
                 </div>
+
                 <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
             </div>
 
@@ -957,7 +982,7 @@
 
         <div class="footer1">
 
-            <div class="fsec1">
+            <div class="fsec1 reveal-left delay-1">
 
                 <h2>About Company</h2>
 
@@ -969,7 +994,7 @@
 
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-left delay-2">
                 <h2>Quick Links</h2>
 
                 <div class="footerlinks">
@@ -984,7 +1009,7 @@
                 </div>
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-left delay-3">
                 <h2>Services</h2>
 
                 <div class="footerlinks">
@@ -1000,7 +1025,7 @@
                 </div>
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-right delay-2">
 
                 <h2>Office Address</h2>
 
@@ -1018,7 +1043,7 @@
 
             </div>
 
-            <div class="fersec2">
+            <div class="fersec2 reveal-right delay-1">
 
                 <h2>Phone Number</h2>
 
@@ -1040,11 +1065,10 @@
 
         </div>
 
-        <div class="footer2">
+        <div class="footer2 reveal">
             <p>@ 2026 All Rights Reserved by Stackly</p>
         </div>
     </footer>
-
     <script src="./js/script.js"></script>
     <script src="./js/about.js"></script>
 </body>
