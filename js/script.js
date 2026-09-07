@@ -28,7 +28,7 @@ errorpage.forEach((err) => {
 
 let subemail = document.querySelector("#subemail")
 let subbtn = document.querySelector(".subscribe-btn")
-    let frmerr = document.querySelector(".frmerr")
+let frmerr = document.querySelector(".frmerr")
 
 
 
@@ -100,4 +100,18 @@ document.querySelectorAll(".reveal, .reveal-right, .reveal-left").forEach((el) =
     observer1.observe(el)
 })
 
+
+//scroll range 
+
+
+let scrollrange = document.querySelector(".scrollranges")
+
+window.addEventListener("scroll", () => {
+
+    let scroll = window.scrollY
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrollpercentage = (scroll / height) * 100;
+    scrollrange.style.width = scrollpercentage + "%"
+
+})
 

@@ -241,6 +241,7 @@
         .search-box .material-symbols-outlined {
             color: var(--sub);
             font-size: 19px;
+            cursor: pointer;
         }
 
         .quick-links {
@@ -324,27 +325,38 @@
             search for what you need below.</p>
 
         <div class="search-box">
-            <span class="material-symbols-outlined">search</span>
+            <span class="material-symbols-outlined searchicon">search</span>
             <input type="text" placeholder="Search properties, localities...">
         </div>
 
         <div class="actions">
-            <a href="admin.html" class="btn solid"><span class="material-symbols-outlined">dashboard</span> Back to
-                Dashboard</a>
-            <a href="index.html" class="btn ghost"><span class="material-symbols-outlined">home</span> Go to
-                Homepage</a>
+            <a href="index.html" class="btn solid"><span class="material-symbols-outlined">home</span> Home Page
+                </a>
+            <div class="btn ghost goback"><span class="material-symbols-outlined">arrow_left</span> Go Back</div>
         </div>
 
         <div class="quick-links">
-            <a href="admin.html">Saved Properties</a>
-            <a href="admin.html">My Enquiries</a>
-            <a href="admin.html">Contact My Agent</a>
+            <a href="404.html">Saved Properties</a>
+            <a href="404.html">My Enquiries</a>
+            <a href="404.html">Contact My Agent</a>
         </div>
     </main>
 
     <footer>
         &copy; 2026 Stackly Realty. Need help? Reach us at <span style="color:var(--ink);font-weight:700;">support@stacklyrealty.com</span>
     </footer>
+
+    <script>
+        let goback=document.querySelector(".goback")
+        goback.addEventListener("click",()=>{
+               window.history.back();
+        })
+
+        let searchicon=document.querySelector(".searchicon")
+        searchicon.addEventListener("click",()=>{
+            window.location.href="404.html"
+        })
+    </script>
 
 </body>
 

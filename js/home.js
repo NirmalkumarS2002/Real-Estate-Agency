@@ -66,3 +66,5 @@ let observer = new IntersectionObserver((entries, observer) => {
 stats.forEach((el) => {
     observer.observe(el)
 })
+
+
