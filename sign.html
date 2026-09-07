@@ -44,8 +44,8 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
-                url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1800&auto=format&fit=crop") center/cover no-repeat fixed;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.829)),
+                url("./src/banner4.webp") center/cover no-repeat fixed;
         }
 
         .ls-top {
@@ -62,14 +62,8 @@
             text-decoration: none;
         }
 
-        .ls-logo span.material-symbols-outlined {
-            font-size: 28px;
-            color: var(--pcolor);
-        }
-
-        .ls-logo h2 {
-            color: white;
-            font-size: 21px;
+        .ls-logo img{
+            width: 160px;
         }
 
         .ls-back {
@@ -415,6 +409,12 @@
             .ls-card h1 {
                 font-size: 26px;
             }
+
+            
+        .ls-top {
+            flex-direction: column;
+            gap: 50px;
+        }
         }
 
         .popup {
@@ -505,8 +505,7 @@
 
         <div class="ls-top">
             <a href="index.html" class="ls-logo">
-                <span class="material-symbols-outlined">home_work</span>
-                <h2>RealEstate</h2>
+               <img src="./src/logo.webp" alt="">
             </a>
             <a href="index.html" class="ls-back"><span class="material-symbols-outlined">arrow_back</span>Back to
                 Home</a>
