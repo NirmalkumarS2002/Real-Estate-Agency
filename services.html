@@ -147,6 +147,9 @@
 
     .sv-service-body {
         padding: 40px 24px 28px;
+
+        display: flex;
+        flex-direction: column;
     }
 
     .sv-service-body h3 {
@@ -159,7 +162,9 @@
         font-size: 14px;
         color: #666;
         line-height: 1.6;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
+        flex: 1;
+        min-height:90px;
     }
 
     .sv-service-link {
@@ -282,6 +287,14 @@
         .sv-deliver-grid {
             grid-template-columns: 1fr;
         }
+
+          .sv-deliver-content h1{
+            max-width: 100%;
+          }
+
+           .sv-deliver-content  p{
+            max-width: 100%;
+           }
 
         .sv-deliver-img {
             height: 360px;
@@ -535,7 +548,7 @@
 
     /* ===================== 6. CTA BANNER ===================== */
     .sv-cta {
-        padding-block: 30px 60px;
+        padding-block: 0px 60px;
         background: white;
     }
 
@@ -649,6 +662,21 @@
 
     
 <div class="sv-sections">
+
+
+        <div class="ab-sections">
+
+            <section class="ab-banner">
+        <div class="ab-banner-content">
+            <span class="reveal delay-1"> Our Real Estate Services</span>
+            <h1 class="reveal delay-2">Services</h1>
+            <div class="ab-crumb reveal delay-3">
+                <a href="index.html">Home</a>
+                <span class="material-symbols-outlined">chevron_right</span>
+                <span>Services</span>
+            </div>
+        </div>
+    </section>
 
 
     <!-- ===================== SECTION 2: CORE SERVICES GRID ===================== -->
