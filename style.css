@@ -267,6 +267,77 @@ body {
 }
 
 
+/* common footer */
+
+
+
+/* common sections */
+
+
+ .ab-banner {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
+                url("./src/banner4.webp");
+            background-size: cover;
+            background-position: center;
+            padding-top: 120px !important;
+            padding-bottom: 120px !important;
+        }
+
+        .ab-banner-content>span {
+            color: var(--pcolor);
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .ab-banner-content h1 {
+            font-family: "Tenor Sans", sans-serif;
+            font-size: clamp(35px, 8vw, 80px);
+            text-transform: uppercase;
+            color: white;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .ab-crumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+        }
+
+        .ab-crumb a {
+            color: white;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        .ab-crumb a:hover {
+            color: var(--pcolor);
+        }
+
+        .ab-crumb span.material-symbols-outlined {
+            font-size: 18px;
+            color: var(--pcolor);
+        }
+
+        
+    @media (max-width:750px) {
+         .ab-banner{
+            padding-top: 120px;
+         }
+    }
+
+
 
 
 /* footer */
@@ -276,14 +347,14 @@ body {
     align-items: center;
     gap: 20px;
     background: linear-gradient(125deg, #000000b0, #000000b4), url("./src/banner4.webp") center/cover no-repeat;
-    padding-inline: 20px;
+    padding-inline: 20px !important;
 }
 
 .footerhead,
 .footer1 {
     width: 100%;
     max-width: 1400px;
-    padding-block: 40px;
+    padding-block: 40px !important;
 }
 
 .footerhead {
@@ -439,7 +510,7 @@ body {
 
 .footer2 {
     width: 100%;
-    padding-block: 30px;
+    padding-block: 30px !important;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.322);
 }
@@ -478,69 +549,3 @@ body {
     }
 }
 
-
-/* common sections */
-
-
- .ab-banner {
-            min-height: 55vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(125deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
-                url("./src/bg11.webp");
-            background-size: cover;
-            background-position: center;
-            padding-top: 120px !important;
-            padding-bottom: 120px !important;
-        }
-
-        .ab-banner-content>span {
-            color: var(--pcolor);
-            font-size: 15px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .ab-banner-content h1 {
-            font-family: "Tenor Sans", sans-serif;
-            font-size: clamp(35px, 8vw, 80px);
-            text-transform: uppercase;
-            color: white;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .ab-crumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 16px;
-        }
-
-        .ab-crumb a {
-            color: white;
-            text-decoration: none;
-            transition: .3s ease;
-        }
-
-        .ab-crumb a:hover {
-            color: var(--pcolor);
-        }
-
-        .ab-crumb span.material-symbols-outlined {
-            font-size: 18px;
-            color: var(--pcolor);
-        }
-
-        
-    @media (max-width:750px) {
-         .ab-banner{
-            padding-top: 120px;
-         }
-    }

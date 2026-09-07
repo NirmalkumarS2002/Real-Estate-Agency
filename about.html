@@ -16,16 +16,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-        <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-
-         * {
+        * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
@@ -40,610 +39,617 @@
             overflow-x: hidden;
         }
 
-  
 
-    :root {
-        --pcolor: rgb(63, 214, 63);
-        --dark: #0d0f0d;
-    }
 
-    .ab-sections * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
- /*       font-family: "Hanken Grotesk", sans-serif;*/
-    }
-
-    .ab-sections a {
-        text-decoration: none;
-    }
-
-    .ab-sections ul {
-        list-style: none;
-    }
-
-    .ab-wrap {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-inline: clamp(20px, 5vw, 60px);
-    }
-
-    .ab-eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 15px;
-        margin-bottom: 16px;
-        color: var(--pcolor);
-        font-weight: 600;
-    }
-
-    .ab-eyebrow span {
-        font-size: 10px;
-    }
-
-    /* ===================== 1. ABOUT HERO / STORY ===================== */
-    .ab-hero {
-        background: white;
-        padding-block: 110px 100px;
-    }
-
-    .ab-hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-    }
-
-    .ab-hero-content h1 {
-        font-size: 46px;
-        color: var(--dark);
-        line-height: 1.2;
-        margin-bottom: 22px;
-        max-width: 520px;
-    }
-
-    .ab-hero-content p {
-        color: #555;
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 18px;
-        max-width: 540px;
-    }
-
-    .ab-hero-images {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 16px;
-    }
-
-    .ab-hero-images img {
-        width: 100%;
-        border-radius: 18px;
-        object-fit: cover;
-    }
-
-    .ab-img-tall {
-        height: 460px;
-    }
-
-    .ab-img-col {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .ab-img-short {
-        height: 220px;
-    }
-
-    .ab-badge-card {
-        background: var(--dark);
-        border-radius: 18px;
-        padding: 24px;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 6px;
-    }
-
-    .ab-badge-card h2 {
-        font-size: 34px;
-        color: var(--pcolor);
-        line-height: 1;
-    }
-
-    .ab-badge-card p {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    @media (max-width:950px) {
-        .ab-hero-grid {
-            grid-template-columns: 1fr;
+        :root {
+            --pcolor: rgb(63, 214, 63);
+            --dark: #0d0f0d;
         }
 
-        .ab-hero-content p{
-            max-width: 100%;
+        .ab-sections * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*       font-family: "Hanken Grotesk", sans-serif;*/
+        }
+
+        .ab-sections a {
+            text-decoration: none;
+        }
+
+        .ab-sections ul {
+            list-style: none;
+        }
+
+        .ab-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-inline: clamp(20px, 5vw, 60px);
+        }
+
+        .ab-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            margin-bottom: 16px;
+            color: var(--pcolor);
+            font-weight: 600;
+        }
+
+        .ab-eyebrow span {
+            font-size: 10px;
+        }
+
+        /* ===================== 1. ABOUT HERO / STORY ===================== */
+        .ab-hero {
+            background: white;
+            padding-block: 110px 100px;
+        }
+
+        .ab-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
         }
 
         .ab-hero-content h1 {
-            font-size: 34px;
+            font-size: 46px;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 22px;
+            max-width: 520px;
         }
-    }
 
-    @media (max-width:560px) {
+        .ab-hero-content p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            max-width: 540px;
+        }
+
         .ab-hero-images {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 16px;
+        }
+
+        .ab-hero-images img {
+            width: 100%;
+            border-radius: 18px;
+            object-fit: cover;
         }
 
         .ab-img-tall {
-            height: 300px;
+            height: 460px;
         }
-    }
 
-    /* ===================== 2. MISSION & VISION ===================== */
-    .mission {
-        background: var(--dark);
-        padding-block: 100px;
-    }
+        .ab-img-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
 
-    .mission-top {
-        max-width: 640px;
-        margin-bottom: 55px;
-    }
+        .ab-img-short {
+            height: 220px;
+        }
 
-    .mission-top h1 {
-        font-size: 42px;
-        color: white;
-        line-height: 1.2;
-        margin-bottom: 18px;
-    }
+        .ab-badge-card {
+            background: var(--dark);
+            border-radius: 18px;
+            padding: 24px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+        }
 
-    .mission-top p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 16px;
-        line-height: 1.7;
-    }
+        .ab-badge-card h2 {
+            font-size: 34px;
+            color: var(--pcolor);
+            line-height: 1;
+        }
 
-    .mission-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-    }
+        .ab-badge-card p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
 
-    .mission-card {
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 18px;
-        padding: 34px 28px;
-        transition: .4s ease;
-    }
+        @media (max-width:950px) {
+            .ab-hero-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .mission-card:hover {
-        border-color: var(--pcolor);
-        transform: translateY(-6px);
-    }
+            .ab-hero-content p {
+                max-width: 100%;
+            }
 
-    .mission-card span.material-symbols-outlined {
-        font-size: 36px;
-        color: var(--pcolor);
-        margin-bottom: 24px;
-        display: block;
-    }
+            .ab-hero-content h1 {
+                font-size: 34px;
+            }
+        }
 
-    .mission-card h3 {
-        font-size: 21px;
-        color: white;
-        margin-bottom: 12px;
-    }
+        @media (max-width:560px) {
+            .ab-hero-images {
+                grid-template-columns: 1fr;
+            }
 
-    .mission-card p {
-        font-size: 14.5px;
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.6;
-    }
+            .ab-img-tall {
+                height: 300px;
+            }
+        }
 
-    @media (max-width:950px) {
-        .mission-grid {
-            grid-template-columns: 1fr;
+        /* ===================== 2. MISSION & VISION ===================== */
+        .mission {
+            background: var(--dark);
+            padding-block: 100px;
+        }
+
+        .mission-top {
+            max-width: 640px;
+            margin-bottom: 55px;
         }
 
         .mission-top h1 {
-            font-size: 32px;
-        }
-    }
-
-    /* ===================== 3. OUR JOURNEY / TIMELINE ===================== */
-    .journey {
-        background: #f5f6f4;
-        padding-block: 100px;
-    }
-
-    .journey-top {
-        text-align: center;
-        max-width: 620px;
-        margin: 0 auto 60px;
-    }
-
-    .journey-top .ab-eyebrow {
-        justify-content: center;
-    }
-
-    .journey-top h1 {
-        font-size: 42px;
-        color: var(--dark);
-        line-height: 1.2;
-        margin-bottom: 16px;
-    }
-
-    .journey-top p {
-        color: #555;
-        font-size: 15.5px;
-        line-height: 1.6;
-    }
-
-    .timeline {
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-    }
-
-    .timeline::before {
-        content: "";
-        position: absolute;
-        top: 26px;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: rgba(0, 0, 0, 0.15);
-    }
-
-    .timeline-item {
-        position: relative;
-        padding-top: 56px;
-    }
-
-    .timeline-dot {
-        position: absolute;
-        top: 12px;
-        left: 0;
-        height: 28px;
-        width: 28px;
-        border-radius: 50%;
-        background: var(--pcolor);
-        border: 5px solid #f5f6f4;
-        z-index: 1;
-    }
-
-    .timeline-item h2 {
-        font-size: 26px;
-        color: var(--dark);
-        margin-bottom: 10px;
-    }
-
-    .timeline-item h3 {
-        font-size: 17px;
-        color: var(--dark);
-        margin-bottom: 8px;
-    }
-
-    .timeline-item p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.55;
-        max-width: 260px;
-    }
-
-    @media (max-width:950px) {
-        .timeline {
-            grid-template-columns: 1fr 1fr;
-            row-gap: 50px;
+            font-size: 42px;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 18px;
         }
 
-        .timeline::before {
-            display: none;
+        .mission-top p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            line-height: 1.7;
         }
-    }
 
-    @media (max-width:560px) {
-        .timeline {
-            grid-template-columns: 1fr;
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .mission-card {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            padding: 34px 28px;
+            transition: .4s ease;
+        }
+
+        .mission-card:hover {
+            border-color: var(--pcolor);
+            transform: translateY(-6px);
+        }
+
+        .mission-card span.material-symbols-outlined {
+            font-size: 36px;
+            color: var(--pcolor);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .mission-card h3 {
+            font-size: 21px;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .mission-card p {
+            font-size: 14.5px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        @media (max-width:950px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-top h1 {
+                font-size: 32px;
+            }
+        }
+
+        /* ===================== 3. OUR JOURNEY / TIMELINE ===================== */
+        .journey {
+            background: #f5f6f4;
+            padding-block: 100px;
+        }
+
+        .journey-top {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 60px;
+        }
+
+        .journey-top .ab-eyebrow {
+            justify-content: center;
         }
 
         .journey-top h1 {
-            font-size: 30px;
+            font-size: 42px;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
         }
-    }
 
-    /* ===================== 4. CORE VALUES ===================== */
-    .values {
-        background: white;
-        padding-block: 100px;
-    }
+        .journey-top p {
+            color: #555;
+            font-size: 15.5px;
+            line-height: 1.6;
+        }
 
-    .values-grid {
-        display: grid;
-        grid-template-columns: 0.85fr 1.15fr;
-        gap: 60px;
-        align-items: center;
-    }
+        .timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
 
-    .values-img {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        height: 540px;
-    }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 26px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.15);
+        }
 
-    .values-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+        .timeline-item {
+            position: relative;
+            padding-top: 56px;
+        }
 
-    .values-content h1 {
-        font-size: 40px;
-        color: var(--dark);
-        line-height: 1.2;
-        margin-bottom: 18px;
-        max-width: 520px;
-    }
+        .timeline-dot {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            height: 28px;
+            width: 28px;
+            border-radius: 50%;
+            background: var(--pcolor);
+            border: 5px solid #f5f6f4;
+            z-index: 1;
+        }
 
-    .values-content>p {
-        color: #555;
-        font-size: 15.5px;
-        line-height: 1.65;
-        max-width: 520px;
-        margin-bottom: 34px;
-    }
+        .timeline-item h2 {
+            font-size: 26px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
 
-    .values-list {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
+        .timeline-item h3 {
+            font-size: 17px;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
 
-    .values-list li {
-        display: flex;
-        gap: 18px;
-        align-items: flex-start;
-        border-top: 1px solid #eee;
-        padding-top: 22px;
-    }
+        .timeline-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.55;
+            max-width: 260px;
+        }
 
-    .values-list li:first-child {
-        border-top: none;
-        padding-top: 0;
-    }
+        @media (max-width:950px) {
+            .timeline {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 50px;
+            }
 
-    .values-num {
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--pcolor);
-        min-width: 34px;
-    }
+            .timeline::before {
+                display: none;
+            }
+        }
 
-    .values-list h3 {
-        font-size: 18px;
-        color: var(--dark);
-        margin-bottom: 6px;
-    }
+        @media (max-width:560px) {
+            .timeline {
+                grid-template-columns: 1fr;
+            }
 
-    .values-list p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.55;
-        max-width: 460px;
-    }
+            .journey-top h1 {
+                font-size: 30px;
+            }
+        }
 
-    @media (max-width:950px) {
+        /* ===================== 4. CORE VALUES ===================== */
+        .values {
+            background: white;
+            padding-block: 100px;
+        }
+
         .values-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .values-img {
-            height: 380px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 540px;
         }
-    }
 
-    @media (max-width:500px) {
+        .values-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .values-content h1 {
-            font-size: 28px;
+            font-size: 40px;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 18px;
+            max-width: 520px;
         }
-    }
 
-    /* ===================== 5. LEADERSHIP TEAM ===================== */
-    .leadership {
-        background: #f5f6f4;
-        padding-block: 100px;
-    }
-
-    .leadership-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 20px;
-        margin-bottom: 55px;
-    }
-
-    .leadership-top h1 {
-        font-size: 42px;
-        color: var(--dark);
-        max-width: 540px;
-        line-height: 1.2;
-    }
-
-    .leadership-top p {
-        color: #555;
-        font-size: 15px;
-        max-width: 320px;
-        line-height: 1.6;
-    }
-
-    .leadership-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-    }
-
-    .leader-card {
-        background: white;
-        border-radius: 18px;
-        overflow: hidden;
-    }
-
-    .leader-img {
-        height: 420px;
-    }
-
-    .leader-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .leader-body {
-        padding: 24px 26px 28px;
-    }
-
-    .leader-body h3 {
-        font-size: 20px;
-        color: var(--dark);
-        margin-bottom: 4px;
-    }
-
-    .leader-body span {
-        font-size: 14px;
-        color: var(--pcolor);
-        font-weight: 600;
-        display: block;
-        margin-bottom: 14px;
-    }
-
-    .leader-body p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.55;
-    }
-
-    @media (max-width:1000px) {
-        .leadership-grid {
-            grid-template-columns: 1fr 1fr;
+        .values-content>p {
+            color: #555;
+            font-size: 15.5px;
+            line-height: 1.65;
+            max-width: 520px;
+            margin-bottom: 34px;
         }
-    }
 
-    @media (max-width:650px) {
-        .leadership-grid {
-            grid-template-columns: 1fr;
+        .values-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .values-list li {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            border-top: 1px solid #eee;
+            padding-top: 22px;
+        }
+
+        .values-list li:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .values-num {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--pcolor);
+            min-width: 34px;
+        }
+
+        .values-list h3 {
+            font-size: 18px;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .values-list p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.55;
+            max-width: 460px;
+        }
+
+        @media (max-width:950px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-img {
+                height: 380px;
+            }
+        }
+
+        @media (max-width:500px) {
+            .values-content h1 {
+                font-size: 28px;
+            }
+        }
+
+        /* ===================== 5. LEADERSHIP TEAM ===================== */
+        .leadership {
+            background: #f5f6f4;
+            padding-block: 100px;
         }
 
         .leadership-top {
-            flex-direction: column;
-            align-items: flex-start;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 55px;
         }
 
         .leadership-top h1 {
-            font-size: 30px;
+            font-size: 42px;
+            color: var(--dark);
+            max-width: 540px;
+            line-height: 1.2;
         }
-    }
 
-    /* ===================== 6. CTA / STATS BANNER ===================== */
-    .ab-cta {
-        padding-block: 60px 60px;
-    }
+        .leadership-top p {
+            color: #555;
+            font-size: 15px;
+            max-width: 320px;
+            line-height: 1.6;
+        }
 
-    .ab-cta-inner {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-inline: clamp(20px, 5vw, 60px);
-    }
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
 
-    .ab-cta-box {
-        position: relative;
-        border-radius: 24px;
-        overflow: hidden;
-        padding: 70px clamp(24px, 6vw, 70px);
-        background: linear-gradient(120deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./src/pic2.webp") center/cover no-repeat;
-    }
+        .leader-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
 
-    .ab-cta-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 30px;
-        margin-bottom: 50px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding-bottom: 40px;
-    }
+            transition: all 0.5s ease;
+        }
 
-    .ab-cta-top h1 {
-        font-size: 38px;
-        color: white;
-        max-width: 500px;
-        line-height: 1.25;
-    }
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
 
-    .ab-cta-actions {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-    }
+        .leader-img {
+            height: 420px;
+        }
 
-    .ab-cta-actions a {
-        padding: 14px 30px;
-        border-radius: 30px;
-        font-size: 15px;
-        white-space: nowrap;
-        color: white;
-    }
+        .leader-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .ab-cta-actions a:first-child {
-        background: var(--pcolor);
-        color: black;
-        font-weight: 600;
-    }
+        .leader-body {
+            padding: 24px 26px 28px;
+        }
 
-    .ab-cta-actions a:last-child {
-        border: 1px solid white;
-    }
+        .leader-body h3 {
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
 
-    .ab-cta-stats {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-    }
+        .leader-body span {
+            font-size: 14px;
+            color: var(--pcolor);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 14px;
+        }
 
-    .ab-cta-stats div h2 {
-        font-size: 42px;
-        color: var(--pcolor);
-        margin-bottom: 6px;
-    }
+        .leader-body p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.55;
+        }
 
-    .ab-cta-stats div p {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.7);
-    }
+        @media (max-width:1000px) {
+            .leadership-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
 
-    @media (max-width:900px) {
+        @media (max-width:650px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .leadership-top h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* ===================== 6. CTA / STATS BANNER ===================== */
+        .ab-cta {
+            padding-block: 60px 60px;
+        }
+
+        .ab-cta-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-inline: clamp(20px, 5vw, 60px);
+        }
+
+        .ab-cta-box {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            padding: 70px clamp(24px, 6vw, 70px);
+            background: linear-gradient(120deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./src/pic2.webp") center/cover no-repeat;
+        }
+
         .ab-cta-top {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
-
-    @media (max-width:650px) {
-        .ab-cta-stats {
-            grid-template-columns: 1fr 1fr;
-            row-gap: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 40px;
         }
 
         .ab-cta-top h1 {
-            font-size: 28px;
+            font-size: 38px;
+            color: white;
+            max-width: 500px;
+            line-height: 1.25;
         }
-    }
-</style>
+
+        .ab-cta-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .ab-cta-actions a {
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 15px;
+            white-space: nowrap;
+            color: white;
+        }
+
+        .ab-cta-actions a:first-child {
+            background: var(--pcolor);
+            color: black;
+            font-weight: 600;
+        }
+
+        .ab-cta-actions a:last-child {
+            border: 1px solid white;
+        }
+
+        .ab-cta-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .ab-cta-stats div h2 {
+            font-size: 42px;
+            color: var(--pcolor);
+            margin-bottom: 6px;
+        }
+
+        .ab-cta-stats div p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width:900px) {
+            .ab-cta-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width:650px) {
+            .ab-cta-stats {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 30px;
+            }
+
+            .ab-cta-top h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
 
 
 
@@ -662,7 +668,7 @@
 
             <div class="menuwrap">
                 <ul class="menus">
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li class="active"><a href="about.html" class="active">About</a></li>
                     <li><a href="pages.html">Pages</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -685,274 +691,268 @@
 
     <div class="ab-sections">
 
-            <section class="ab-banner">
-        <div class="ab-banner-content">
-            <span class="reveal delay-1">Know Our Agency</span>
-            <h1 class="reveal delay-2">About Us</h1>
-            <div class="ab-crumb reveal delay-3">
-                <a href="index.html">Home</a>
-                <span class="material-symbols-outlined">chevron_right</span>
-                <span>About Us</span>
+        <section class="ab-banner">
+            <div class="ab-banner-content">
+                <span class="reveal delay-1">Know Our Agency</span>
+                <h1 class="reveal delay-2">About Us</h1>
+                <div class="ab-crumb reveal delay-3">
+                    <a href="index.html">Home</a>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                    <span>About Us</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===================== SECTION 1: ABOUT HERO / OUR STORY ===================== -->
-    <section class="ab-hero">
-        <div class="ab-wrap ab-hero-grid">
-            <div class="ab-hero-content">
-                <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> About Our Agency</p>
-                <h1>Helping Families and Businesses Find the Right Address Since 2007</h1>
-                <p>What started as a two-person office in Anna Nagar has grown into one of the city's most trusted
-                    real estate agencies. Over the last eighteen years, we've helped hundreds of families move into
-                    homes that actually fit their lives, and helped business owners find spaces that support how
-                    they work.</p>
-                <p>We believe property decisions shouldn't feel rushed or confusing. Every client works with a
-                    dedicated agent who takes the time to understand their budget, priorities, and timeline before a
-                    single listing is shared, so the properties you see are ones worth seeing.</p>
-                
-            </div>
+        <!-- ===================== SECTION 1: ABOUT HERO / OUR STORY ===================== -->
+        <section class="ab-hero">
+            <div class="ab-wrap ab-hero-grid">
+                <div class="ab-hero-content">
+                    <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> About Our Agency</p>
+                    <h1>Helping Families and Businesses Find the Right Address Since 2007</h1>
+                    <p>What started as a two-person office in Anna Nagar has grown into one of the city's most trusted
+                        real estate agencies. Over the last eighteen years, we've helped hundreds of families move into
+                        homes that actually fit their lives, and helped business owners find spaces that support how
+                        they work.</p>
+                    <p>We believe property decisions shouldn't feel rushed or confusing. Every client works with a
+                        dedicated agent who takes the time to understand their budget, priorities, and timeline before a
+                        single listing is shared, so the properties you see are ones worth seeing.</p>
 
-            <div class="ab-hero-images">
-                <img class="ab-img-tall"
-                    src="./src/image_50.webp"
-                    alt="Real estate office team at work">
-                <div class="ab-img-col">
-                    <img class="ab-img-short"
-                        src="./src/image_51.webp"
-                        alt="Agent showing a property to clients">
-                    <div class="ab-badge-card">
-                        <h2>18+</h2>
-                        <p>Years building trust in the local property market</p>
+                </div>
+
+                <div class="ab-hero-images">
+                    <img class="ab-img-tall" src="./src/image_50.webp" alt="Real estate office team at work">
+                    <div class="ab-img-col">
+                        <img class="ab-img-short" src="./src/image_51.webp" alt="Agent showing a property to clients">
+                        <div class="ab-badge-card">
+                            <h2>18+</h2>
+                            <p>Years building trust in the local property market</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===================== SECTION 2: MISSION, VISION & APPROACH ===================== -->
-    <section class="mission">
-        <div class="ab-wrap">
-            <div class="mission-top">
-                <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> What Drives Us</p>
-                <h1>Our Mission, Vision, and the Way We Work</h1>
-                <p>These three ideas shape every listing we take on, every negotiation we run, and every
-                    conversation we have with a client, whether it's their first home or their fifth investment
-                    property.</p>
+        <!-- ===================== SECTION 2: MISSION, VISION & APPROACH ===================== -->
+        <section class="mission">
+            <div class="ab-wrap">
+                <div class="mission-top">
+                    <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> What Drives Us</p>
+                    <h1>Our Mission, Vision, and the Way We Work</h1>
+                    <p>These three ideas shape every listing we take on, every negotiation we run, and every
+                        conversation we have with a client, whether it's their first home or their fifth investment
+                        property.</p>
+                </div>
+
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <span class="material-symbols-outlined">flag</span>
+                        <h3>Our Mission</h3>
+                        <p>To make property buying, selling, and renting straightforward by pairing honest advice with
+                            real local expertise, so clients make decisions with full confidence.</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="material-symbols-outlined">visibility</span>
+                        <h3>Our Vision</h3>
+                        <p>To be the agency people recommend to their own family, known for listings that are accurately
+                            represented and deals that close without last-minute surprises.</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="material-symbols-outlined">diversity_3</span>
+                        <h3>Our Approach</h3>
+                        <p>We match every client with an agent who specialises in that property type and area, backed by
+                            a research team that verifies pricing and paperwork before you ever see a listing.</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <span class="material-symbols-outlined">flag</span>
-                    <h3>Our Mission</h3>
-                    <p>To make property buying, selling, and renting straightforward by pairing honest advice with
-                        real local expertise, so clients make decisions with full confidence.</p>
+        <!-- ===================== SECTION 3: OUR JOURNEY / TIMELINE ===================== -->
+        <section class="journey">
+            <div class="ab-wrap">
+                <div class="journey-top">
+                    <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> Our Journey</p>
+                    <h1>Milestones Along the Way</h1>
+                    <p>From a small storefront to a full-service agency, here's how we've grown over the years.</p>
                 </div>
-                <div class="mission-card">
-                    <span class="material-symbols-outlined">visibility</span>
-                    <h3>Our Vision</h3>
-                    <p>To be the agency people recommend to their own family, known for listings that are accurately
-                        represented and deals that close without last-minute surprises.</p>
-                </div>
-                <div class="mission-card">
-                    <span class="material-symbols-outlined">diversity_3</span>
-                    <h3>Our Approach</h3>
-                    <p>We match every client with an agent who specialises in that property type and area, backed by
-                        a research team that verifies pricing and paperwork before you ever see a listing.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h2>2007</h2>
+                        <h3>Agency Founded</h3>
+                        <p>Opened our first office in Anna Nagar with a team of three, focused on residential resale.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h2>2013</h2>
+                        <h3>Commercial Desk Launched</h3>
+                        <p>Added a dedicated commercial leasing and sales division to serve growing local businesses.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h2>2019</h2>
+                        <h3>500th Property Sold</h3>
+                        <p>Crossed 500 successful closings and expanded coverage to five neighbourhoods across the city.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h2>2026</h2>
+                        <h3>32-Agent Team</h3>
+                        <p>Now operating with a 32-person team and close to 900 active listings city-wide.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===================== SECTION 3: OUR JOURNEY / TIMELINE ===================== -->
-    <section class="journey">
-        <div class="ab-wrap">
-            <div class="journey-top">
-                <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> Our Journey</p>
-                <h1>Milestones Along the Way</h1>
-                <p>From a small storefront to a full-service agency, here's how we've grown over the years.</p>
+        <!-- ===================== SECTION 4: CORE VALUES ===================== -->
+        <section class="values">
+            <div class="ab-wrap values-grid">
+                <div class="values-img">
+                    <img src="./src/image_46.webp" alt="Agent and client shaking hands">
+                </div>
+
+                <div class="values-content">
+                    <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> Core Values</p>
+                    <h1>The Principles Behind Every Deal We Close</h1>
+                    <p>Values are easy to write down and hard to practice consistently. Here's what we hold every agent
+                        on our team accountable to, on every single transaction.</p>
+
+                    <ul class="values-list">
+                        <li>
+                            <span class="values-num">01</span>
+                            <div>
+                                <h3>Honesty Over the Easy Sale</h3>
+                                <p>If a property isn't right for you, we'll say so, even if it costs us a commission.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="values-num">02</span>
+                            <div>
+                                <h3>Clear Communication</h3>
+                                <p>You'll always know where a deal stands, what's pending, and what happens next.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="values-num">03</span>
+                            <div>
+                                <h3>Local Expertise</h3>
+                                <p>Our agents specialise by neighbourhood, so advice is grounded in real, current data.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="values-num">04</span>
+                            <div>
+                                <h3>Long-Term Relationships</h3>
+                                <p>Most of our new clients come from referrals by people we've worked with before.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </section>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h2>2007</h2>
-                    <h3>Agency Founded</h3>
-                    <p>Opened our first office in Anna Nagar with a team of three, focused on residential resale.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h2>2013</h2>
-                    <h3>Commercial Desk Launched</h3>
-                    <p>Added a dedicated commercial leasing and sales division to serve growing local businesses.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h2>2019</h2>
-                    <h3>500th Property Sold</h3>
-                    <p>Crossed 500 successful closings and expanded coverage to five neighbourhoods across the city.
+        <!-- ===================== SECTION 5: LEADERSHIP TEAM ===================== -->
+        <section class="leadership">
+            <div class="ab-wrap">
+                <div class="leadership-top">
+                    <h1>The Leadership Behind the Agency</h1>
+                    <p>A team with decades of combined experience across residential, commercial, and rental markets.
                     </p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h2>2026</h2>
-                    <h3>32-Agent Team</h3>
-                    <p>Now operating with a 32-person team and close to 900 active listings city-wide.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===================== SECTION 4: CORE VALUES ===================== -->
-    <section class="values">
-        <div class="ab-wrap values-grid">
-            <div class="values-img">
-                <img src="./src/image_46.webp"
-                    alt="Agent and client shaking hands">
-            </div>
-
-            <div class="values-content">
-                <p class="ab-eyebrow"><span class="material-symbols-outlined">circle</span> Core Values</p>
-                <h1>The Principles Behind Every Deal We Close</h1>
-                <p>Values are easy to write down and hard to practice consistently. Here's what we hold every agent
-                    on our team accountable to, on every single transaction.</p>
-
-                <ul class="values-list">
-                    <li>
-                        <span class="values-num">01</span>
-                        <div>
-                            <h3>Honesty Over the Easy Sale</h3>
-                            <p>If a property isn't right for you, we'll say so, even if it costs us a commission.
-                            </p>
+                <div class="leadership-grid">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="./src/team-1.webp" alt="Founder portrait">
                         </div>
-                    </li>
-                    <li>
-                        <span class="values-num">02</span>
-                        <div>
-                            <h3>Clear Communication</h3>
-                            <p>You'll always know where a deal stands, what's pending, and what happens next.</p>
+                        <div class="leader-body">
+                            <h3>Ramesh Sundaram</h3>
+                            <span>Founder &amp; Managing Director</span>
+                            <p>Started the agency in 2007 and still personally oversees every major commercial deal we
+                                close.</p>
                         </div>
-                    </li>
-                    <li>
-                        <span class="values-num">03</span>
-                        <div>
-                            <h3>Local Expertise</h3>
-                            <p>Our agents specialise by neighbourhood, so advice is grounded in real, current data.
-                            </p>
+                    </div>
+
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="./src/team-2.webp" alt="Director portrait">
                         </div>
-                    </li>
-                    <li>
-                        <span class="values-num">04</span>
-                        <div>
-                            <h3>Long-Term Relationships</h3>
-                            <p>Most of our new clients come from referrals by people we've worked with before.</p>
+                        <div class="leader-body">
+                            <h3>Lakshmi Venkataraman</h3>
+                            <span>Director of Residential Sales</span>
+                            <p>Leads a team of fourteen agents and has personally closed over 300 home sales.</p>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+                    </div>
 
-    <!-- ===================== SECTION 5: LEADERSHIP TEAM ===================== -->
-    <section class="leadership">
-        <div class="ab-wrap">
-            <div class="leadership-top">
-                <h1>The Leadership Behind the Agency</h1>
-                <p>A team with decades of combined experience across residential, commercial, and rental markets.
-                </p>
-            </div>
-
-            <div class="leadership-grid">
-                <div class="leader-card">
-                    <div class="leader-img">
-                        <img src="./src/team-1.webp"
-                            alt="Founder portrait">
-                    </div>
-                    <div class="leader-body">
-                        <h3>Ramesh Sundaram</h3>
-                        <span>Founder &amp; Managing Director</span>
-                        <p>Started the agency in 2007 and still personally oversees every major commercial deal we
-                            close.</p>
-                    </div>
-                </div>
-
-                <div class="leader-card">
-                    <div class="leader-img">
-                                               <img src="./src/team-2.webp"
-                            alt="Director portrait">
-                    </div>
-                    <div class="leader-body">
-                        <h3>Lakshmi Venkataraman</h3>
-                        <span>Director of Residential Sales</span>
-                        <p>Leads a team of fourteen agents and has personally closed over 300 home sales.</p>
-                    </div>
-                </div>
-
-                <div class="leader-card">
-                    <div class="leader-img">
-                        <img src="./src/team-3.webp"
-                            alt="Operations head portrait">
-                    </div>
-                    <div class="leader-body">
-                        <h3>Suresh Pillai</h3>
-                        <span>Head of Operations</span>
-                        <p>Manages compliance, paperwork, and closings, keeping every transaction on schedule.</p>
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="./src/team-3.webp" alt="Operations head portrait">
+                        </div>
+                        <div class="leader-body">
+                            <h3>Suresh Pillai</h3>
+                            <span>Head of Operations</span>
+                            <p>Manages compliance, paperwork, and closings, keeping every transaction on schedule.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===================== SECTION 6: CTA / STATS BANNER ===================== -->
-    <section class="ab-cta">
-        <div class="ab-cta-inner">
-            <div class="ab-cta-box">
-                <div class="ab-cta-top">
-                    <h1>Eighteen Years In, We're Still Just Getting Started</h1>
-                    <div class="ab-cta-actions">
-                        <a href="contact.html">Talk to Our Team</a>
-                        <a href="pages.html">See Our Listings</a>
+        <!-- ===================== SECTION 6: CTA / STATS BANNER ===================== -->
+        <section class="ab-cta">
+            <div class="ab-cta-inner">
+                <div class="ab-cta-box">
+                    <div class="ab-cta-top">
+                        <h1>Eighteen Years In, We're Still Just Getting Started</h1>
+                        <div class="ab-cta-actions">
+                            <a href="404.html">Talk to Our Team</a>
+                            <a href="404.html">See Our Listings</a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="ab-cta-stats">
-                    <div>
-                        <h2>18+</h2>
-                        <p>Years in business</p>
-                    </div>
-                    <div>
-                        <h2>895+</h2>
-                        <p>Properties listed</p>
-                    </div>
-                    <div>
-                        <h2>640+</h2>
-                        <p>Families settled</p>
-                    </div>
-                    <div>
-                        <h2>32+</h2>
-                        <p>Agents our team</p>
+                    <div class="ab-cta-stats">
+                        <div>
+                            <h2 class="counts" data-target="18">18+</h2>
+                            <p>Years in business</p>
+                        </div>
+                        <div>
+                            <h2 class="counts" data-target="895">895+</h2>
+                            <p>Properties listed</p>
+                        </div>
+                        <div>
+                            <h2 class="counts" data-target="640">640+</h2>
+                            <p>Families settled</p>
+                        </div>
+                        <div>
+                            <h2 class="counts" data-target="32">32+</h2>
+                            <p>Agents our team</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-</div>
+    </div>
 
-      <footer class="footer">
+    <footer class="footer">
 
         <div class="footerhead">
             <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
 
-            
+
             <div>
                 <div class="footerform">
-                <input type="email" placeholder="Enter Your Email" id="subemail">
-                <button class="subscribe-btn">Subscribe</button>
-            </div>
+                    <input type="email" placeholder="Enter Your Email" id="subemail">
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
                 <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
             </div>
-        
+
         </div>
 
         <div class="footer1">
@@ -1045,12 +1045,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/about.js"></script>
 </body>
 
 </html>
-
-
-
-
-

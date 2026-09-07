@@ -20,9 +20,8 @@
 
 
 
-<style>
-
-       * {
+    <style>
+        * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
@@ -37,649 +36,698 @@
             overflow-x: hidden;
         }
 
-    :root {
-        --pcolor: rgb(63, 214, 63);
-        --dark: #0d0f0d;
-    }
-
-    .pg-sections * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .pg-sections a {
-        text-decoration: none;
-    }
-
-    .pg-sections ul {
-        list-style: none;
-    }
-
-    .pg-wrap {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-inline: clamp(20px, 5vw, 60px);
-    }
-
-    .pg-eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 15px;
-        margin-bottom: 16px;
-        color: var(--pcolor);
-        font-weight: 600;
-    }
-
-    .pg-eyebrow span {
-        font-size: 10px;
-    }
-
-    /* ===================== 2. FILTER TABS + LISTINGS GRID ===================== */
-    .pg-listings {
-        background: white;
-        padding-block: 90px;
-    }
-
-    .pg-listings-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-
-    .pg-listings-top h1 {
-        font-size: 34px;
-        color: var(--dark);
-    }
-
-    .pg-tabs {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .pg-tabs a {
-        padding: 10px 20px;
-        border-radius: 30px;
-        border: 1px solid #e2e2e2;
-        color: #555;
-        font-size: 14px;
-    }
-
-    .pg-tabs a.pg-active {
-        background: var(--dark);
-        border-color: var(--dark);
-        color: white;
-    }
-
-    .pg-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-    }
-
-    .pg-card {
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid #eee;
-        transition: .4s ease;
-    }
-
-    .pg-card:hover {
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
-        transform: translateY(-5px);
-    }
-
-    .pg-card-img {
-        position: relative;
-        height: 220px;
-    }
-
-    .pg-card-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .pg-tag {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        background: var(--pcolor);
-        color: black;
-        font-size: 12.5px;
-        font-weight: 600;
-        padding: 5px 12px;
-        border-radius: 20px;
-    }
-
-    .pg-fav {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        height: 34px;
-        width: 34px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--dark);
-        font-size: 18px;
-    }
-
-    .pg-card-body {
-        padding: 20px 22px 24px;
-    }
-
-    .pg-card-price {
-        font-size: 20px;
-        color: var(--dark);
-        font-weight: 700;
-        margin-bottom: 6px;
-    }
-
-    .pg-card-body h3 {
-        font-size: 17px;
-        color: var(--dark);
-        margin-bottom: 6px;
-    }
-
-    .pg-card-loc {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: #888;
-        font-size: 13.5px;
-        margin-bottom: 16px;
-    }
-
-    .pg-card-loc span {
-        font-size: 16px;
-        color: var(--pcolor);
-    }
-
-    .pg-card-specs {
-        display: flex;
-        gap: 16px;
-        border-top: 1px solid #f0f0f0;
-        padding-top: 14px;
-    }
-
-    .pg-card-specs div {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12.5px;
-        color: #555;
-    }
-
-    .pg-card-specs span {
-        font-size: 16px;
-        color: var(--dark);
-    }
-
-    @media (max-width:1000px) {
-        .pg-grid {
-            grid-template-columns: 1fr 1fr;
+        :root {
+            --pcolor: rgb(63, 214, 63);
+            --dark: #0d0f0d;
         }
-    }
 
-    @media (max-width:650px) {
-        .pg-grid {
-            grid-template-columns: 1fr;
+        .pg-sections * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .pg-sections a {
+            text-decoration: none;
+        }
+
+        .pg-sections ul {
+            list-style: none;
+        }
+
+        .pg-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-inline: clamp(20px, 5vw, 60px);
+        }
+
+        .pg-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            margin-bottom: 16px;
+            color: var(--pcolor);
+            font-weight: 600;
+        }
+
+        .pg-eyebrow span {
+            font-size: 10px;
+        }
+
+
+
+        .ab-banner {
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
+                url("./src/banner.webp");
+        }
+
+        /* ===================== 2. FILTER TABS + LISTINGS GRID ===================== */
+        .pg-listings {
+            background: white;
+            padding-block: 90px;
         }
 
         .pg-listings-top {
-            flex-direction: column;
-            align-items: flex-start;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
         }
-    }
 
-    /* ===================== 3. FEATURED PREMIUM LISTING ===================== */
-    .pg-premium {
-        background: var(--dark);
-        padding-block: 90px;
-    }
+        .pg-listings-top h1 {
+            font-size: 34px;
+            color: var(--dark);
+        }
 
-    .pg-premium-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        border-radius: 20px;
-        overflow: hidden;
-    }
+        .pg-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
-    .pg-premium-img {
-        height: 480px;
-        position: relative;
-    }
+        .pg-tabs a {
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid #e2e2e2;
+            color: #555;
+            font-size: 14px;
+            transition: .4s ease;
+        }
 
-    .pg-premium-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+        .pg-tabs a:hover {
+            background: var(--dark);
+            border-color: var(--dark);
+            color: white;
+        }
 
-    .pg-premium-badge {
-        position: absolute;
-        top: 24px;
-        left: 24px;
-        background: var(--pcolor);
-        color: black;
-        font-size: 13px;
-        font-weight: 700;
-        padding: 8px 18px;
-        border-radius: 20px;
-    }
+        .pg-tabs a.pg-active {
+            background: var(--dark);
+            border-color: var(--dark);
+            color: white;
+        }
 
-    .pg-premium-content {
-        background: #16191600;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-left: none;
-        padding: 50px 46px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+        .pg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
 
-    .pg-premium-content h1 {
-        font-size: 32px;
-        color: white;
-        margin-bottom: 10px;
-        line-height: 1.25;
-    }
+        .pg-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: .4s ease;
+        }
 
-    .pg-premium-loc {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
+        .pg-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+            transform: translateY(-5px);
+        }
 
-    .pg-premium-loc span {
-        font-size: 18px;
-        color: var(--pcolor);
-    }
+        .pg-card-img {
+            position: relative;
+            height: 220px;
+        }
 
-    .pg-premium-content>p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 14.5px;
-        line-height: 1.65;
-        margin-bottom: 28px;
-    }
+        .pg-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .pg-premium-specs {
-        display: flex;
-        gap: 26px;
-        margin-bottom: 30px;
-        flex-wrap: wrap;
-    }
+        .pg-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--pcolor);
+            color: black;
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
 
-    .pg-premium-specs div {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: white;
-        font-size: 14px;
-    }
+        .pg-fav {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            height: 34px;
+            width: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 18px;
+            transition: .5s ease;
+            cursor: pointer;
+        }
 
-    .pg-premium-specs span {
-        font-size: 20px;
-        color: var(--pcolor);
-    }
+        .pg-fav:hover {
+            background: palevioletred;
+            color: white;
+        }
 
-    .pg-premium-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        padding-top: 26px;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
+        .pg-fav.active {
+            background: palevioletred;
+            color: white;
+        }
 
-    .pg-premium-bottom h2 {
-        font-size: 30px;
-        color: var(--pcolor);
-    }
+        .pg-card-body {
+            padding: 20px 22px 24px;
+        }
 
-    .pg-premium-bottom a {
-        padding: 13px 28px;
-        background: var(--pcolor);
-        color: black;
-        border-radius: 30px;
-        font-size: 14.5px;
-        font-weight: 600;
-        white-space: nowrap;
-    }
+        .pg-card-price {
+            font-size: 20px;
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
 
-    @media (max-width:900px) {
+        .pg-card-body h3 {
+            font-size: 17px;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .pg-card-loc {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #888;
+            font-size: 13.5px;
+            margin-bottom: 16px;
+        }
+
+        .pg-card-loc span {
+            font-size: 16px;
+            color: var(--pcolor);
+        }
+
+        .pg-card-specs {
+            display: flex;
+            gap: 16px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 14px;
+        }
+
+        .pg-card-specs div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12.5px;
+            color: #555;
+        }
+
+        .pg-card-specs span {
+            font-size: 16px;
+            color: var(--dark);
+        }
+
+        @media (max-width:1000px) {
+            .pg-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:650px) {
+            .pg-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pg-listings-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ===================== 3. FEATURED PREMIUM LISTING ===================== */
+        .pg-premium {
+            background: var(--dark);
+            padding-block: 90px;
+        }
+
         .pg-premium-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         .pg-premium-img {
-            height: 320px;
+            height: 480px;
+            position: relative;
+        }
+
+        .pg-premium-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pg-premium-badge {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--pcolor);
+            color: black;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 20px;
         }
 
         .pg-premium-content {
-            border-left: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 36px 28px;
+            background: #16191600;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: none;
+            padding: 50px 46px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-    }
 
-    /* ===================== 4. BROWSE BY LOCATION ===================== */
-    .pg-location {
-        background: #f5f6f4;
-        padding-block: 90px;
-    }
-
-    .pg-location-top {
-        max-width: 600px;
-        margin-bottom: 45px;
-    }
-
-    .pg-location-top h1 {
-        font-size: 38px;
-        color: var(--dark);
-        line-height: 1.2;
-        margin-bottom: 14px;
-    }
-
-    .pg-location-top p {
-        color: #555;
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .pg-loc-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-
-    .pg-loc-card {
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-        height: 220px;
-    }
-
-    .pg-loc-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: .5s ease;
-    }
-
-    .pg-loc-card:hover img {
-        transform: scale(1.08);
-    }
-
-    .pg-loc-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.75) 100%);
-    }
-
-    .pg-loc-inner {
-        position: absolute;
-        bottom: 18px;
-        left: 20px;
-        z-index: 1;
-        color: white;
-    }
-
-    .pg-loc-inner h3 {
-        font-size: 18px;
-        margin-bottom: 3px;
-    }
-
-    .pg-loc-inner p {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.75);
-    }
-
-    @media (max-width:950px) {
-        .pg-loc-grid {
-            grid-template-columns: 1fr 1fr;
+        .pg-premium-content h1 {
+            font-size: 32px;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.25;
         }
-    }
 
-    @media (max-width:500px) {
-        .pg-loc-grid {
-            grid-template-columns: 1fr;
+        .pg-premium-loc {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .pg-premium-loc span {
+            font-size: 18px;
+            color: var(--pcolor);
+        }
+
+        .pg-premium-content>p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14.5px;
+            line-height: 1.65;
+            margin-bottom: 28px;
+        }
+
+        .pg-premium-specs {
+            display: flex;
+            gap: 26px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pg-premium-specs div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .pg-premium-specs span {
+            font-size: 20px;
+            color: var(--pcolor);
+        }
+
+        .pg-premium-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 26px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .pg-premium-bottom h2 {
+            font-size: 30px;
+            color: var(--pcolor);
+        }
+
+        .pg-premium-bottom a {
+            padding: 13px 28px;
+            background: var(--pcolor);
+            color: black;
+            border-radius: 30px;
+            font-size: 14.5px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        @media (max-width:900px) {
+            .pg-premium-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pg-premium-img {
+                height: 320px;
+            }
+
+            .pg-premium-content {
+                border-left: 1px solid rgba(255, 255, 255, 0.12);
+                padding: 36px 28px;
+            }
+        }
+
+        /* ===================== 4. BROWSE BY LOCATION ===================== */
+        .pg-location {
+            background: #f5f6f4;
+            padding-block: 90px;
+        }
+
+        .pg-location-top {
+            max-width: 600px;
+            margin-bottom: 45px;
         }
 
         .pg-location-top h1 {
-            font-size: 28px;
+            font-size: 38px;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 14px;
         }
-    }
 
-    /* ===================== 5. NEWLY ADDED LISTINGS ===================== */
-    .pg-new {
-        background: white;
-        padding-block: 90px;
-    }
-
-    .pg-new-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-
-    .pg-new-top h1 {
-        font-size: 36px;
-        color: var(--dark);
-        max-width: 500px;
-        line-height: 1.2;
-    }
-
-    .pg-new-btn {
-        border: 1px solid var(--dark);
-        padding: 12px 26px;
-        border-radius: 30px;
-        color: var(--dark);
-        font-size: 14.5px;
-        white-space: nowrap;
-        transition: .4s ease;
-    }
-
-    .pg-new-btn:hover {
-        background: var(--pcolor);
-        border-color: var(--pcolor);
-    }
-
-    .pg-new-row {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-
-    .pg-new-card {
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid #eee;
-    }
-
-    .pg-new-img {
-        height: 150px;
-        position: relative;
-    }
-
-    .pg-new-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .pg-new-flag {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: white;
-        color: var(--dark);
-        font-size: 11px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 20px;
-    }
-
-    .pg-new-body {
-        padding: 16px 16px 18px;
-    }
-
-    .pg-new-body h3 {
-        font-size: 15px;
-        color: var(--dark);
-        margin-bottom: 6px;
-    }
-
-    .pg-new-body p {
-        font-size: 13px;
-        color: #888;
-        margin-bottom: 10px;
-    }
-
-    .pg-new-body span {
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--pcolor);
-    }
-
-    @media (max-width:950px) {
-        .pg-new-row {
-            grid-template-columns: 1fr 1fr;
+        .pg-location-top p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
         }
-    }
 
-    @media (max-width:600px) {
-        .pg-new-row {
-            grid-template-columns: 1fr;
+        .pg-loc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .pg-loc-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .pg-loc-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s ease;
+        }
+
+        .pg-loc-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .pg-loc-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.75) 100%);
+        }
+
+        .pg-loc-inner {
+            position: absolute;
+            bottom: 18px;
+            left: 20px;
+            z-index: 1;
+            color: white;
+        }
+
+        .pg-loc-inner h3 {
+            font-size: 18px;
+            margin-bottom: 3px;
+        }
+
+        .pg-loc-inner p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        @media (max-width:950px) {
+            .pg-loc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:500px) {
+            .pg-loc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pg-location-top h1 {
+                font-size: 28px;
+            }
+        }
+
+        /* ===================== 5. NEWLY ADDED LISTINGS ===================== */
+        .pg-new {
+            background: white;
+            padding-block: 90px;
         }
 
         .pg-new-top {
-            flex-direction: column;
-            align-items: flex-start;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .pg-new-top h1 {
-            font-size: 26px;
+            font-size: 36px;
+            color: var(--dark);
+            max-width: 500px;
+            line-height: 1.2;
         }
-    }
 
-    /* ===================== 6. PAGINATION + PROPERTY ALERT CTA ===================== */
-    .pg-alert {
-        background: #f5f6f4;
-        padding-block: 30px 80px;
-    }
+        .pg-new-btn {
+            border: 1px solid var(--dark);
+            padding: 12px 26px;
+            border-radius: 30px;
+            color: var(--dark);
+            font-size: 14.5px;
+            white-space: nowrap;
+            transition: .4s ease;
+        }
 
-    .pg-pagination {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 70px;
-    }
+        .pg-new-btn:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+        }
 
-    .pg-pagination a {
-        height: 42px;
-        width: 42px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #ddd;
-        color: var(--dark);
-        font-size: 14px;
-    }
+        .pg-new-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
 
-    .pg-pagination a.pg-current {
-        background: var(--pcolor);
-        border-color: var(--pcolor);
-        color: black;
-        font-weight: 700;
-    }
+        .pg-new-card {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: .5s ease;
+        }
 
-    .pg-alert-box {
-        border-radius: 24px;
-        background: var(--dark);
-        padding: 60px clamp(24px, 6vw, 70px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-    }
+        .pg-new-card:hover {
 
-    .pg-alert-box h1 {
-        font-size: 30px;
-        color: white;
-        max-width: 480px;
-        line-height: 1.3;
-        margin-bottom: 8px;
-    }
+            transform: scale(1.08);
+            box-shadow: 10px 10px 40px gray;
 
-    .pg-alert-box p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 14.5px;
-        max-width: 440px;
-    }
+        }
 
-    .pg-alert-form {
-        position: relative;
-        min-width: 320px;
-    }
+        .pg-new-img {
+            height: 150px;
+            position: relative;
+        }
 
-    .pg-alert-form input {
-        width: 100%;
-        padding: 15px 130px 15px 20px;
-        border: none;
-        border-radius: 30px;
-        font-size: 14.5px;
-        font-family: "Hanken Grotesk", sans-serif;
-    }
+        .pg-new-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .pg-alert-form input:focus {
-        outline: none;
-    }
+        .pg-new-flag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            color: var(--dark);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
 
-    .pg-alert-form button {
-        position: absolute;
-        right: 4px;
-        top: 4px;
-        bottom: 4px;
-        padding: 0 22px;
-        background: var(--pcolor);
-        border: none;
-        border-radius: 26px;
-        color: black;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-    }
+        .pg-new-body {
+            padding: 16px 16px 18px;
+        }
 
-    @media (max-width:800px) {
+        .pg-new-body h3 {
+            font-size: 15px;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .pg-new-body p {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .pg-new-body span {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--pcolor);
+        }
+
+        @media (max-width:950px) {
+            .pg-new-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:600px) {
+            .pg-new-row {
+                grid-template-columns: 1fr;
+            }
+
+            .pg-new-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pg-new-top h1 {
+                font-size: 26px;
+            }
+        }
+
+        /* ===================== 6. PAGINATION + PROPERTY ALERT CTA ===================== */
+        .pg-alert {
+            background: #f5f6f4;
+            padding-block: 80px 80px;
+        }
+
+        .pg-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 70px;
+        }
+
+        .pg-pagination a {
+            height: 42px;
+            width: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            color: var(--dark);
+            font-size: 14px;
+            transition: .5s ease;
+        }
+
+        .pg-pagination a:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: black;
+            font-weight: 700;
+        }
+
+        .pg-pagination a.pg-current {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: black;
+            font-weight: 700;
+        }
+
         .pg-alert-box {
-            flex-direction: column;
-            align-items: flex-start;
+            border-radius: 24px;
+            background: var(--dark);
+            padding: 60px clamp(24px, 6vw, 70px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .pg-alert-box h1 {
+            font-size: 30px;
+            color: white;
+            max-width: 480px;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .pg-alert-box p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14.5px;
+            max-width: 440px;
         }
 
         .pg-alert-form {
-            width: 100%;
-            min-width: unset;
+            position: relative;
+            min-width: 320px;
         }
-    }
-</style>
+
+        .pg-alert-form input {
+            width: 100%;
+            padding: 15px 130px 15px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 14.5px;
+            font-family: "Hanken Grotesk", sans-serif;
+        }
+
+        .pg-alert-form input:focus {
+            outline: none;
+        }
+
+        .pg-alert-form button {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            bottom: 4px;
+            padding: 0 22px;
+            background: var(--pcolor);
+            border: none;
+            border-radius: 26px;
+            color: black;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+
+          .pg-alert-form button:hover{
+            color: white;
+            background: black;
+
+          }
+
+        @media (max-width:800px) {
+            .pg-alert-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pg-alert-form {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+    </style>
 
 </head>
 
@@ -696,9 +744,9 @@
 
             <div class="menuwrap">
                 <ul class="menus">
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li  class="active"><a href="pages.html"  class="active">Pages</a></li>
+                    <li class="active"><a href="pages.html" class="active">Pages</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -717,444 +765,444 @@
 
     </header>
 
-    
-<div class="pg-sections">
+
+    <div class="pg-sections">
 
         <div class="ab-sections">
 
             <section class="ab-banner">
-        <div class="ab-banner-content">
-            <span class="reveal delay-1">Explore Our Properties</span>
-            <h1 class="reveal delay-2">Pages</h1>
-            <div class="ab-crumb reveal delay-3">
-                <a href="index.html">Home</a>
-                <span class="material-symbols-outlined">chevron_right</span>
-                <span>Pages</span>
-            </div>
+                <div class="ab-banner-content">
+                    <span class="reveal delay-1">Explore Our Properties</span>
+                    <h1 class="reveal delay-2">Pages</h1>
+                    <div class="ab-crumb reveal delay-3">
+                        <a href="index.html">Home</a>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span>Pages</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ===================== SECTION 2: FILTER TABS + LISTINGS GRID ===================== -->
+            <section class="pg-listings">
+                <div class="pg-wrap">
+                    <div class="pg-listings-top">
+                        <h1>All Listings</h1>
+                        <div class="pg-tabs">
+                            <a href="404.html" class="pg-active">All</a>
+                            <a href="404.html">Residential</a>
+                            <a href="404.html">Commercial</a>
+                            <a href="404.html">Rentals</a>
+                            <a href="404.html">Land</a>
+                        </div>
+                    </div>
+
+                    <div class="pg-grid">
+                        <div class="pg-card">
+                            <div class="pg-card-img">
+                                <img src="./src/image_18.webp" alt="Maple Ridge Villa">
+                                <span class="pg-tag">For Sale</span>
+                                <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
+                            </div>
+                            <div class="pg-card-body">
+                                <p class="pg-card-price">$4,25,000</p>
+                                <h3>Maple Ridge Villa</h3>
+                                <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Anna
+                                    Nagar,
+                                    Chennai</p>
+                                <div class="pg-card-specs">
+                                    <div><span class="material-symbols-outlined">bed</span>4 Beds</div>
+                                    <div><span class="material-symbols-outlined">bathtub</span>3 Baths</div>
+                                    <div><span class="material-symbols-outlined">square_foot</span>2,450 sqft</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pg-card">
+                            <div class="pg-card-img">
+                                <img src="./src/image_19.webp" alt="Harborview Apartment">
+                                <span class="pg-tag">For Rent</span>
+                                <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
+                            </div>
+                            <div class="pg-card-body">
+                                <p class="pg-card-price">$1,850/mo</p>
+                                <h3>Harborview Apartment</h3>
+                                <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Marina
+                                    Bay,
+                                    Chennai</p>
+                                <div class="pg-card-specs">
+                                    <div><span class="material-symbols-outlined">bed</span>2 Beds</div>
+                                    <div><span class="material-symbols-outlined">bathtub</span>2 Baths</div>
+                                    <div><span class="material-symbols-outlined">square_foot</span>1,180 sqft</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pg-card">
+                            <div class="pg-card-img">
+                                <img src="./src/image_20.webp" alt="Commercial office space">
+                                <span class="pg-tag">For Lease</span>
+                                <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
+                            </div>
+                            <div class="pg-card-body">
+                                <p class="pg-card-price">$3,200/mo</p>
+                                <h3>Riverside Office Suite</h3>
+                                <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>T.
+                                    Nagar,
+                                    Chennai</p>
+                                <div class="pg-card-specs">
+                                    <div><span class="material-symbols-outlined">meeting_room</span>6 Rooms</div>
+                                    <div><span class="material-symbols-outlined">bathtub</span>2 Baths</div>
+                                    <div><span class="material-symbols-outlined">square_foot</span>3,100 sqft</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pg-card">
+                            <div class="pg-card-img">
+                                <img src="./src/image_21.webp" alt="Willowbrook Bungalow">
+                                <span class="pg-tag">For Sale</span>
+                                <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
+                            </div>
+                            <div class="pg-card-body">
+                                <p class="pg-card-price">$3,10,000</p>
+                                <h3>Willowbrook Bungalow</h3>
+                                <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Adyar,
+                                    Chennai</p>
+                                <div class="pg-card-specs">
+                                    <div><span class="material-symbols-outlined">bed</span>3 Beds</div>
+                                    <div><span class="material-symbols-outlined">bathtub</span>2 Baths</div>
+                                    <div><span class="material-symbols-outlined">square_foot</span>1,920 sqft</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pg-card">
+                            <div class="pg-card-img">
+                                <img src="./src/image_22.webp" alt="Open residential plot">
+                                <span class="pg-tag">For Sale</span>
+                                <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
+                            </div>
+                            <div class="pg-card-body">
+                                <p class="pg-card-price">$95,000</p>
+                                <h3>Greenfield Residential Plot</h3>
+                                <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Outer
+                                    Ring
+                                    Road, Chennai</p>
+                                <div class="pg-card-specs">
+                                    <div><span class="material-symbols-outlined">square_foot</span>2,400 sqft</div>
+                                    <div><span class="material-symbols-outlined">fence</span>Gated</div>
+                                    <div><span class="material-symbols-outlined">description</span>Clear Title</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pg-card">
+                            <div class="pg-card-img">
+                                <img src="./src/image_23.webp" alt="Modern studio apartment">
+                                <span class="pg-tag">For Rent</span>
+                                <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
+                            </div>
+                            <div class="pg-card-body">
+                                <p class="pg-card-price">$980/mo</p>
+                                <h3>Cedar Studio Apartment</h3>
+                                <p class="pg-card-loc"><span
+                                        class="material-symbols-outlined">location_on</span>Nungambakkam,
+                                    Chennai</p>
+                                <div class="pg-card-specs">
+                                    <div><span class="material-symbols-outlined">bed</span>1 Bed</div>
+                                    <div><span class="material-symbols-outlined">bathtub</span>1 Bath</div>
+                                    <div><span class="material-symbols-outlined">square_foot</span>620 sqft</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 3: FEATURED PREMIUM LISTING ===================== -->
+            <section class="pg-premium">
+                <div class="pg-wrap">
+                    <p class="pg-eyebrow"><span class="material-symbols-outlined">circle</span> Premium Pick</p>
+                    <div class="pg-premium-grid">
+                        <div class="pg-premium-img">
+                            <img src="./src/image_37.webp" alt="Luxury lakeside villa">
+                            <span class="pg-premium-badge">Editor's Pick</span>
+                        </div>
+                        <div class="pg-premium-content">
+                            <h1>Lakeside Grand Villa</h1>
+                            <p class="pg-premium-loc"><span class="material-symbols-outlined">location_on</span>ECR
+                                Road,
+                                Chennai</p>
+                            <p>A five-bedroom estate set on a private lakeside plot, with a landscaped garden, a private
+                                dock, and a fully renovated interior finished in 2025. One of the rare large-plot
+                                listings
+                                left within city limits.</p>
+
+                            <div class="pg-premium-specs">
+                                <div><span class="material-symbols-outlined">bed</span>5 Beds</div>
+                                <div><span class="material-symbols-outlined">bathtub</span>4 Baths</div>
+                                <div><span class="material-symbols-outlined">square_foot</span>5,200 sqft</div>
+                                <div><span class="material-symbols-outlined">garage_home</span>3 Car Garage</div>
+                            </div>
+
+                            <div class="pg-premium-bottom">
+                                <h2>$9,80,000</h2>
+                                <a href="404.html">Schedule a Visit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 4: BROWSE BY LOCATION ===================== -->
+            <section class="pg-location">
+                <div class="pg-wrap">
+                    <div class="pg-location-top">
+                        <p class="pg-eyebrow"><span class="material-symbols-outlined">circle</span> Browse by Location
+                        </p>
+                        <h1>Explore Listings by Neighbourhood</h1>
+                        <p>Every area has its own character and price range. Pick a neighbourhood to see everything
+                            currently listed there.</p>
+                    </div>
+
+                    <div class="pg-loc-grid">
+                        <div class="pg-loc-card">
+                            <img src="./src/image_14.webp" alt="Anna Nagar neighbourhood">
+                            <div class="pg-loc-inner">
+                                <h3>Anna Nagar</h3>
+                                <p>210 Listings</p>
+                            </div>
+                        </div>
+                        <div class="pg-loc-card">
+                            <img src="./src/image_15.webp" alt="Adyar neighbourhood">
+                            <div class="pg-loc-inner">
+                                <h3>Adyar</h3>
+                                <p>168 Listings</p>
+                            </div>
+                        </div>
+                        <div class="pg-loc-card">
+                            <img src="./src/image_16.webp" alt="Marina Bay neighbourhood">
+                            <div class="pg-loc-inner">
+                                <h3>Marina Bay</h3>
+                                <p>132 Listings</p>
+                            </div>
+                        </div>
+                        <div class="pg-loc-card">
+                            <img src="./src/image_17.webp" alt="T. Nagar neighbourhood">
+                            <div class="pg-loc-inner">
+                                <h3>T. Nagar</h3>
+                                <p>185 Listings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 5: NEWLY ADDED LISTINGS ===================== -->
+            <section class="pg-new">
+                <div class="pg-wrap">
+                    <div class="pg-new-top">
+                        <h1>Newly Added This Week</h1>
+                        <a href="404.html" class="pg-new-btn">View All New Listings</a>
+                    </div>
+
+                    <div class="pg-new-row">
+                        <div class="pg-new-card">
+                            <div class="pg-new-img">
+                                <img src="./src/image_18.webp" alt="Compact townhouse">
+                                <span class="pg-new-flag">New</span>
+                            </div>
+                            <div class="pg-new-body">
+                                <h3>Birchwood Townhouse</h3>
+                                <p>Velachery, Chennai</p>
+                                <span>$2,40,000</span>
+                            </div>
+                        </div>
+
+                        <div class="pg-new-card">
+                            <div class="pg-new-img">
+                                <img src="./src/image_19.webp" alt="Compact rental flat">
+                                <span class="pg-new-flag">New</span>
+                            </div>
+                            <div class="pg-new-body">
+                                <h3>Elm Street Flat</h3>
+                                <p>Kilpauk, Chennai</p>
+                                <span>$1,100/mo</span>
+                            </div>
+                        </div>
+
+                        <div class="pg-new-card">
+                            <div class="pg-new-img">
+                                <img src="./src/image_20.webp" alt="Retail storefront">
+                                <span class="pg-new-flag">New</span>
+                            </div>
+                            <div class="pg-new-body">
+                                <h3>Main Street Storefront</h3>
+                                <p>T. Nagar, Chennai</p>
+                                <span>$2,600/mo</span>
+                            </div>
+                        </div>
+
+                        <div class="pg-new-card">
+                            <div class="pg-new-img">
+                                <img src="./src/image_21.webp" alt="Corner residential plot">
+                                <span class="pg-new-flag">New</span>
+                            </div>
+                            <div class="pg-new-body">
+                                <h3>Corner Plot, Sector 9</h3>
+                                <p>Perambur, Chennai</p>
+                                <span>$78,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECTION 6: PAGINATION + PROPERTY ALERT CTA ===================== -->
+            <section class="pg-alert">
+                <div class="pg-wrap">
+                    <div class="pg-pagination">
+                        <a href="404.html"><span class="material-symbols-outlined">chevron_left</span></a>
+                        <a href="404.html" class="pg-current">1</a>
+                        <a href="404.html">2</a>
+                        <a href="404.html">3</a>
+                        <a href="404.html">4</a>
+                        <a href="404.html"><span class="material-symbols-outlined">chevron_right</span></a>
+                    </div>
+
+                    <div class="pg-alert-box">
+                        <div>
+                            <h1>Get New Listings Before Anyone Else</h1>
+                            <p>Set your budget and preferred area, and we'll email you the moment a matching property
+                                goes
+                                live.</p>
+                        </div>
+                        <div class="pg-alert-form">
+                            <input type="email" placeholder="Enter your email" class="pageemail">
+                            <button class="pagebtn">Notify Me</button><p class="pageerr" style="position: absolute; margin-top:10px; color:red"></p>
+                        </div>
+                      
+                    </div>
+                </div>
+            </section>
+
         </div>
-    </section>
 
 
-    <!-- ===================== SECTION 2: FILTER TABS + LISTINGS GRID ===================== -->
-    <section class="pg-listings">
-        <div class="pg-wrap">
-            <div class="pg-listings-top">
-                <h1>All Listings</h1>
-                <div class="pg-tabs">
-                    <a href="#" class="pg-active">All</a>
-                    <a href="#">Residential</a>
-                    <a href="#">Commercial</a>
-                    <a href="#">Rentals</a>
-                    <a href="#">Land</a>
-                </div>
-            </div>
 
-            <div class="pg-grid">
-                <div class="pg-card">
-                    <div class="pg-card-img">
-                        <img src="./src/image_18.webp"
-                            alt="Maple Ridge Villa">
-                        <span class="pg-tag">For Sale</span>
-                        <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
-                    </div>
-                    <div class="pg-card-body">
-                        <p class="pg-card-price">$4,25,000</p>
-                        <h3>Maple Ridge Villa</h3>
-                        <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Anna Nagar,
-                            Chennai</p>
-                        <div class="pg-card-specs">
-                            <div><span class="material-symbols-outlined">bed</span>4 Beds</div>
-                            <div><span class="material-symbols-outlined">bathtub</span>3 Baths</div>
-                            <div><span class="material-symbols-outlined">square_foot</span>2,450 sqft</div>
-                        </div>
-                    </div>
-                </div>
+        <footer class="footer">
 
-                <div class="pg-card">
-                    <div class="pg-card-img">
-                        <img src="./src/image_19.webp"
-                            alt="Harborview Apartment">
-                        <span class="pg-tag">For Rent</span>
-                        <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
-                    </div>
-                    <div class="pg-card-body">
-                        <p class="pg-card-price">$1,850/mo</p>
-                        <h3>Harborview Apartment</h3>
-                        <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Marina Bay,
-                            Chennai</p>
-                        <div class="pg-card-specs">
-                            <div><span class="material-symbols-outlined">bed</span>2 Beds</div>
-                            <div><span class="material-symbols-outlined">bathtub</span>2 Baths</div>
-                            <div><span class="material-symbols-outlined">square_foot</span>1,180 sqft</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="footerhead">
+                <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
 
-                <div class="pg-card">
-                    <div class="pg-card-img">
-                        <img src="./src/image_20.webp"
-                            alt="Commercial office space">
-                        <span class="pg-tag">For Lease</span>
-                        <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
-                    </div>
-                    <div class="pg-card-body">
-                        <p class="pg-card-price">$3,200/mo</p>
-                        <h3>Riverside Office Suite</h3>
-                        <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>T. Nagar,
-                            Chennai</p>
-                        <div class="pg-card-specs">
-                            <div><span class="material-symbols-outlined">meeting_room</span>6 Rooms</div>
-                            <div><span class="material-symbols-outlined">bathtub</span>2 Baths</div>
-                            <div><span class="material-symbols-outlined">square_foot</span>3,100 sqft</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="pg-card">
-                    <div class="pg-card-img">
-                        <img src="./src/image_21.webp"
-                            alt="Willowbrook Bungalow">
-                        <span class="pg-tag">For Sale</span>
-                        <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
-                    </div>
-                    <div class="pg-card-body">
-                        <p class="pg-card-price">$3,10,000</p>
-                        <h3>Willowbrook Bungalow</h3>
-                        <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Adyar,
-                            Chennai</p>
-                        <div class="pg-card-specs">
-                            <div><span class="material-symbols-outlined">bed</span>3 Beds</div>
-                            <div><span class="material-symbols-outlined">bathtub</span>2 Baths</div>
-                            <div><span class="material-symbols-outlined">square_foot</span>1,920 sqft</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pg-card">
-                    <div class="pg-card-img">
-                        <img src="./src/image_22.webp"
-                            alt="Open residential plot">
-                        <span class="pg-tag">For Sale</span>
-                        <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
-                    </div>
-                    <div class="pg-card-body">
-                        <p class="pg-card-price">$95,000</p>
-                        <h3>Greenfield Residential Plot</h3>
-                        <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Outer Ring
-                            Road, Chennai</p>
-                        <div class="pg-card-specs">
-                            <div><span class="material-symbols-outlined">square_foot</span>2,400 sqft</div>
-                            <div><span class="material-symbols-outlined">fence</span>Gated</div>
-                            <div><span class="material-symbols-outlined">description</span>Clear Title</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pg-card">
-                    <div class="pg-card-img">
-                        <img src="./src/image_23.webp"
-                            alt="Modern studio apartment">
-                        <span class="pg-tag">For Rent</span>
-                        <div class="pg-fav"><span class="material-symbols-outlined">favorite_border</span></div>
-                    </div>
-                    <div class="pg-card-body">
-                        <p class="pg-card-price">$980/mo</p>
-                        <h3>Cedar Studio Apartment</h3>
-                        <p class="pg-card-loc"><span class="material-symbols-outlined">location_on</span>Nungambakkam,
-                            Chennai</p>
-                        <div class="pg-card-specs">
-                            <div><span class="material-symbols-outlined">bed</span>1 Bed</div>
-                            <div><span class="material-symbols-outlined">bathtub</span>1 Bath</div>
-                            <div><span class="material-symbols-outlined">square_foot</span>620 sqft</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SECTION 3: FEATURED PREMIUM LISTING ===================== -->
-    <section class="pg-premium">
-        <div class="pg-wrap">
-            <p class="pg-eyebrow"><span class="material-symbols-outlined">circle</span> Premium Pick</p>
-            <div class="pg-premium-grid">
-                <div class="pg-premium-img">
-                    <img src="./src/image_37.webp"
-                        alt="Luxury lakeside villa">
-                    <span class="pg-premium-badge">Editor's Pick</span>
-                </div>
-                <div class="pg-premium-content">
-                    <h1>Lakeside Grand Villa</h1>
-                    <p class="pg-premium-loc"><span class="material-symbols-outlined">location_on</span>ECR Road,
-                        Chennai</p>
-                    <p>A five-bedroom estate set on a private lakeside plot, with a landscaped garden, a private
-                        dock, and a fully renovated interior finished in 2025. One of the rare large-plot listings
-                        left within city limits.</p>
-
-                    <div class="pg-premium-specs">
-                        <div><span class="material-symbols-outlined">bed</span>5 Beds</div>
-                        <div><span class="material-symbols-outlined">bathtub</span>4 Baths</div>
-                        <div><span class="material-symbols-outlined">square_foot</span>5,200 sqft</div>
-                        <div><span class="material-symbols-outlined">garage_home</span>3 Car Garage</div>
-                    </div>
-
-                    <div class="pg-premium-bottom">
-                        <h2>$9,80,000</h2>
-                        <a href="contact.html">Schedule a Visit</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SECTION 4: BROWSE BY LOCATION ===================== -->
-    <section class="pg-location">
-        <div class="pg-wrap">
-            <div class="pg-location-top">
-                <p class="pg-eyebrow"><span class="material-symbols-outlined">circle</span> Browse by Location</p>
-                <h1>Explore Listings by Neighbourhood</h1>
-                <p>Every area has its own character and price range. Pick a neighbourhood to see everything
-                    currently listed there.</p>
-            </div>
-
-            <div class="pg-loc-grid">
-                <div class="pg-loc-card">
-                    <img src="./src/image_14.webp"
-                        alt="Anna Nagar neighbourhood">
-                    <div class="pg-loc-inner">
-                        <h3>Anna Nagar</h3>
-                        <p>210 Listings</p>
-                    </div>
-                </div>
-                <div class="pg-loc-card">
-                    <img src="./src/image_15.webp"
-                        alt="Adyar neighbourhood">
-                    <div class="pg-loc-inner">
-                        <h3>Adyar</h3>
-                        <p>168 Listings</p>
-                    </div>
-                </div>
-                <div class="pg-loc-card">
-                    <img src="./src/image_16.webp"
-                        alt="Marina Bay neighbourhood">
-                    <div class="pg-loc-inner">
-                        <h3>Marina Bay</h3>
-                        <p>132 Listings</p>
-                    </div>
-                </div>
-                <div class="pg-loc-card">
-                    <img src="./src/image_17.webp"
-                        alt="T. Nagar neighbourhood">
-                    <div class="pg-loc-inner">
-                        <h3>T. Nagar</h3>
-                        <p>185 Listings</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SECTION 5: NEWLY ADDED LISTINGS ===================== -->
-    <section class="pg-new">
-        <div class="pg-wrap">
-            <div class="pg-new-top">
-                <h1>Newly Added This Week</h1>
-                <a href="#" class="pg-new-btn">View All New Listings</a>
-            </div>
-
-            <div class="pg-new-row">
-                <div class="pg-new-card">
-                    <div class="pg-new-img">
-                        <img src="./src/image_18.webp"
-                            alt="Compact townhouse">
-                        <span class="pg-new-flag">New</span>
-                    </div>
-                    <div class="pg-new-body">
-                        <h3>Birchwood Townhouse</h3>
-                        <p>Velachery, Chennai</p>
-                        <span>$2,40,000</span>
-                    </div>
-                </div>
-
-                <div class="pg-new-card">
-                    <div class="pg-new-img">
-                        <img src="./src/image_19.webp"
-                            alt="Compact rental flat">
-                        <span class="pg-new-flag">New</span>
-                    </div>
-                    <div class="pg-new-body">
-                        <h3>Elm Street Flat</h3>
-                        <p>Kilpauk, Chennai</p>
-                        <span>$1,100/mo</span>
-                    </div>
-                </div>
-
-                <div class="pg-new-card">
-                    <div class="pg-new-img">
-                        <img src="./src/image_20.webp"
-                            alt="Retail storefront">
-                        <span class="pg-new-flag">New</span>
-                    </div>
-                    <div class="pg-new-body">
-                        <h3>Main Street Storefront</h3>
-                        <p>T. Nagar, Chennai</p>
-                        <span>$2,600/mo</span>
-                    </div>
-                </div>
-
-                <div class="pg-new-card">
-                    <div class="pg-new-img">
-                        <img src="./src/image_21.webp"
-                            alt="Corner residential plot">
-                        <span class="pg-new-flag">New</span>
-                    </div>
-                    <div class="pg-new-body">
-                        <h3>Corner Plot, Sector 9</h3>
-                        <p>Perambur, Chennai</p>
-                        <span>$78,000</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SECTION 6: PAGINATION + PROPERTY ALERT CTA ===================== -->
-    <section class="pg-alert">
-        <div class="pg-wrap">
-            <div class="pg-pagination">
-                <a href="#"><span class="material-symbols-outlined">chevron_left</span></a>
-                <a href="#" class="pg-current">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#"><span class="material-symbols-outlined">chevron_right</span></a>
-            </div>
-
-            <div class="pg-alert-box">
                 <div>
-                    <h1>Get New Listings Before Anyone Else</h1>
-                    <p>Set your budget and preferred area, and we'll email you the moment a matching property goes
-                        live.</p>
-                </div>
-                <div class="pg-alert-form">
-                    <input type="email" placeholder="Enter your email">
-                    <button>Notify Me</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</div>
-
-
-
-      <footer class="footer">
-
-        <div class="footerhead">
-            <a href="index.html"><img src="./src/logo.webp" alt="Company Logo" class="footerlogo"></a>
-
-            
-            <div>
-                <div class="footerform">
-                <input type="email" placeholder="Enter Your Email" id="subemail">
-                <button class="subscribe-btn">Subscribe</button>
-            </div>
-                <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
-            </div>
-        
-        </div>
-
-        <div class="footer1">
-
-            <div class="fsec1">
-
-                <h2>About Company</h2>
-
-                <p>We strive to build long-term partnerships
-                    through excellence and customer
-                    satisfaction.</p>
-
-                <h1>Since 2007</h1>
-
-            </div>
-
-            <div class="fersec2">
-                <h2>Quick Links</h2>
-
-                <div class="footerlinks">
-
-                    <a href="index.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Home</a>
-                    <a href="about.html"><span class="material-symbols-outlined farrow">arrow_forward</span>About</a>
-                    <a href="pages.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pages</a>
-                    <a href="blog.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Blog</a>
-                    <a href="contact.html"><span
-                            class="material-symbols-outlined farrow">arrow_forward</span>Contact</a>
-
-                </div>
-            </div>
-
-            <div class="fersec2">
-                <h2>Services</h2>
-
-                <div class="footerlinks">
-
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Service</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Pricing</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Team</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Terms &
-                        conditions</a>
-                    <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Privacy
-                        Policy</a>
-
-                </div>
-            </div>
-
-            <div class="fersec2">
-
-                <h2>Office Address</h2>
-
-                <div class="footerlinks">
-                    <a href="404.html">123,Anna Nager </a>
-                    <a href="404.html">Chennai, Tamilnadu</a>
-                </div>
-
-                <h2>Email Address</h2>
-
-                <div class="footerlinks">
-                    <a href="404.html">admin@gmail.com</a>
-                    <a href="404.html">career@gmail.com</a>
+                    <div class="footerform">
+                        <input type="email" placeholder="Enter Your Email" id="subemail">
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                    <p class="frmerr" style="color:red;font-size:14px;margin-top:10px"></p>
                 </div>
 
             </div>
 
-            <div class="fersec2">
+            <div class="footer1">
 
-                <h2>Phone Number</h2>
+                <div class="fsec1">
 
-                <div class="footerlinks">
-                    <a href="404.html">+91 12345 67890</a>
-                    <a href="404.html">+91 09876 54321</a>
+                    <h2>About Company</h2>
+
+                    <p>We strive to build long-term partnerships
+                        through excellence and customer
+                        satisfaction.</p>
+
+                    <h1>Since 2007</h1>
+
                 </div>
 
-                <h2>follow Us</h2>
+                <div class="fersec2">
+                    <h2>Quick Links</h2>
 
-                <div class="footer-sotial-icons">
-                    <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                    <div class="footerlinks">
+
+                        <a href="index.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Home</a>
+                        <a href="about.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>About</a>
+                        <a href="pages.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Pages</a>
+                        <a href="blog.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Blog</a>
+                        <a href="contact.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Contact</a>
+
+                    </div>
+                </div>
+
+                <div class="fersec2">
+                    <h2>Services</h2>
+
+                    <div class="footerlinks">
+
+                        <a href="404.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Service</a>
+                        <a href="404.html"><span
+                                class="material-symbols-outlined farrow">arrow_forward</span>Pricing</a>
+                        <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Team</a>
+                        <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Terms &
+                            conditions</a>
+                        <a href="404.html"><span class="material-symbols-outlined farrow">arrow_forward</span>Privacy
+                            Policy</a>
+
+                    </div>
+                </div>
+
+                <div class="fersec2">
+
+                    <h2>Office Address</h2>
+
+                    <div class="footerlinks">
+                        <a href="404.html">123,Anna Nager </a>
+                        <a href="404.html">Chennai, Tamilnadu</a>
+                    </div>
+
+                    <h2>Email Address</h2>
+
+                    <div class="footerlinks">
+                        <a href="404.html">admin@gmail.com</a>
+                        <a href="404.html">career@gmail.com</a>
+                    </div>
+
+                </div>
+
+                <div class="fersec2">
+
+                    <h2>Phone Number</h2>
+
+                    <div class="footerlinks">
+                        <a href="404.html">+91 12345 67890</a>
+                        <a href="404.html">+91 09876 54321</a>
+                    </div>
+
+                    <h2>follow Us</h2>
+
+                    <div class="footer-sotial-icons">
+                        <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+            <div class="footer2">
+                <p>@ 2026 All Rights Reserved by Stackly</p>
+            </div>
+        </footer>
 
-        <div class="footer2">
-            <p>@ 2026 All Rights Reserved by Stackly</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/pages.js"></script>
 </body>
 
 </html>

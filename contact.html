@@ -75,6 +75,12 @@
         font-size: 10px;
     }
 
+    .ab-banner {
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
+                url("./src/02.webp");
+                background-position: bottom;
+        }
+
 
     /* ===================== 2. CONTACT INFO CARDS ===================== */
     .ct-info {
@@ -332,6 +338,14 @@
         border-radius: 18px;
         overflow: hidden;
         border: 1px solid #eee;
+        transition: .5s ease;
+    }
+
+    
+    .ct-office-card:hover {
+        transform: scale(1.08);
+        box-shadow: 5px 2px 20px gray;
+        
     }
 
     .ct-office-img {
@@ -439,14 +453,24 @@
         color: var(--pcolor);
         font-size: 20px;
         min-width: 20px;
+        cursor: pointer;
     }
 
-    .ct-faq-item p {
+    .ct-faq-item .para {
         font-size: 14px;
         color: #666;
-        line-height: 1.6;
-        margin-top: 12px;
+       
+        max-height: 0px;
+        opacity: 0;
+        transition: max-height .5s ease, opacity .5s ease;
     }
+
+     .ct-faq-item .para.active{
+         margin-top: 12px;
+         max-height: 60px;
+         opacity: 1;
+
+     }
 
     @media (max-width:900px) {
         .ct-faq-grid {
@@ -581,30 +605,30 @@
     <!-- ===================== SECTION 2: CONTACT INFO CARDS ===================== -->
     <section class="ct-info">
         <div class="ct-wrap ct-info-grid">
-            <div class="ct-info-card">
+            <div class="ct-info-card errorpage">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">call</span></div>
                 <h3>Call Us</h3>
-                <a href="tel:+911234567890">+91 12345 67890</a>
-                <a href="tel:+919876543210">+91 09876 54321</a>
+                <a href="404.html">+91 12345 67890</a>
+                <a href="404.html">+91 09876 54321</a>
                 <p style="margin-top:8px;">Mon to Sat, 9:00 AM to 7:00 PM</p>
             </div>
 
-            <div class="ct-info-card">
+            <div class="ct-info-card errorpage">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">mail</span></div>
                 <h3>Email Us</h3>
-                <a href="mailto:support@gmail.com">support@gmail.com</a>
-                <a href="mailto:admin@gmail.com">admin@gmail.com</a>
+                <a href="404.html">support@gmail.com</a>
+                <a href="404.html">admin@gmail.com</a>
                 <p style="margin-top:8px;">We reply within 24 hours</p>
             </div>
 
-            <div class="ct-info-card">
+            <div class="ct-info-card errorpage">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">location_on</span></div>
                 <h3>Visit Us</h3>
                 <p>123, Anna Nagar, Chennai, Tamil Nadu</p>
                 <p style="margin-top:8px;">Drop by for a walk-in consultation</p>
             </div>
 
-            <div class="ct-info-card">
+            <div class="ct-info-card errorpage">
                 <div class="ct-info-icon"><span class="material-symbols-outlined">schedule</span></div>
                 <h3>Working Hours</h3>
                 <p>Monday to Saturday: 9:00 AM to 7:00 PM</p>
@@ -632,22 +656,48 @@
                 <p>Share a few details about your requirement and one of our agents will reach out with matching
                     listings and next steps.</p>
 
-                <form>
-                    <div class="ct-form-row">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="tel" placeholder="Phone Number" required>
-                    </div>
-                    <input type="email" placeholder="Email Address" required>
-                    <select>
-                        <option value="">I'm interested in...</option>
-                        <option value="buy">Buying a Property</option>
-                        <option value="sell">Selling a Property</option>
-                        <option value="rent">Renting a Property</option>
-                        <option value="commercial">Commercial Space</option>
-                    </select>
-                    <textarea placeholder="Tell us more about your requirement, budget, and preferred location"></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+               <form id="contact-form">
+
+    <div class="ct-form-row">
+
+        <div>
+            <input type="text" placeholder="Full Name" id="con-name">
+            <p class="cerr" style="font-size:13px;color:red"></p>
+        </div>
+
+        <div>
+            <input type="tel" placeholder="Phone Number" id="con-number">
+            <p class="cerr" style="font-size:13px;color:red"></p>
+        </div>
+
+    </div>
+
+    <div>
+        <input type="email" placeholder="Email Address" id="con-email">
+        <p class="cerr" style="font-size:13px;color:red;margin-bottom:10px"></p>
+    </div>
+
+    <div>
+        <input type="text" placeholder="Enter Subject" id="con-subject">
+        <p class="cerr" style="font-size:13px;color:red;margin-bottom:10px"></p>
+    </div>
+
+    <div>
+        <textarea
+            placeholder="Tell us more about your requirement, budget, and preferred location"
+            id="con-area">
+        </textarea>
+
+        <p class="cerr" style="font-size:13px;color:red;margin-bottom:10px"></p>
+    </div>
+
+    <button type="submit" id="con-submit">
+        Send Message
+    </button>
+
+    <p class="cerr" style="font-size:13px;color:red;margin-top:20px"></p>
+
+</form>
             </div>
         </div>
     </section>
@@ -724,26 +774,26 @@
             <div class="ct-faq-list">
                 <div class="ct-faq-item">
                     <h3>How soon will an agent contact me? <span
-                            class="material-symbols-outlined">expand_more</span></h3>
-                    <p>Most enquiries submitted through the form or a call are responded to within 24 hours on
+                            class="material-symbols-outlined arrow">expand_more</span></h3>
+                    <p class="para active">Most enquiries submitted through the form or a call are responded to within 24 hours on
                         business days. Urgent enquiries can call our front desk directly for a same-day response.</p>
                 </div>
                 <div class="ct-faq-item">
                     <h3>Do you charge a fee for property viewings? <span
-                            class="material-symbols-outlined">expand_more</span></h3>
-                    <p>No, property viewings are free for buyers and tenants. Our fees are structured around
+                            class="material-symbols-outlined arrow">expand_more</span></h3>
+                    <p class="para">No, property viewings are free for buyers and tenants. Our fees are structured around
                         successful transactions and are explained upfront before any agreement is signed.</p>
                 </div>
                 <div class="ct-faq-item">
                     <h3>Can you help me sell a property in a different city branch's area? <span
-                            class="material-symbols-outlined">expand_more</span></h3>
-                    <p>Yes, all three of our branches share listings and coordinate on cross-area transactions, so
+                            class="material-symbols-outlined arrow">expand_more</span></h3>
+                    <p class="para">Yes, all three of our branches share listings and coordinate on cross-area transactions, so
                         your agent can help regardless of which office they're based at.</p>
                 </div>
                 <div class="ct-faq-item">
                     <h3>What documents should I bring for a first consultation? <span
-                            class="material-symbols-outlined">expand_more</span></h3>
-                    <p>For buyers, a valid ID and proof of budget approval helps. For sellers, property title
+                            class="material-symbols-outlined arrow">expand_more</span></h3>
+                    <p class="para">For buyers, a valid ID and proof of budget approval helps. For sellers, property title
                         documents and past tax receipts speed up the initial valuation.</p>
                 </div>
             </div>
@@ -759,7 +809,7 @@
                     <p>Call our front desk and we'll match you with the right agent for your requirement, free of
                         charge.</p>
                 </div>
-                <a href="tel:+911234567890">Call +91 12345 67890</a>
+                <a href="404.html">Call +91 12345 67890</a>
             </div>
         </div>
     </section>
@@ -873,7 +923,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+      <script src="./js/script.js"></script>
+      <script src="./js/contact.js"></script>
 </body>
 
 </html>
