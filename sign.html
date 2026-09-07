@@ -413,8 +413,22 @@
             
         .ls-top {
             flex-direction: column;
-            gap: 50px;
+            gap: 10px;
         }
+
+         .ls-back{
+            border: none;
+            position: relative;
+         }
+
+         .ls-back::before{
+            content: "";
+            position: absolute;
+            width: 80%;
+            background: white;
+            height: 1px;
+            bottom: 8px;
+         }
         }
 
         .popup {

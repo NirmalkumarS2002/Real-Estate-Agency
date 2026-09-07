@@ -75,76 +75,7 @@
         font-size: 10px;
     }
 
-    /* ===================== 1. SERVICES HERO ===================== */
-    .sv-hero {
-        position: relative;
-        padding-block: 150px 90px;
-        background: linear-gradient(125deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.65)), url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
-    }
-
-    .sv-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 50px;
-        align-items: flex-end;
-    }
-
-    .sv-hero h1 {
-        font-size: 50px;
-        color: white;
-        line-height: 1.15;
-        margin-bottom: 20px;
-        max-width: 620px;
-    }
-
-    .sv-hero-left p {
-        color: rgba(255, 255, 255, 0.78);
-        font-size: 16px;
-        line-height: 1.65;
-        max-width: 560px;
-    }
-
-    .sv-hero-right {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    .sv-hero-stat {
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 14px;
-        padding: 18px 22px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .sv-hero-stat span.material-symbols-outlined {
-        font-size: 28px;
-        color: var(--pcolor);
-    }
-
-    .sv-hero-stat h3 {
-        font-size: 20px;
-        color: white;
-        margin-bottom: 2px;
-    }
-
-    .sv-hero-stat p {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.65);
-    }
-
-    @media (max-width:950px) {
-        .sv-hero-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .sv-hero h1 {
-            font-size: 34px;
-        }
-    }
-
+   
     /* ===================== 2. CORE SERVICES GRID ===================== */
     .sv-services {
         background: white;
@@ -719,35 +650,6 @@
     
 <div class="sv-sections">
 
-    <!-- ===================== SECTION 1: SERVICES HERO ===================== -->
-    <section class="sv-hero">
-        <div class="sv-wrap sv-hero-grid">
-            <div class="sv-hero-left">
-                <p class="sv-eyebrow"><span class="material-symbols-outlined">circle</span> What We Offer</p>
-                <h1>Full-Service Real Estate Support, Start to Finish</h1>
-                <p>From the first search to the final signature, we handle buying, selling, renting, valuations, and
-                    property management under one roof, so you don't need to juggle multiple agencies for one move.
-                </p>
-            </div>
-
-            <div class="sv-hero-right">
-                <div class="sv-hero-stat">
-                    <span class="material-symbols-outlined">workspace_premium</span>
-                    <div>
-                        <h3>6 Core Services</h3>
-                        <p>Covering every stage of a property transaction</p>
-                    </div>
-                </div>
-                <div class="sv-hero-stat">
-                    <span class="material-symbols-outlined">groups</span>
-                    <div>
-                        <h3>32 Specialists</h3>
-                        <p>Agents dedicated to a single service area each</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ===================== SECTION 2: CORE SERVICES GRID ===================== -->
     <section class="sv-services">
